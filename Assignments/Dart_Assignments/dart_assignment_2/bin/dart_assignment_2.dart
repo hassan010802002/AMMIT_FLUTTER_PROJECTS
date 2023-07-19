@@ -1,8 +1,7 @@
-//this is a Dart Assignment 2......
 // ignore_for_file: non_constant_identifier_names
 import 'dart:io';
-import 'dart:js_interop';
 
+//this is a Dart Assignment 2......
 /// it contains 2 parts(capitalizing every first letter in each word in an entered sentence , search method in a list and find a record)
 void main(List<String> arguments) {
   /**first part in the assignment........!!!!!!!!! */
@@ -28,36 +27,37 @@ void main(List<String> arguments) {
       addressKey = "address";
   String? nameValue, ageValue, emailValue, phoneValue, addressValue;
   int idValue = 0;
-  List<Map<String, dynamic>>? data = [];
+  List<Map<String, dynamic>>? userData = [];
   RegExp exp = RegExp(r'\w*');
-  Map<String, dynamic>? tempData;
+  Map<String, dynamic>? tempData = {};
   while (true) {
+    print(
+        "!!!!!!!!!_____________Enter the Data of the User: __________!!!!!!!!!!!\n");
     print("!!!!!!!.......Enter Your Name : ......!!!!!!!!!!");
     nameValue = stdin.readLineSync();
-    tempData!.addAll({
+    tempData.addAll({
       idKey: idValue++,
-      nameKey:
-          nameValue!.isNotEmpty && exp.hasMatch(nameValue) ? nameValue : null
+      nameKey: nameValue!.isNotEmpty && exp.hasMatch(nameValue) ? nameValue : ""
     });
     print("!!!!!!!.......Enter Your Age : ......!!!!!!!!!!");
     ageValue = stdin.readLineSync();
     exp = RegExp(r'\d{2}');
     tempData.addAll({
-      ageKey: ageValue!.isNotEmpty && exp.hasMatch(ageValue) ? ageValue : null
+      ageKey: ageValue!.isNotEmpty && exp.hasMatch(ageValue) ? ageValue : ""
     });
     print("!!!!!!!.......Enter Your email : ......!!!!!!!!!!");
     emailValue = stdin.readLineSync();
     exp = RegExp(r'\w*\d*@gmail.com');
     tempData.addAll({
       emailKey:
-          emailValue!.isNotEmpty && exp.hasMatch(emailValue) ? emailValue : null
+          emailValue!.isNotEmpty && exp.hasMatch(emailValue) ? emailValue : ""
     });
     print("!!!!!!!.......Enter Your phone : ......!!!!!!!!!!");
     phoneValue = stdin.readLineSync();
-    exp = RegExp(r'201[1|2|5]\d{8}');
+    exp = RegExp(r'\+201[1|2|5]\d{8}');
     tempData.addAll({
       phoneKey:
-          phoneValue!.isNotEmpty && exp.hasMatch(phoneValue) ? phoneValue : null
+          phoneValue!.isNotEmpty && exp.hasMatch(phoneValue) ? phoneValue : ""
     });
     print("!!!!!!!.......Enter Your address : ......!!!!!!!!!!");
     addressValue = stdin.readLineSync();
@@ -65,23 +65,39 @@ void main(List<String> arguments) {
     tempData.addAll({
       addressKey: addressValue!.isNotEmpty && exp.hasMatch(addressValue)
           ? addressValue
-          : null
+          : ""
     });
-    if (nameValue.isNull &&
-        ageValue.isNull &&
-        emailValue.isNull &&
-        phoneValue.isNull &&
-        addressValue.isNull) {
+    if (nameValue.isEmpty &&
+        ageValue.isEmpty &&
+        emailValue.isEmpty &&
+        phoneValue.isEmpty &&
+        addressValue.isEmpty) {
       tempData.clear();
       break;
     } else {
-      data.add(tempData);
+      print("This is The Record You Entered : $tempData \n");
+      userData.add(Map<String, dynamic>.of(tempData));
       tempData.clear();
     }
   }
+
+  print(userData);
   print("Enter Your Name:.....");
-  String? searchName = stdin.readLineSync();
-  search(data, searchName);
+  String? searchData = stdin.readLineSync();
+  String? searchName = searchData!.isNotEmpty ? searchData : "";
+  print("Enter Your Id:......");
+  searchData = stdin.readLineSync();
+  String? searchId = searchData!.isNotEmpty ? searchData : "";
+  print("Enter Your Email:......");
+  searchData = stdin.readLineSync();
+  String? searchEmail = searchData!.isNotEmpty ? searchData : "";
+  print("Enter Your Phone:......");
+  searchData = stdin.readLineSync();
+  String? searchPhone = searchData!.isNotEmpty ? searchData : "";
+  search(userData, searchName.isNotEmpty ? searchName : "",
+      id: searchId.isNotEmpty ? searchId : "",
+      email: searchEmail.isNotEmpty ? searchEmail : "",
+      phone: searchPhone.isNotEmpty ? searchPhone : "");
 }
 
 String? getName(String? WholeSentence) {
@@ -116,22 +132,37 @@ String? getName(String? WholeSentence) {
   return WholeSentence;
 }
 
+int times = 1;
 void search(List<Map<String, dynamic>>? myData, String? name,
     {String? id, String? email, String? phone}) {
-  print("!!!!!!!!!!!_______________Your Data________________!!!!!!!!!!!!!");
-  for (var element in myData!) {
-    if (element.containsValue(name) ||
-        element.containsValue(email) ||
-        element.containsValue(phone) ||
-        element.containsValue(id)) {
-      print("The ID is : ${element['id']}");
-      print("The Name is : ${element['name']}");
-      print("The Email is : ${element['email']}");
-      print("The Age is : ${element['age']}");
-      print("The Phone is : ${element['phone']}");
-      print("The Address is : ${element['address']}");
+  if (name!.isEmpty) {
+    if (times <= 3) {
+      print(
+          "!!!!!!!!____________Please You Must Enter Your Name at Least____________!!!!!!!!!!!");
+      name = stdin.readLineSync();
+      times++;
+      search(myData, name);
     } else {
-      print("There No Such a Record in the List Containing This Name");
+      print(
+          "!!!!!!!!!!____________ You Didn't Enter Your Name for Three Times So The Program Has Terminated ____________!!!!!!!!!!");
+      return;
+    }
+  }
+  for (var value in myData!) {
+    if (value.containsValue(name) ||
+        value.containsValue(email) ||
+        value.containsValue(phone) ||
+        value.containsValue(id)) {
+      if (name == value['name']) {
+        print(
+            "!!!!!!!!!!!_______________Your Data________________!!!!!!!!!!!!\n");
+        print("The ID is : ${value['id']}");
+        print("The Name is : ${value['name']}");
+        print("The Email is : ${value['email']}");
+        print("The Age is : ${value['age']}");
+        print("The Phone is : ${value['phone']}");
+        print("The Address is : ${value['address']}");
+      }
     }
   }
 }
