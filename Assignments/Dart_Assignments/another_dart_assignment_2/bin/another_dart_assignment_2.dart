@@ -29,10 +29,16 @@ void main(List<String> args) {
     }
     print("My Numbers List _______ : $theNumbers");
     int i = 1;
+    var tupleNumbers = "(";
     theNumbers.removeWhere((element) => element == null);
     for (var element in theNumbers) {
       print("${i++} - $element");
+      tupleNumbers += "'$element' , ";
     }
+    tupleNumbers += ")";
+    tupleNumbers = tupleNumbers.substring(0, tupleNumbers.length - 3);
+    tupleNumbers += ")";
+    print("My Numbers Tuple _______ : $tupleNumbers");
   }
 }
 ///!!!!!!!!!!!!___________________END____________________!!!!!!!!!!!!!!!
