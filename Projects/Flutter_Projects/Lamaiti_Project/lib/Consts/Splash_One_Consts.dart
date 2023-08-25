@@ -38,17 +38,15 @@ class Splash_One_Consts {
       ),
     ),
     fixedSize: MaterialStatePropertyAll(Size(374.0, 60)),
-
   );
   static const button_Child = Text(
     "ابداء الان",
     style: TextStyle(
-      fontStyle: FontStyle.normal,
-      fontSize: 30,
-      fontFamily: "Tajawal",
-      fontWeight: FontWeight.w800,
-      color: Color(0xff0B3FA8)
-    ),
+        fontStyle: FontStyle.normal,
+        fontSize: 30,
+        fontFamily: "Tajawal",
+        fontWeight: FontWeight.w800,
+        color: Color(0xff0B3FA8)),
     textAlign: TextAlign.center,
   );
   static Container small_Container = Container(
@@ -58,13 +56,12 @@ class Splash_One_Consts {
   );
   static Container container = Container(
     decoration: const BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(15.0)),
-      color: Colors.white
-    ),
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        color: Colors.white),
     width: 23.0,
     height: 8,
   );
-  static const simple_Space =  SizedBox(
+  static const simple_Space = SizedBox(
     width: 6.0,
   );
   static const text2_Style = TextStyle(
@@ -73,4 +70,57 @@ class Splash_One_Consts {
     fontSize: 20.0,
     fontFamily: "Tajawal",
   );
+  static const text_3 = "نحن نهتم بمركبتك بقدر اهتمامك";
+  static const text_4 = "توفر المعدات الدقيقة نتائج مثالية.";
+
+  static const image2 = "assets/Images/2_generated-removebg-preview 1.png";
+  static const image3 = "assets/Images/2_generated-removebg-preview(2) 1.png";
+
+  static const images = [
+    image,
+    image2,
+    image3
+  ];
+
+  static const texts = [
+    text1,
+    text_3,
+    text_4
+  ];
+
+  static var rows = [
+    Row(
+      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Splash_One_Consts.container,
+        Splash_One_Consts.simple_Space,
+        Splash_One_Consts.small_Container,
+        Splash_One_Consts.simple_Space,
+        Splash_One_Consts.small_Container,
+      ],
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Splash_One_Consts.small_Container,
+        Splash_One_Consts.simple_Space,
+        Splash_One_Consts.container,
+        Splash_One_Consts.simple_Space,
+        Splash_One_Consts.small_Container,
+      ],
+    ),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Splash_One_Consts.small_Container,
+        Splash_One_Consts.simple_Space,
+        Splash_One_Consts.small_Container,
+        Splash_One_Consts.simple_Space,
+        Splash_One_Consts.container,
+      ],
+    )
+  ];
 }
