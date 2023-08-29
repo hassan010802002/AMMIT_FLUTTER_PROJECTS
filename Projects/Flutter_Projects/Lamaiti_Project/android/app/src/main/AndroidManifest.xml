@@ -2,7 +2,11 @@
     <application
         android:label="lamaiti"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCkB4Ob5ABGNpQa4gcWuH1E-mCt2TjmXGY"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

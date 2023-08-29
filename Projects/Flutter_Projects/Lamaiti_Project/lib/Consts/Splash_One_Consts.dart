@@ -50,19 +50,21 @@ class Splash_One_Consts {
     textAlign: TextAlign.center,
   );
   static Container small_Container = Container(
-    color: Colors.white,
+    decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        color: Colors.white),
     width: 20.0,
-    height: 5,
+    height: 10,
   );
   static Container container = Container(
     decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
         color: Colors.white),
-    width: 23.0,
-    height: 8,
+    width: 30.0,
+    height: 10,
   );
   static const simple_Space = SizedBox(
-    width: 6.0,
+    width: 8.0,
   );
   static const text2_Style = TextStyle(
     color: Colors.white,
@@ -76,13 +78,13 @@ class Splash_One_Consts {
   static const image2 = "assets/Images/2_generated-removebg-preview 1.png";
   static const image3 = "assets/Images/2_generated-removebg-preview(2) 1.png";
 
-  static const images = [
+  static var images = [
     image,
     image2,
     image3
   ];
 
-  static const texts = [
+  static var texts = [
     text1,
     text_3,
     text_4
@@ -123,4 +125,6 @@ class Splash_One_Consts {
       ],
     )
   ];
+
+
 }

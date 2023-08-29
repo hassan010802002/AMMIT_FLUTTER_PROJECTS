@@ -32,15 +32,27 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.7
   google_fonts: ^5.1.0
+  google_maps_flutter: ^2.4.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  http: ^1.1.0
+  json_serializable: ^6.7.1
+  animated_bottom_navigation_bar: ^1.2.0
+  line_icons: ^2.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  build_runner: ^2.4.6
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/Icons/car_icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -70,6 +82,7 @@ flutter:
     - assets/Pdfs/
     - assets/Lottie_Animations/
     - assets/Rive_Animations/
+    - assets/locations.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

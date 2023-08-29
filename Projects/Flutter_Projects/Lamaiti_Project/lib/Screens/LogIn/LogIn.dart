@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lamaiti/Components/CustomTextField/CustomTextField.dart';
 import 'package:lamaiti/Consts/LogInConsts.dart';
+import 'package:lamaiti/Screens/Home_Screen/HomeScreen.dart';
+import 'package:lamaiti/Screens/SignUp/SignUp.dart';
 
 class MyLogIn extends StatelessWidget {
   const MyLogIn({super.key});
@@ -35,6 +37,7 @@ class _LogInPageState extends State<LogInPage> {
               LogInConsts.svgVectorString,
               width: LogInConsts.vectorWidth,
               height: LogInConsts.vectorHeight,
+              alignment: Alignment.topCenter,
             ),
             Align(
               alignment: AlignmentDirectional.center,
@@ -73,7 +76,7 @@ class _LogInPageState extends State<LogInPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 65.0,
                       width: 380.0,
                       child: CustomTextField(),
@@ -96,16 +99,13 @@ class _LogInPageState extends State<LogInPage> {
                         ),
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 65.0,
                       width: 380.0,
-                      child: TextField(
-                        textAlign: TextAlign.center,
-                        decoration: LogInConsts.textFieldDecoration2,
-                        style: LogInConsts.textFieldStyle2,
-                        maxLines: 1,
-                        obscureText: true,
-                        obscuringCharacter: "*",
+                      child: CustomTextField(
+                        icon: Icons.password_rounded,
+                        opsecure: true,
+                        hintText: "Enter Your Password",
                       ),
                     ),
                     Padding(
@@ -113,7 +113,10 @@ class _LogInPageState extends State<LogInPage> {
                         top: 30.0,
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context, MaterialPageRoute(
+                            builder: (context) => MyHome(),));
+                        },
                         style: LogInConsts.buttonSyle,
                         child: const Text(
                           LogInConsts.text5,
@@ -130,7 +133,10 @@ class _LogInPageState extends State<LogInPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           TextButton(
-                            onPressed: (){},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                  builder: (context) => MySignUp()));
+                            },
                             child: const Text(
                               LogInConsts.text6,
                               textAlign: TextAlign.center,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lamaiti/Consts/Splash_One_Consts.dart';
+import 'package:lamaiti/Helper/Splash_One_Helper/Splash_Model.dart';
 import '../../Components/Custom_Splash/Custom_Splash.dart';
 
 class My_Splash_One extends StatelessWidget {
@@ -22,6 +23,17 @@ class Splash_One_Page extends StatefulWidget {
 }
 
 class _Splash_One_Page_State extends State<Splash_One_Page> {
+  List<SplashModel> slides = getSlides();
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +41,8 @@ class _Splash_One_Page_State extends State<Splash_One_Page> {
         decoration: Splash_One_Consts.screen_Decoration,
         child: Center(
           child: Custom_Splash(
-              image: Splash_One_Consts.images[0],
-              text: Splash_One_Consts.texts[0],
+              image: slides.elementAt(0).imagePath,
+              text: slides.elementAt(0).descriptionText,
               editRow: Splash_One_Consts.rows[0]),
         ),
       ),

@@ -36,20 +36,6 @@ class LogInConsts {
     fontWeight: FontWeight.w500,
     fontStyle: FontStyle.normal,
   );
-  static const textFieldDecoration1 = InputDecoration(
-    fillColor: Color(0xffE1E6F1),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-    ),
-    hintText: "Something@Example.com",
-    hintStyle: TextStyle(
-      fontWeight: FontWeight.w600,
-      fontSize: 18.0,
-      color: Colors.blueGrey,
-    ),
-    prefixIcon: Icon(Icons.email_rounded, color: Colors.blueGrey),
-    filled: true,
-  );
   static const textFieldStyle1 = TextStyle(
       color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w800);
   static const text4 = "كلمة المرور";
