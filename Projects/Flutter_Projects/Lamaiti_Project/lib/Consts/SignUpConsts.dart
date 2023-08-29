@@ -44,17 +44,6 @@ class SignUpConsts {
     fontWeight: FontWeight.w800,
     fontFamily: "Tajawal",
   );
-  static const buttonSyle = ButtonStyle(
-      elevation: MaterialStatePropertyAll(5.0),
-      fixedSize: MaterialStatePropertyAll(Size(380, 65)),
-      shape: MaterialStatePropertyAll(
-        RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(15.0),
-          ),
-        ),
-      ),
-      backgroundColor: MaterialStatePropertyAll(Color(0xff0B3FA8)));
   static const text10Style = TextStyle(
       color: Colors.white,
       fontWeight: FontWeight.w900,

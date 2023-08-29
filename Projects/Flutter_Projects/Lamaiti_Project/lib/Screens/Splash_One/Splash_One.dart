@@ -8,9 +8,8 @@ class My_Splash_One extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Splash_One_Page(),
+    return const Scaffold(
+      body: Splash_One_Page(),
     );
   }
 }
@@ -24,6 +23,7 @@ class Splash_One_Page extends StatefulWidget {
 
 class _Splash_One_Page_State extends State<Splash_One_Page> {
   List<SplashModel> slides = getSlides();
+
   @override
   void initState() {
     super.initState();
@@ -36,15 +36,13 @@ class _Splash_One_Page_State extends State<Splash_One_Page> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        decoration: Splash_One_Consts.screen_Decoration,
-        child: Center(
-          child: Custom_Splash(
-              image: slides.elementAt(0).imagePath,
-              text: slides.elementAt(0).descriptionText,
-              editRow: Splash_One_Consts.rows[0]),
-        ),
+    return Container(
+      decoration: Splash_One_Consts.screen_Decoration,
+      child: Center(
+        child: Custom_Splash(
+            image: slides.elementAt(0).imagePath,
+            text: slides.elementAt(0).descriptionText,
+            editRow: Splash_One_Consts.rows[0]),
       ),
     );
   }

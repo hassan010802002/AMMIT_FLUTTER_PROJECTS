@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:line_icons/line_icons.dart';
 
 class HomeConsts {
   static const unselectedIconTheme = IconThemeData(
@@ -24,7 +25,6 @@ class HomeConsts {
   static const text4 = "الحساب";
   static const text5 = "احجز الان";
   static const text6 = "اضف مركبة";
-  static const assetImage = "assets/Images/ant-design_car-outlinedcar.png";
   static const assetImage2 = "assets/Images/mdi_car-2-plusaddCar.png";
   static const initialCameraPosition = CameraPosition(
     target: LatLng(0, 0),
@@ -59,4 +59,10 @@ class HomeConsts {
     fontSize: 20.0,
     fontWeight: FontWeight.w800,
   );
+  static const List<IconData> icons = [
+    Icons.home_rounded,
+    Icons.car_rental,
+    Icons.calendar_month_rounded,
+    Icons.account_circle
+  ];
 }

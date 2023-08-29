@@ -1,7 +1,9 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:lamaiti/Controllers/OnBroading_Controller/OnBroading_Controller.dart';
+import 'package:lamaiti/Routes/My_Routes.dart';
 import 'package:lamaiti/Screens/LogIn/LogIn.dart';
 import '../../Consts/Splash_One_Consts.dart';
 import '../../Helper/Splash_One_Helper/Splash_Model.dart';
@@ -38,16 +40,16 @@ class CustomSplashStatefull extends StatefulWidget {
 }
 
 class _CustomSplashStatefullState extends State<CustomSplashStatefull> {
-  static int _times = 0;
-  Timer? _timer;
   List<SplashModel> slides = getSlides();
   int currentIndex = 0;
   PageController _controller = PageController(initialPage: 0);
+  OnBroading_Controller onBroading_Controller =
+      Get.put(OnBroading_Controller());
 
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+    Timer.periodic(Duration(seconds: 3), (timer) {
       if (currentIndex < 3) {
         currentIndex++;
       } else {
@@ -95,7 +97,8 @@ class _CustomSplashStatefullState extends State<CustomSplashStatefull> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Image(
-                        image: AssetImage(slides.elementAt(currentIndex).imagePath),
+                        image: AssetImage(
+                            slides.elementAt(currentIndex).imagePath),
                         width: Splash_One_Consts.image_Dimensions,
                         height: Splash_One_Consts.image_Dimensions,
                         fit: Splash_One_Consts.image_Fit,
@@ -120,8 +123,8 @@ class _CustomSplashStatefullState extends State<CustomSplashStatefull> {
           padding: Splash_One_Consts.button_Top_Padding,
           child: ElevatedButton(
               onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => const MyLogIn()));
+                onBroading_Controller.Navigate_without_return(
+                    MyRoutes.logInScreen);
               },
               style: Splash_One_Consts.button_Style,
               child: Splash_One_Consts.button_Child),
@@ -176,18 +179,14 @@ class _CustomSplashStatefullState extends State<CustomSplashStatefull> {
                     setState(() {
                       if (currentIndex < 2) {
                         currentIndex++;
-                        widget.text = slides
-                            .elementAt(currentIndex)
-                            .descriptionText;
-                        widget.image =
-                            slides.elementAt(currentIndex).imagePath;
+                        widget.text =
+                            slides.elementAt(currentIndex).descriptionText;
+                        widget.image = slides.elementAt(currentIndex).imagePath;
                         widget.editRow = Splash_One_Consts.rows[currentIndex];
                       }
                       if (currentIndex == 2) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MyLogIn()));
+                        onBroading_Controller.Navigate_without_return(
+                            MyRoutes.logInScreen);
                       }
                     });
                   },

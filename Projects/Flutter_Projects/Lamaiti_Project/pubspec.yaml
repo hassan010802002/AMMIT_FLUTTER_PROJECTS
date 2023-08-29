@@ -42,6 +42,9 @@ dependencies:
   json_serializable: ^6.7.1
   animated_bottom_navigation_bar: ^1.2.0
   line_icons: ^2.0.3
+  image_picker: ^1.0.3
+  get: ^4.6.5
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -79,7 +82,7 @@ flutter:
     - assets/Videos/
     - assets/Icons/
     - assets/Audios/
-    - assets/Pdfs/
+    - assets/Files/
     - assets/Lottie_Animations/
     - assets/Rive_Animations/
     - assets/locations.json
