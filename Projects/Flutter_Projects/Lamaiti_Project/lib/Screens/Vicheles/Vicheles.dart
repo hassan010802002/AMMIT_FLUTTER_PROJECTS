@@ -6,9 +6,11 @@ import 'package:lamaiti/Components/Custom_Navigation_Bar/Custom_Navigation_Bar.d
 import 'package:lamaiti/Consts/Add_New_Car_Consts.dart';
 import 'package:lamaiti/Consts/Vicheles_Consts.dart';
 import 'package:lamaiti/Controllers/Home_Controller/Home_Controller.dart';
+import 'package:lamaiti/Controllers/Vicheles_Controller/Vicheles_Controller.dart';
+import 'package:lamaiti/Routes/My_Routes.dart';
 
 class MyVicheles extends StatelessWidget {
-  Home_Controller home_controller = Get.put(Home_Controller());
+  Home_Controller home_controller = Get.put(Home_Controller(1.obs));
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class VichelesPage extends StatefulWidget {
 }
 
 class _VichelesPageState extends State<VichelesPage> {
-  Home_Controller home_controller = Get.put(Home_Controller());
+  VichelesController vichelesController = Get.put(VichelesController());
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +107,7 @@ class _VichelesPageState extends State<VichelesPage> {
                                         child: Icon(
                                           Icons.close_rounded,
                                           size: 15,
-                                          color: Colors.white70,
+                                          color: Colors.white,
                                         ),
                                       ),
                                     ),
@@ -186,7 +188,9 @@ class _VichelesPageState extends State<VichelesPage> {
                             height: 65,
                             child: FloatingActionButton(
                               heroTag: "addButton",
-                              onPressed: () {},
+                              onPressed: () {
+                                vichelesController.Navigate(MyRoutes.newCarScreen);
+                              },
                               child: Icon(
                                 Icons.add_rounded,
                                 size: 60,

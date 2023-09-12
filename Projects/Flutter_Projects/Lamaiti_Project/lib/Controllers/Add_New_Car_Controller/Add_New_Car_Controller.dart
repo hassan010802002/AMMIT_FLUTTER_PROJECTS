@@ -53,10 +53,7 @@ class Add_New_Car_Controller extends GetxController {
   }
 
   void Navigate(dynamic page) {
-    Get.to(page);
+    Get.toNamed(page);
   }
 
-  void Navigate_Without_Return(dynamic page) {
-    Get.off(page);
-  }
 }

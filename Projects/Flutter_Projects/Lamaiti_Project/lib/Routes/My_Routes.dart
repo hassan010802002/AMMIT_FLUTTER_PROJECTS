@@ -7,4 +7,13 @@ class MyRoutes {
   static const homeScreen = "/home";
   static const newCarScreen = "/newcar";
   static const vichelesScreen = "/vicheles";
+  static const carBookingsScreen = "/bookings";
+  static const carServicesScreen = "/services";
+  static const carDetailsScreen = "/details";
+  static const profileScreen = "/profile";
+  static const walletScreen = "/wallet";
+  static const settingsScreen = "/settings";
+  static const helpScreen = "/help";
+  static const notificationScreen = "/notification";
+  static const termsScreen = "/terms";
 }

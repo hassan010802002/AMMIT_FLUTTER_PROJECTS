@@ -7,7 +7,10 @@ class CustomButton extends StatelessWidget {
   final void Function()? onPressed;
   MaterialStateProperty<Size?>? fixedSize;
   final  controller;
-  String buttonText;
+  final String buttonText;
+  final TextStyle? style;
+  final MaterialStateProperty<Color?>? backgroundColor ;
+  final MaterialStateProperty<OutlinedBorder?>? shape;
 
   CustomButton({
     super.key,
@@ -15,6 +18,15 @@ class CustomButton extends StatelessWidget {
     this.onPressed,
     this.fixedSize = const MaterialStatePropertyAll(Size(380.0, 65)),
     this.buttonText = SignUpConsts.text10,
+    this.style = SignUpConsts.text10Style,
+    this.backgroundColor = const MaterialStatePropertyAll(Color(0xff0B3FA8)),
+    this.shape = const MaterialStatePropertyAll(
+      RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(15.0),
+        ),
+      ),
+    ),
   });
 
   @override
@@ -24,17 +36,11 @@ class CustomButton extends StatelessWidget {
       style: ButtonStyle(
           elevation: MaterialStatePropertyAll(5.0),
           fixedSize: fixedSize,
-          shape: MaterialStatePropertyAll(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(15.0),
-              ),
-            ),
-          ),
-          backgroundColor: MaterialStatePropertyAll(Color(0xff0B3FA8))),
+          shape: shape,
+          backgroundColor: backgroundColor),
       child: Text(
         buttonText,
-        style: SignUpConsts.text10Style,
+        style: style,
         textAlign: TextAlign.center,
       ),
     );

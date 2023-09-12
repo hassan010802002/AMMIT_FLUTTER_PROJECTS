@@ -9,6 +9,7 @@ import 'package:lamaiti/Components/Custom_Carusel_Slider/Custom_Carusel_Slider.d
 import 'package:lamaiti/Components/Custom_Dropdown_Menu/Custom_Dropdown_Menu.dart';
 import 'package:lamaiti/Consts/Add_New_Car_Consts.dart';
 import 'package:lamaiti/Controllers/Add_New_Car_Controller/Add_New_Car_Controller.dart';
+import 'package:lamaiti/Routes/My_Routes.dart';
 
 class My_New_Car extends StatelessWidget {
   @override
@@ -306,7 +307,9 @@ class _Add_New_Car_State extends State<Add_New_Car> {
                       padding: const EdgeInsets.only(top: 65.0, bottom: 50),
                       child: CustomButton(
                         controller: controller,
-                        onPressed: () {},
+                        onPressed: () {
+                          controller.Navigate(MyRoutes.carServicesScreen);
+                        },
                         buttonText: Add_New_Car_Consts.text7,
                       ),
                     ),

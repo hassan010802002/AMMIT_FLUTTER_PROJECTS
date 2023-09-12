@@ -4,13 +4,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:lamaiti/Components/CustomTextField/CustomTextField.dart';
 import 'package:lamaiti/Components/Custom_Button/Custom_Button.dart';
 import 'package:lamaiti/Components/Custom_Navigation_Bar/Custom_Navigation_Bar.dart';
+import 'package:lamaiti/Components/Custom_PopUp_Dialog/Custom_PopUp_Dialog.dart';
 import 'package:lamaiti/Consts/Home_Consts.dart';
 import 'package:lamaiti/Controllers/Home_Controller/Home_Controller.dart';
 import 'package:lamaiti/Routes/My_Routes.dart';
 import '../../src/locations.dart' as locations;
 
 class MyHome extends StatelessWidget {
-  Home_Controller homeController = Get.put(Home_Controller());
+  Home_Controller homeController = Get.put(Home_Controller(0.obs));
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Home_Controller homeController = Get.put(Home_Controller());
+  Home_Controller homeController = Get.put(Home_Controller(0.obs));
   final Map<String, Marker> _markers = {};
 
   Future<void> _onMapCreated(GoogleMapController controller) async {
@@ -114,7 +115,8 @@ class _HomePageState extends State<HomePage> {
                                     fit: BoxFit.fill,
                                   ),
                                   onPressed: () {
-                                    homeController.Navigate(MyRoutes.newCarScreen);
+                                    homeController.Navigate(
+                                        MyRoutes.newCarScreen);
                                   },
                                   style: HomeConsts.buttonSyle,
                                   label: const Text(
@@ -163,7 +165,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildPopupDialog(BuildContext context) {
-    return AlertDialog(
+    return Custom_PopUp_Dialog(
       content: Container(
         width: 375,
         height: 400,
@@ -219,7 +221,6 @@ class _HomePageState extends State<HomePage> {
               buttonText: "اضافة الان",
               onPressed: () {
                 homeController.Navigate_in_PopUp(MyRoutes.newCarScreen);
-
               },
               fixedSize: MaterialStatePropertyAll(Size(180, 65)),
             ),

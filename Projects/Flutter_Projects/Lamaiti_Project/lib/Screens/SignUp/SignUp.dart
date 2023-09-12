@@ -138,10 +138,17 @@ class _SignUpPageState extends State<SignUpPage> {
                             textAlign: TextAlign.right,
                             style: SignUpConsts.text6Style,
                           ),
-                          Radio(
-                            value: "Female",
-                            groupValue: "Gender",
-                            onChanged: (_) {},
+                          GetX(
+                            init: signUp_Controller,
+                            builder: (controller) {
+                              return Radio(
+                                value: "Female",
+                                groupValue: signUp_Controller.genderValue!.value,
+                                onChanged: (value) {
+                                  signUp_Controller.OnGenderChange(value);
+                                },
+                              );
+                            },
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 150),
@@ -151,10 +158,17 @@ class _SignUpPageState extends State<SignUpPage> {
                               style: SignUpConsts.text6Style,
                             ),
                           ),
-                          Radio(
-                            value: "Male",
-                            groupValue: "Gender",
-                            onChanged: (_) {},
+                          GetX(
+                            init: signUp_Controller,
+                            builder: (controller) {
+                              return Radio(
+                                value: "Male",
+                                groupValue: signUp_Controller.genderValue!.value,
+                                onChanged: (value) {
+                                  signUp_Controller.OnGenderChange(value);
+                                },
+                              );
+                            },
                           ),
                         ],
                       ),
@@ -227,10 +241,17 @@ class _SignUpPageState extends State<SignUpPage> {
                             textAlign: TextAlign.right,
                             style: SignUpConsts.text6Style,
                           ),
-                          Radio(
-                            value: "Policy Agree",
-                            groupValue: "Policy",
-                            onChanged: (_) {},
+                          GetX(
+                            init: signUp_Controller,
+                            builder: (controller) {
+                              return Radio(
+                                value: "Policy Agree",
+                                groupValue: signUp_Controller.policyValue!.value,
+                                onChanged: (value) {
+                                  signUp_Controller.OnPolicyChange(value);
+                                },
+                              );
+                            },
                           ),
                         ],
                       ),

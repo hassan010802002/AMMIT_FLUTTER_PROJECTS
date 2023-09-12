@@ -78,7 +78,7 @@ class _OTP_Page_State extends State<OTP_Page> {
                           width: 90.0,
                           child: CustomTextField(
                             hintText: "0",
-                            icon: Icons.pin,
+                            icon: Icons.numbers_rounded,
                             lenght: 1,
                           ),
                         ),
@@ -90,7 +90,7 @@ class _OTP_Page_State extends State<OTP_Page> {
                           width: 90.0,
                           child: CustomTextField(
                             hintText: "0",
-                            icon: Icons.pin,
+                            icon: Icons.numbers_rounded,
                             lenght: 1,
                           ),
                         ),
@@ -102,7 +102,7 @@ class _OTP_Page_State extends State<OTP_Page> {
                           width: 90.0,
                           child: CustomTextField(
                             hintText: "0",
-                            icon: Icons.pin,
+                            icon: Icons.numbers_rounded,
                             lenght: 1,
                           ),
                         ),
@@ -114,7 +114,7 @@ class _OTP_Page_State extends State<OTP_Page> {
                           width: 90.0,
                           child: CustomTextField(
                             hintText: "0",
-                            icon: Icons.pin,
+                            icon: Icons.numbers_rounded,
                             lenght: 1,
                           ),
                         )
