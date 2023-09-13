@@ -16,4 +16,8 @@ class MyRoutes {
   static const helpScreen = "/help";
   static const notificationScreen = "/notification";
   static const termsScreen = "/terms";
+  static const forgetPasswordScreen = "/forgetpassword";
+  static const newPasswordScreen = "/newpassword";
+  static const confirmNewPasswordScreen = "/confirmnewpassword";
+  static const updatingProfileScreen = "/updatingprofile";
 }

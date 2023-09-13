@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LogInConsts {
+class Updating_Profile_Consts {
   static const containerDecoration = BoxDecoration(
       borderRadius: BorderRadius.all(Radius.circular(12)),
       color: Color(0xffF9F9F9));
@@ -12,43 +12,24 @@ class LogInConsts {
   ''';
   static const vectorWidth = 462.0;
   static const vectorHeight = 292.0;
-  static const text1 = "تسجيل الدخول";
+  static const text1 = "نسيت كلمة المرور ؟";
   static const text1Style = TextStyle(
     color: Color(0xff0B3FA8),
     fontFamily: "Tajawal",
-    fontSize: 36.0,
+    fontSize: 38.0,
     fontWeight: FontWeight.w800,
     fontStyle: FontStyle.normal,
   );
-  static const text2 = "مرحبا بك مجددا";
+  static const text2 = "الاسم";
+  static const text4 = "البريد الإلكتروني";
+  static const text6 = "رقم الهاتف";
   static const text2Style = TextStyle(
-    color: Color(0xff0B3FA8),
+    color: Colors.black,
     fontFamily: "Tajawal",
-    fontSize: 24.0,
-    fontWeight: FontWeight.w700,
+    fontSize: 15.0,
+    fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
   );
-  static const text3 = "البريد الالكتروني";
-  static const text3Style = TextStyle(
-    color: Color(0xff000000),
-    fontFamily: "Tajawal",
-    fontSize: 16.0,
-    fontWeight: FontWeight.w500,
-    fontStyle: FontStyle.normal,
-  );
-  static const textFieldStyle1 = TextStyle(
-      color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w800);
-  static const text4 = "كلمة المرور";
-  static const textFieldDecoration2 = InputDecoration(
-    fillColor: Color(0xffE1E6F1),
-    border: OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-    ),
-    prefixIcon: Icon(Icons.password_rounded, color: Colors.blueGrey),
-    filled: true,
-  );
-  static const textFieldStyle2 = TextStyle(
-      color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w800);
   static const buttonSyle = ButtonStyle(
       elevation: MaterialStatePropertyAll(5.0),
       fixedSize: MaterialStatePropertyAll(Size(380, 65)),
@@ -60,23 +41,10 @@ class LogInConsts {
         ),
       ),
       backgroundColor: MaterialStatePropertyAll(Color(0xff0B3FA8)));
-  static const text5 = "دخول";
-  static const text6 = "حساب جديد";
-  static const text7 = "ليس لديك حساب؟ ";
-  static const text8 = "نسيت كلمة المرور ؟";
+  static const text5 = "تحديث";
   static const text5Style = TextStyle(
       color: Colors.white,
-      fontWeight: FontWeight.w900,
+      fontWeight: FontWeight.w800,
       fontSize: 32.0,
-      fontFamily: "Tajawal");
-  static const text6Style = TextStyle(
-      color: Color(0xff0B3FA8),
-      fontSize: 20.0,
-      fontWeight: FontWeight.w800,
-      fontFamily: "Tajawal");
-  static const text7Style = TextStyle(
-      color: Colors.black,
-      fontSize: 16.0,
-      fontWeight: FontWeight.w800,
       fontFamily: "Tajawal");
 }

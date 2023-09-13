@@ -84,56 +84,62 @@ class _Profile_Screen_State extends State<Profile_Screen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 20),
-                      child: Container(
-                        height: 90.0,
-                        padding: EdgeInsets.only(
-                          left: 10,
-                          right: 10,
-                        ),
-                        color: Colors.white,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Text(
-                                  Profile_Screen_Consts.text2,
-                                  style: Profile_Screen_Consts.text2Style,
-                                  textDirection: TextDirection.rtl,
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      Profile_Screen_Consts.text3,
-                                      style: Profile_Screen_Consts.text2Style,
-                                      textDirection: TextDirection.rtl,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Color(0xffFFCE31),
-                                      size: 35,
-                                    ),
-                                  ],
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            CircleAvatar(
-                              backgroundImage: AssetImage(
-                                  Profile_Screen_Consts.profileAvatarImage),
-                              radius: 36,
-                            )
-                          ],
+                      child: GestureDetector(
+                        onTap: () {
+                          profile_screen_controller.Navigating(MyRoutes.updatingProfileScreen);
+                        },
+                        child: Container(
+                          height: 90.0,
+                          padding: EdgeInsets.only(
+                            left: 10,
+                            right: 10,
+                          ),
+                          color: Colors.white,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    Profile_Screen_Consts.text2,
+                                    style: Profile_Screen_Consts.text2Style,
+                                    textDirection: TextDirection.rtl,
+                                  ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        Profile_Screen_Consts.text3,
+                                        style: Profile_Screen_Consts.text2Style,
+                                        textDirection: TextDirection.rtl,
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Color(0xffFFCE31),
+                                        size: 35,
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    Profile_Screen_Consts.profileAvatarImage),
+                                radius: 36,
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -179,7 +185,8 @@ class _Profile_Screen_State extends State<Profile_Screen> {
                         padding: EdgeInsets.only(top: 30),
                         child: GestureDetector(
                           onTap: () {
-                            profile_screen_controller.Navigating(MyRoutes.settingsScreen);
+                            profile_screen_controller.Navigating(
+                                MyRoutes.settingsScreen);
                           },
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -214,7 +221,8 @@ class _Profile_Screen_State extends State<Profile_Screen> {
                         padding: EdgeInsets.only(top: 30),
                         child: GestureDetector(
                           onTap: () {
-                            profile_screen_controller.Navigating(MyRoutes.helpScreen);
+                            profile_screen_controller.Navigating(
+                                MyRoutes.helpScreen);
                           },
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,

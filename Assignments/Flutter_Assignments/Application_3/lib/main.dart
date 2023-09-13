@@ -1,5 +1,7 @@
 import 'package:application_3/Carousel_Slider_Consts.dart';
+import 'package:application_3/Controllers/Carousel_Controlle.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'Custom_Carousel_Slider.dart';
 
@@ -29,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int selectedIdx = 0;
-  List carouselImages = CarouselSliderConsts.networkImagesList;
+  Carousel_Controller carousel_controller = Get.put(Carousel_Controller());
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Align(
-                    alignment: Alignment.topCenter,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 25),
-                      child: Expanded(
-                        child: CustomCarouselSlider(
-                            carouselImages: carouselImages),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: CustomCarouselSlider(),
                       ),
                     ),
                   ),
@@ -91,12 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25),
-                    child: Expanded(
-                      child: CustomCarouselSlider(
-                        carouselImages: carouselImages,
-                        enlargeCenterPage: false,
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: CustomCarouselSlider(
+                          enlargeCenterPage: false,
+                        ),
                       ),
                     ),
                   )
@@ -108,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 5.0,
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             selectedIdx = index;
           });
@@ -119,11 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
         showUnselectedLabels: false,
         selectedIconTheme: const IconThemeData(
           color: Color.fromRGBO(255, 0, 203, 1),
-          size:35.0,
+          size: 35.0,
         ),
         unselectedIconTheme: const IconThemeData(
           color: Colors.tealAccent,
-          size:25.0,
+          size: 25.0,
         ),
         selectedItemColor: const Color.fromRGBO(255, 0, 203, 1),
         selectedFontSize: 14,

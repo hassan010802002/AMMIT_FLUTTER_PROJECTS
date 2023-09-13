@@ -8,6 +8,7 @@ class CustomTextField extends StatelessWidget {
   int? lenght , maxLines;
   Color? fillColor;
   void Function()? onTap;
+  TextInputType? keyboardType;
 
   CustomTextField({
     super.key,
@@ -23,11 +24,13 @@ class CustomTextField extends StatelessWidget {
     this.onTap,
     this.contentText,
     this.sufIcon,
+    this.keyboardType
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      keyboardType: keyboardType,
       textAlign: TextAlign.center,
       controller: TextEditingController(text: contentText),
       readOnly: isReadOnly!,

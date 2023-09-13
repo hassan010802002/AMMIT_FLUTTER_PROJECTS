@@ -4,9 +4,12 @@ import 'package:lamaiti/Screens/Add_New_Car/Add_New_Car.dart';
 import 'package:lamaiti/Screens/Car_Bookings/Car_Bookings.dart';
 import 'package:lamaiti/Screens/Car_Details/Car_Details.dart';
 import 'package:lamaiti/Screens/Car_Services/Car_Services.dart';
+import 'package:lamaiti/Screens/Confirm_New_Password_Screen/Confirm_New_Password_Screen.dart';
+import 'package:lamaiti/Screens/Forget_Password_Screen/Forget_Password_Screen.dart';
 import 'package:lamaiti/Screens/Help_Screen/Help_Screen.dart';
 import 'package:lamaiti/Screens/Home_Screen/HomeScreen.dart';
 import 'package:lamaiti/Screens/LogIn/LogIn.dart';
+import 'package:lamaiti/Screens/New_Password_Screen/New_Password_Screen.dart';
 import 'package:lamaiti/Screens/Notifications_Screen/Notifications_Screen.dart';
 import 'package:lamaiti/Screens/OTP/OTP.dart';
 import 'package:lamaiti/Screens/Profile_Screen/Profile_Screen.dart';
@@ -15,6 +18,7 @@ import 'package:lamaiti/Screens/SignUp/SignUp.dart';
 import 'package:lamaiti/Screens/Splash/Splash.dart';
 import 'package:lamaiti/Screens/Splash_One/Splash_One.dart';
 import 'package:lamaiti/Screens/Terms_Screen/Terms_Screen.dart';
+import 'package:lamaiti/Screens/Updating_Profile_Screen/Updating_Profile_Sceen.dart';
 import 'package:lamaiti/Screens/Vicheles/Vicheles.dart';
 import 'package:lamaiti/Screens/Wallet_Screen/Wallet_Screen.dart';
 
@@ -87,6 +91,22 @@ class MyScreensPages {
     GetPage(
       name: MyRoutes.termsScreen,
       page: () => MyTerms_Screen(),
+    ),
+    GetPage(
+      name: MyRoutes.forgetPasswordScreen,
+      page: () => Forget_MyPassword(),
+    ),
+    GetPage(
+      name: MyRoutes.newPasswordScreen,
+      page: () => MyNew_Password(),
+    ),
+    GetPage(
+      name: MyRoutes.confirmNewPasswordScreen,
+      page: () => Confirm_MyNew_Password(),
+    ),
+    GetPage(
+      name: MyRoutes.updatingProfileScreen,
+      page: () => Updating_MyProfile(),
     ),
   ];
 }
