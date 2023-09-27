@@ -5,8 +5,8 @@
 /// country : "GB"
 /// state : "England"
 
-class LocationsModel {
-  LocationsModel({
+class Locations_Model {
+  Locations_Model({
       String? name, 
       LocalNames? localNames, 
       num? lat, 
@@ -21,7 +21,7 @@ class LocationsModel {
     _state = state;
 }
 
-  LocationsModel.fromJson(dynamic json) {
+  Locations_Model.fromJson(dynamic json) {
     _name = json['name'];
     _localNames = json['local_names'] != null ? LocalNames.fromJson(json['local_names']) : null;
     _lat = json['lat'];
@@ -35,13 +35,13 @@ class LocationsModel {
   num? _lon;
   String? _country;
   String? _state;
-LocationsModel copyWith({  String? name,
+Locations_Model copyWith({  String? name,
   LocalNames? localNames,
   num? lat,
   num? lon,
   String? country,
   String? state,
-}) => LocationsModel(  name: name ?? _name,
+}) => Locations_Model(  name: name ?? _name,
   localNames: localNames ?? _localNames,
   lat: lat ?? _lat,
   lon: lon ?? _lon,

@@ -9,7 +9,7 @@ import 'package:weathery_news_app/Screens/Weather_Splash_Screen/Weather_Splash_S
 void main() {
   runApp( ScreenUtilInit(
     ensureScreenSize: true,
-    designSize: Size(480, 620),
+    designSize: const Size(480, 620),
     splitScreenMode: true,
     minTextAdapt: true,
     useInheritedMediaQuery: true,
@@ -17,7 +17,7 @@ void main() {
       initialRoute: MyPages.splashScreen,
       getPages: Weather_Main_Controller().screensRoutes,
       debugShowCheckedModeBanner: false,
-      home: MyWeather_Splash(),
+      home: const MyHome_Weather(),
     ),
   ));
 }
