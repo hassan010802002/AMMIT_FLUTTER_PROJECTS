@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:weathery_news_app/Routes/MyPages/MyPages.dart';
 import 'package:weathery_news_app/Screens/Weather_Home_Screen/Weather_Home_Screen.dart';
+import 'package:weathery_news_app/Screens/Weather_Searching_Screen/Weather_Searching_Screen.dart';
 import 'package:weathery_news_app/Screens/Weather_Splash_Screen/Weather_Splash_Screen.dart';
 
 class MyScreenPages {
@@ -11,7 +12,11 @@ class MyScreenPages {
     ),
     GetPage(
       name: MyPages.homeScreen,
-      page: () => MyHome_Weather(),
+      page: () => const MyHome_Weather(),
+    ),
+    GetPage(
+      name: MyPages.searchScreen,
+      page: () => const MyWeather_Search(),
     ),
   ];
 }

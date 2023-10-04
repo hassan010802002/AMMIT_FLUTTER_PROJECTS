@@ -1,0 +1,52 @@
+class Home_Sliding_Texts{
+  static const textFamily = "SF Pro Display";
+  ///___________________________________________________________________________///
+  static const text1 ="Hourly Forecast";
+  static const text2 ="Weekly Forecast";
+  static const text3 ="Now";
+  static const text4 ="20°C";
+  static const text5 ="Today";
+  static const text6 ="AIR QUALITY";
+  static const text7 ="5% Low Health Risk";
+  static const text8 ="See more";
+  static const text9 ="UV INDEX";
+  static const text10 ="5%Moderate";
+  static const text11 ="SUNRISE";
+  static const text12 ="06:00 AM";
+  static const text13 ="WIND";
+  static const text14 ="Speed";
+  static const text15 ="05 Km/H";
+  static const text16 ="RAINFALL";
+  static const text17 ="3.5 mm";
+  static const text18 ="In the Last Hour";
+  static const text19 ="FEELS LIKE";
+  static const text20 ="Feels Like";
+  static const text21 ="Similar to the Actual Temperature";
+  static const text22 ="HUMMITDIY";
+  static const text23 ="Humidity";
+  static const text24 ="60 %";
+  static const text25 ="VISIBILITY";
+  static const text26 ="Visibility";
+  static const text27 ="8.0 KM";
+  static const text28 ="PRESSURE";
+  static const text29 ="Pressure";
+  static const text30 ="ON the Sea Level";
+  ///________________________________________________________________________________________________________///
+  static const image1 ="assets/icons/weather_icons/moon/3.png";
+  static const image2 ="assets/images/air-quality-control-management-environment-ecology-purifier-pollution-svgrepo-com.svg";
+  static const image3 ="https://cdn0.iconfinder.com/data/icons/impact/100/7-1024.png";
+  static const image4 ="assets/images/sunset_sunrise.png";
+  static const image5 ="assets/images/pngwing.com.png";
+  static const image6 ="assets/images/wind_background.png";
+  static const image7 ="assets/images/wind.png";
+  static const image8 ="assets/images/rain_background.png";
+  static const image9 ="assets/images/rain_drops.png";
+  static const image10 ="assets/images/temperature_background.png";
+  static const image11 ="assets/images/weather_temperature_icon.png";
+  static const image12 ="assets/images/hummidity_background.png";
+  static const image13 ="assets/images/humidity_logo.png";
+  static const image14 ="https://cdn3d.iconscout.com/3d/premium/thumb/visibility-7847143-6293698.png";
+  static const image15 ="https://cdn3d.iconscout.com/3d/premium/thumb/visibility-9559575-7718615.png?f=webp";
+  static const image16 ="https://cdn3d.iconscout.com/3d/premium/thumb/wind-9203757-7520552.png";
+  static const image17 ="assets/images/pressure.png";
+}
