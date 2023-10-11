@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "287512007385",
+    "firebase_url": "https://home-project-a7e35-default-rtdb.firebaseio.com",
+    "project_id": "home-project-a7e35",
+    "storage_bucket": "home-project-a7e35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287512007385:android:31db628a93f9e2674be4c8",
+        "android_client_info": {
+          "package_name": "com.example.chatbox_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9HLYisrudDLr6xt5WqO4RrI-vPmfDB7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287512007385:android:0b50efea15b2a19e4be4c8",
+        "android_client_info": {
+          "package_name": "com.example.firebase_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9HLYisrudDLr6xt5WqO4RrI-vPmfDB7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

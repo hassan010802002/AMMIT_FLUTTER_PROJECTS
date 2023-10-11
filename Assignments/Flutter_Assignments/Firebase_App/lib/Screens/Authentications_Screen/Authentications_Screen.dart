@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:firebase_app/Components/Custom_Button/Custom_Bottom.dart';
 import 'package:firebase_app/Components/Custom_TextField/Custom_TextField.dart';
 import 'package:firebase_app/Consts/Authentications_Consts/Authentications_Consts.dart';
@@ -89,7 +91,7 @@ class _Authentications_Screen_State extends State<Authentications_Screen> {
                       height: 30,
                     ),
                     ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                      borderRadius: const BorderRadius.all(Radius.circular(12.0)),
                       child: SizedBox(
                         width: 355,
                         height: 60,
@@ -104,7 +106,7 @@ class _Authentications_Screen_State extends State<Authentications_Screen> {
                       height: 20.0,
                     ),
                     ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                      borderRadius: const BorderRadius.all(Radius.circular(12.0)),
                       child: SizedBox(
                         width: 355,
                         height: 60,
@@ -118,22 +120,6 @@ class _Authentications_Screen_State extends State<Authentications_Screen> {
                     ),
                     const SizedBox(
                       height: 20.0,
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                      child: SizedBox(
-                        width: 355,
-                        height: 60,
-                        child: CustomButton(
-                          buttonText: "Delete Account",
-                          onPressed: () {
-                            controller.Deleting();
-                          },
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 15,
                     ),
                   ],
                 ),

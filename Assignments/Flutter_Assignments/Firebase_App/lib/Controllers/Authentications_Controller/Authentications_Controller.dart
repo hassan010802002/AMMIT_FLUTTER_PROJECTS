@@ -1,3 +1,6 @@
+// ignore_for_file: non_constant_identifier_names, camel_case_types
+
+import 'package:firebase_app/Screens/Registeration_Screen/Registeration_Screen.dart';
 import 'package:firebase_app/Services/Authentications_Services/Authentications_Services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,9 +13,6 @@ class Authentications_Controller extends GetxController{
     Authentications_Services.SignIn_Authentication(userNameController.text, passwordNameController.text);
   }
   void SigningUp(){
-    Authentications_Services.SignUp_Authentication(userNameController.text, passwordNameController.text);
-  }
-  void Deleting(){
-    Authentications_Services.Deleting_Authentication();
+    Get.to(const MyRegisteration());
   }
 }
