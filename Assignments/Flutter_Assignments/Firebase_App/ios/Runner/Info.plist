@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSCameraUsageDescription</key>
+    <string>$Charity app would like to use your camera to Upload a photo of the item you want to donate.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Always and when in use!</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>$Charity app would like to save photos to your photo gallery</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Charity app would like access to your photo gallery to Upload a photo of the item you want to donate</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

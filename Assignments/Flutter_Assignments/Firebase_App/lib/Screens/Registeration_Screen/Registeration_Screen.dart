@@ -138,7 +138,7 @@ class _Registeration_Screen_State extends State<Registeration_Screen> {
                         child: CustomButton(
                           buttonText: "Auth Sign Up",
                           onPressed: () {
-                            controller.SigningUp();
+                            controller.SigningUp_to_Auth();
                           },
                         ),
                       ),
@@ -154,7 +154,7 @@ class _Registeration_Screen_State extends State<Registeration_Screen> {
                         child: CustomButton(
                           buttonText: "FireStore Sign Up",
                           onPressed: () {
-                            controller.SigningUp();
+                            controller.SigningUp_to_FireStore();
                           },
                         ),
                       ),
@@ -170,7 +170,7 @@ class _Registeration_Screen_State extends State<Registeration_Screen> {
                         child: CustomButton(
                           buttonText: "Real DB Sign Up",
                           onPressed: () {
-                            controller.SigningUp();
+                            controller.SigningUp_to_RealDB();
                           },
                         ),
                       ),
@@ -186,7 +186,7 @@ class _Registeration_Screen_State extends State<Registeration_Screen> {
                         child: CustomButton(
                           buttonText: "Log In",
                           onPressed: () {
-                            controller.Navigation(const Authentications_Screen());
+                            controller.Navigation(const MyAuthentications());
                           },
                         ),
                       ),

@@ -13,7 +13,7 @@ class Registeration_Controller extends GetxController {
   final phoneController = TextEditingController();
   final emailController = TextEditingController();
 
-  void SigningUp() {
+  void SigningUp_to_Auth() {
     final UserModel userModel = UserModel(
       id: idController.text,
       name: nameController.text,
@@ -21,9 +21,29 @@ class Registeration_Controller extends GetxController {
       userName: userNameController.text,
       password: passwordController.text,
     );
-    // Registeration_Services.addUserAuth(emailController.text, passwordController.text);
+    Registeration_Services.addUserAuth(emailController.text, passwordController.text);
+  }
+
+  void SigningUp_to_FireStore() {
+    final UserModel userModel = UserModel(
+      id: idController.text,
+      name: nameController.text,
+      phone: phoneController.text,
+      userName: userNameController.text,
+      password: passwordController.text,
+    );
     Registeration_Services.addToFireStore(model: userModel);
-    // Registeration_Services.addToRealTime(model: userModel);
+  }
+
+  void SigningUp_to_RealDB() {
+    final UserModel userModel = UserModel(
+      id: idController.text,
+      name: nameController.text,
+      phone: phoneController.text,
+      userName: userNameController.text,
+      password: passwordController.text,
+    );
+    Registeration_Services.addToRealTime(model: userModel);
   }
 
   void Navigation(dynamic page){

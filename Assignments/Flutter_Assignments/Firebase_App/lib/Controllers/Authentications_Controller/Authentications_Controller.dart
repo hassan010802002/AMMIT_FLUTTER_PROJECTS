@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
+import 'package:firebase_app/Screens/Home_Screen/Home_Screen.dart';
 import 'package:firebase_app/Screens/Registeration_Screen/Registeration_Screen.dart';
 import 'package:firebase_app/Services/Authentications_Services/Authentications_Services.dart';
 import 'package:flutter/material.dart';
