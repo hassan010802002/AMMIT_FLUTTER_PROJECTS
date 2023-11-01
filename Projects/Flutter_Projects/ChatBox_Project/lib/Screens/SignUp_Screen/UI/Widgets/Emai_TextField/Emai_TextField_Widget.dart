@@ -1,10 +1,14 @@
 // ignore_for_file: camel_case_types
 
 import 'package:chatbox_project/Components/CustomTextField/CustomTextField.dart';
+import 'package:chatbox_project/Screens/SignUp_Screen/Controller/SignUp_Controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Emai_TextField_Widget extends StatefulWidget {
-  const Emai_TextField_Widget({super.key});
+  final SignUp_Controller controller = Get.put(SignUp_Controller());
+
+  Emai_TextField_Widget({super.key});
 
   @override
   State<Emai_TextField_Widget> createState() => _Emai_TextField_Widget_State();
@@ -13,11 +17,17 @@ class Emai_TextField_Widget extends StatefulWidget {
 class _Emai_TextField_Widget_State extends State<Emai_TextField_Widget> {
   @override
   Widget build(BuildContext context) {
-    return CustomTextField(
-      labelText: "Your email",
-      keyboardType: TextInputType.emailAddress,
-      fillColor: Colors.white,
-      opsecure: false,
+    return GetX(
+      init: widget.controller,
+      builder: (controller) {
+        return CustomTextField(
+          textEditingController: controller.emailController.value,
+          labelText: "Your email",
+          keyboardType: TextInputType.emailAddress,
+          fillColor: Colors.white,
+          opsecure: false,
+        );
+      },
     );
   }
 }

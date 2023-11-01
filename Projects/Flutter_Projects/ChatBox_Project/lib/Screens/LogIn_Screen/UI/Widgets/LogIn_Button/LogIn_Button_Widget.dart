@@ -2,11 +2,15 @@
 
 import 'package:chatbox_project/Components/Custom_Button/Custom_Button.dart';
 import 'package:chatbox_project/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Controller/LogIn_Controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class LogIn_Button_Widget extends StatefulWidget {
-  const LogIn_Button_Widget({super.key});
+  final LogIn_Controller controller = Get.put(LogIn_Controller());
+
+  LogIn_Button_Widget({super.key});
 
   @override
   State<StatefulWidget> createState() => _LogIn_Button_Widget_State();
@@ -18,7 +22,9 @@ class _LogIn_Button_Widget_State extends State<LogIn_Button_Widget> {
     return CustomButton(
       buttonText: "Log in",
       backgroundColor: const MaterialStatePropertyAll(Color(0xff24786D)),
-      onPressed: () {},
+      onPressed: () {
+        widget.controller.customAuthentication(context, "Successful LogIn" , errorMessage: "LogIn Failure");
+      },
       style: TextStyle(
         fontWeight: FontWeight.w600,
         fontFamily: "Caros",

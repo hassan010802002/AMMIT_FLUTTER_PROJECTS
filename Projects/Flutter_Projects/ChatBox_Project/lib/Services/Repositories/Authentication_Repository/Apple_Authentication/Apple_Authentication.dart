@@ -5,18 +5,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 
 class Apple_Authentication{
-  static final currentAuth = Main_Authentication_Service.authentication;
+  static final currentAuth = FirebaseAuth.instance;
 
-  static void Apple_SigningIn() async {
+  static Future<UserCredential> Apple_SigningIn() async {
     try {
       final appleProvider = AppleAuthProvider();
       if (kIsWeb) {
-        await currentAuth.signInWithPopup(appleProvider);
+        return await currentAuth.signInWithPopup(appleProvider);
       } else {
-        await currentAuth.signInWithProvider(appleProvider);
+        return await currentAuth.signInWithProvider(appleProvider);
       }
     } on Exception catch (e) {
       print(e.toString());
+      rethrow;
     }
   }
 }

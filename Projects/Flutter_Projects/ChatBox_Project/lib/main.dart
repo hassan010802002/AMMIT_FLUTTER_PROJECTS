@@ -1,6 +1,11 @@
+import 'package:chatbox_project/Helpers/Local_Cache_Helper/cache_helper.dart';
 import 'package:chatbox_project/Main_Controller.dart';
 import 'package:chatbox_project/Routes/MyPages/MyPages.dart';
 import 'package:chatbox_project/Screens/Base_Screen/Base_Screen.dart';
+import 'package:chatbox_project/Screens/Chatting_Screen/Chatting_Screen.dart';
+import 'package:chatbox_project/Screens/Home_Screen/Home_Screen.dart';
+import 'package:chatbox_project/Screens/OnBroading_Screen/OnBroading_Screen.dart';
+import 'package:chatbox_project/Screens/Splash_Screen/UI/Splash_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,7 +15,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
+  CacheHelper.init();
   runApp(const MyApp());
 }
 
@@ -38,7 +43,7 @@ class MyApp extends StatelessWidget {
         initialRoute: MyPages.splashScreen,
         debugShowCheckedModeBanner: false,
         getPages: Main_Controller().routes,
-        home: const MyBase(),
+        home: const MySplash(),
       ),
     );
   }

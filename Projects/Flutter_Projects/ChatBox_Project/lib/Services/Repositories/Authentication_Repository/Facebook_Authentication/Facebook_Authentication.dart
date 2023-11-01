@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class Facebook_Authentication{
-  static final currentAuth = Main_Authentication_Service.authentication;
+  static final currentAuth = FirebaseAuth.instance;
 
   static Future<UserCredential> Facebook_SigningIn() async {
     try {

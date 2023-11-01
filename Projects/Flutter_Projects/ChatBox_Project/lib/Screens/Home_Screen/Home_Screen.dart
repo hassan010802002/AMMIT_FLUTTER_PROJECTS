@@ -1,5 +1,7 @@
 // ignore_for_file: camel_case_types
 
+import 'package:chatbox_project/Screens/Home_Screen/UI/Views/APP_Bar_View/APP_Bar_View.dart';
+import 'package:chatbox_project/Screens/Home_Screen/UI/Views/Home_Main_View.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatelessWidget{
@@ -21,9 +23,11 @@ class Home_Screen extends StatefulWidget{
 class _Home_Screen_State extends State<Home_Screen>{
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      primary: true,
-
+    return Scaffold(
+      extendBody: true,
+      resizeToAvoidBottomInset: true,
+      appBar: APP_Bar_View(),
+      body: const Home_Main_View(),
     );
   }
 }

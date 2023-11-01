@@ -5,4 +5,5 @@ class MyPages{
   static const signUpScreen = "/signup";
   static const baseScreen = "/base";
   static const homeScreen = "/home";
+  static const chattingScreen = "/chat";
 }

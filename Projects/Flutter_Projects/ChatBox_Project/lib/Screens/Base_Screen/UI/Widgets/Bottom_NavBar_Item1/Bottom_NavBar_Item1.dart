@@ -11,7 +11,7 @@ class Bottom_NavBar_Item1 {
 
   static PersistentBottomNavBarItem Items1(BuildContext context) => PersistentBottomNavBarItem(
         icon: const Icon(
-          FontAwesomeIcons.solidCommentDots,
+          FontAwesomeIcons.commentDots,
         ),
         iconSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 18.0,
         activeColorPrimary: const Color(0xff24786D),

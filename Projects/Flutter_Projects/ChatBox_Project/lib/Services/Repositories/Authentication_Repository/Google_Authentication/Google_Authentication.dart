@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Google_Authentication{
-  static final currentAuth = Main_Authentication_Service.authentication;
+  static final currentAuth = FirebaseAuth.instance;
 
   static Future<UserCredential> Google_SigningIn() async {
     try {

@@ -2,6 +2,7 @@
 
 import 'package:chatbox_project/Routes/MyPages/MyPages.dart';
 import 'package:chatbox_project/Screens/Base_Screen/Base_Screen.dart';
+import 'package:chatbox_project/Screens/Chatting_Screen/Chatting_Screen.dart';
 import 'package:chatbox_project/Screens/Home_Screen/Home_Screen.dart';
 import 'package:chatbox_project/Screens/LogIn_Screen/LogIn_Screen.dart';
 import 'package:chatbox_project/Screens/OnBroading_Screen/OnBroading_Screen.dart';
@@ -34,6 +35,10 @@ class MyPages_Routes {
     GetPage(
       name: MyPages.homeScreen,
       page: () => const MyHome(),
+    ),
+    GetPage(
+      name: MyPages.chattingScreen,
+      page: () => const MyChatting(),
     ),
   ];
 }

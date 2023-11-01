@@ -6,7 +6,7 @@ class Carousel_Controller extends GetxController {
   RxList<Results>? dataResults = <Results>[].obs;
   RxInt selectedIdx = 0.obs;
 
-  void Function(int)? onTap(index){
+  void Function(int)? onTap(index) {
     selectedIdx.value = index;
   }
 

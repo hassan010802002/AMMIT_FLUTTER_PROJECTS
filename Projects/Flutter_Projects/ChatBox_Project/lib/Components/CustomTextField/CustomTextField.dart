@@ -10,6 +10,14 @@ class CustomTextField extends StatelessWidget {
   Color? fillColor;
   TextInputType? keyboardType;
   TextEditingController? textEditingController;
+  String? hintText;
+  TextStyle? hintStyle;
+  InputBorder? focusedBorder, enabledBorder;
+  int? maxLines;
+  void Function(String)? onSubmitted;
+  void Function()? onTap;
+  void Function()? onEditingComplete;
+  void Function(PointerDownEvent)? onTapOutside;
 
   CustomTextField({
     super.key,
@@ -19,6 +27,27 @@ class CustomTextField extends StatelessWidget {
     this.isEnabled = true,
     this.keyboardType,
     this.textEditingController,
+    this.hintText,
+    this.hintStyle,
+    this.enabledBorder = const UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: Color(0xffC5D4F5),
+        width: 2.0,
+        strokeAlign: BorderSide.strokeAlignCenter,
+      ),
+    ),
+    this.focusedBorder = const UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: Color(0xffC5D4F5),
+        width: 2.0,
+        strokeAlign: BorderSide.strokeAlignCenter,
+      ),
+    ),
+    this.maxLines = 1,
+    this.onSubmitted,
+    this.onTap,
+    this.onEditingComplete,
+    this.onTapOutside,
   });
 
   @override
@@ -29,48 +58,35 @@ class CustomTextField extends StatelessWidget {
       controller: textEditingController,
       decoration: InputDecoration(
         fillColor: fillColor,
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Color(0xffC5D4F5),
-            width: 2.0,
-            strokeAlign: BorderSide.strokeAlignCenter,
-          ),
-        ),
-        focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Color(0xffC5D4F5),
-            width: 2.0,
-            strokeAlign: BorderSide.strokeAlignCenter,
-          ),
-        ),
-        enabledBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(
-            color: Color(0xffC5D4F5),
-            width: 2.0,
-            strokeAlign: BorderSide.strokeAlignCenter,
-          ),
-        ),
+        hintText: hintText,
+        hintStyle: hintStyle,
+        focusedBorder: focusedBorder,
+        enabledBorder: enabledBorder,
         labelText: labelText,
         floatingLabelAlignment: FloatingLabelAlignment.start,
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         floatingLabelStyle: TextStyle(
             fontWeight: FontWeight.w400,
-            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/25.0.w,
+            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 25.0.w,
             color: const Color(0xff24786D),
-            fontFamily: "Circular Std"
-        ),
+            fontFamily: "Circular Std"),
         labelStyle: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/30.0.w,
-          color: const Color(0xff24786D),
-          fontFamily: "Circular Std"
-        ),
+            fontWeight: FontWeight.w400,
+            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 30.0.w,
+            color: const Color(0xff24786D),
+            fontFamily: "Circular Std"),
         filled: true,
+        contentPadding: EdgeInsets.all(12.0.sp),
       ),
       obscureText: opsecure!,
+      onSubmitted: onSubmitted,
+      onTap: onTap,
+      onEditingComplete: onEditingComplete,
+      onTapOutside: onTapOutside,
+      maxLines: maxLines,
       style: TextStyle(
         color: const Color(0xff000E08),
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/20.0.w,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.w,
         fontWeight: FontWeight.w600,
         fontFamily: "Caros",
       ),

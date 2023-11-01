@@ -7,11 +7,9 @@ import 'package:chatbox_project/Services/Repositories/Authentication_Repository/
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Main_Authentication_Service {
-  static final authentication = FirebaseAuth.instance;
-
-  static Future<Future<UserCredential> Function()> get facebookAuth async => Facebook_Authentication.Facebook_SigningIn;
-  static Future<Future<UserCredential> Function()> get googleAuth async => Google_Authentication.Google_SigningIn;
-  static Future<Function(String? myEmail, String? myPassword)> get customAuth async => Custom_Authentication.Custom_SigningIn;
-  static Future<void Function()> get appleAuth async => Apple_Authentication.Apple_SigningIn;
+  static Future<UserCredential> get facebookAuth async => await Facebook_Authentication.Facebook_SigningIn();
+  static Future<UserCredential> get googleAuth async =>await Google_Authentication.Google_SigningIn();
+  static customAuth(String? myEmail , String? myPassword) async => Custom_Authentication.Custom_SigningIn(myEmail, myPassword);
+  static  Future<UserCredential> get appleAuth async =>await Apple_Authentication.Apple_SigningIn();
 
 }
