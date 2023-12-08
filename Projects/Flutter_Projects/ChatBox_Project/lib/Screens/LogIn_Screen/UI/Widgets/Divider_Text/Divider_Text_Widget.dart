@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:chatbox_project/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/LogIn_Consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,15 +18,10 @@ class _Divider_Text_Widget_State extends State<Divider_Text_Widget> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.0.w),
       child: Text(
-        "OR",
+        LogIn_Consts.text1,
         textAlign: TextAlign.left,
         softWrap: true,
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontFamily: "Circular Std",
-          color: const Color(0xff797C7B),
-          fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.w,
-        ),
+        style: LogIn_Consts.style1(context),
       ),
     );
   }

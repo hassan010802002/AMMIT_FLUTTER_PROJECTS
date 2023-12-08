@@ -49,7 +49,7 @@ class _SignUp_Main_View_State extends State<SignUp_Main_View> {
             SizedBox(
               height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 12.0.h,
             ),
-            const Name_TextField_Widget(),
+            Name_TextField_Widget(),
             SizedBox(
               height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 40.0.h,
             ),

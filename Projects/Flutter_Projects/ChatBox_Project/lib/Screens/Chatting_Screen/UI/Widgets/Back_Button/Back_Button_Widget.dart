@@ -17,9 +17,9 @@ class Back_Button_Widget extends StatefulWidget {
 }
 
 class _Back_Button_Widget_State extends State<Back_Button_Widget> {
-  Chatting_Controller chatting_controller = Get.put(Chatting_Controller());
   @override
   Widget build(BuildContext context) {
+  Chatting_Controller chatting_controller = Get.put(Chatting_Controller(context: context));
     return GestureDetector(
       onTap: () {
         chatting_controller.BackNavigation();

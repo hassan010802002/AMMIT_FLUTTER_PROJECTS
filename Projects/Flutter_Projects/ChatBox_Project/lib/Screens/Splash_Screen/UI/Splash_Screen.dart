@@ -29,7 +29,7 @@ class _Splash_Screen_State extends State<Splash_Screen> {
       message: "Online Network Connection",
       errorMessage: "Offline Network Connection",
       permissionGrantedMessage: "Permission Granted Successfully",
-      failedPermissionMessage: "Failed To Access Contacts Permission",
+      failedPermissionMessage: "Failed To Access Permission",
     ));
     return GetX(
       init: splashController,

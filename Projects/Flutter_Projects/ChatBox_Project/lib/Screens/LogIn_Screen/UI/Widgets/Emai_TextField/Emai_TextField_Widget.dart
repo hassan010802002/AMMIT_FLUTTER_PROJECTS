@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:chatbox_project/Components/CustomTextField/CustomTextField.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/LogIn_Consts.dart';
 import 'package:chatbox_project/Screens/LogIn_Screen/Controller/LogIn_Controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,9 +23,9 @@ class _Emai_TextField_Widget_State extends State<Emai_TextField_Widget> {
       builder: ( controller) {
         return CustomTextField(
           textEditingController: controller.emailController.value,
-          labelText: "Your email",
+          labelText: LogIn_Consts.text2,
           keyboardType: TextInputType.emailAddress,
-          fillColor: Colors.white,
+          fillColor: LogIn_Consts.color2,
           opsecure: false,
         );
       },

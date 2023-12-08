@@ -7,22 +7,23 @@ import 'package:flutter/material.dart';
 
 class Users_Service {
   static final FirebaseFirestore cloudFireStore = FirebaseFirestore.instance;
+  static final CollectionReference<Map<String, dynamic>> mainUsersCollection = cloudFireStore.collection(userCollection);
   static const String userCollection = "Active_Users";
   static final userID = CacheHelper.getData(key: "ID");
 
   static void UserInfoInitialization({required UserModel userData}) async {
-    await cloudFireStore.collection(userCollection).doc(userID).set(userData.toJson());
+    await mainUsersCollection.doc(userID).set(userData.toJson());
   }
 
   static Future<DocumentSnapshot<Map<String, dynamic>>> UserRetrieving({required String userId}) async {
-    return await cloudFireStore.collection(userCollection).doc(userId).get();
+    return await mainUsersCollection.doc(userId).get();
   }
 
   static void UpdatingUserData({
     required UserModel userInfo,
     required BuildContext context,
   }) async {
-    final DocumentReference<Map<String, dynamic>> currentUserInfo = cloudFireStore.collection(userCollection).doc(userID);
+    final DocumentReference<Map<String, dynamic>> currentUserInfo = mainUsersCollection.doc(userID);
     await cloudFireStore.runTransaction((transaction) async {
       final DocumentSnapshot<Map<String, dynamic>> userInfoSnapshot = await transaction.get(currentUserInfo);
       if (userInfoSnapshot.exists) {
@@ -37,7 +38,7 @@ class Users_Service {
   static void DeletingUser({
     required BuildContext context,
   }) async {
-    await cloudFireStore.collection(userCollection).doc(userID).delete();
+    await mainUsersCollection.doc(userID).delete();
     SnackBar_Helper.showSuccessToast(context, "User of ID: $userID Deleted");
   }
 }

@@ -13,6 +13,7 @@ import 'package:get/get.dart';
 class SignUp_Controller extends GetxController {
   final Rx<TextEditingController> emailController = TextEditingController().obs;
   final Rx<TextEditingController> passwordController = TextEditingController().obs;
+  final Rx<TextEditingController> nameController = TextEditingController().obs;
 
   void customRegistration(BuildContext context, String? message , {String? errorMessage}) async {
     try {
@@ -21,6 +22,7 @@ class SignUp_Controller extends GetxController {
       if (currentUserCredential.user!.uid.isNotEmpty) {
         CacheHelper.saveData(key: "ID", value: currentUserCredential.user!.uid);
         CacheHelper.saveData(key: "Email", value: currentUserCredential.user!.email!);
+        CacheHelper.saveData(key: "Name", value: nameController.value.text);
         SnackBar_Helper.showSuccessToast(context, message!);
         Future.delayed(
           const Duration(seconds: 3),

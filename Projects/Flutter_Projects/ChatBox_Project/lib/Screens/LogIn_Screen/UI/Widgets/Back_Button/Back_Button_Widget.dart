@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:chatbox_project/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/LogIn_Consts.dart';
 import 'package:chatbox_project/Screens/LogIn_Screen/Controller/LogIn_Controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +28,7 @@ class _Back_Button_Widget_State extends State<Back_Button_Widget> {
         alignment: Alignment.topLeft,
         child: Icon(
           FontAwesomeIcons.arrowLeft,
-          color: const Color(0xff000E08),
+          color: LogIn_Consts.color1,
           size: MediaQuery_Size_Helper.MAX_WIDTH(context)!/15.0.w,
         ),
       ),

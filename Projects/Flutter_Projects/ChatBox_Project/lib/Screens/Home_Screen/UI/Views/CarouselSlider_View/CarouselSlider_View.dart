@@ -10,41 +10,58 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CarouselSlider_View extends StatefulWidget {
-  const CarouselSlider_View({super.key});
+  final Home_Controller home_controller;
+
+  const CarouselSlider_View({super.key, required this.home_controller});
 
   @override
   State<CarouselSlider_View> createState() => _CarouselSlider_View_State();
 }
 
 class _CarouselSlider_View_State extends State<CarouselSlider_View> {
-  final Home_Controller home_controller = Get.put(Home_Controller());
-
   @override
   Widget build(BuildContext context) {
     return GetX<Home_Controller>(
-      init: home_controller,
+      init: widget.home_controller,
       builder: (logic) {
         if (logic.listLength.value != 0) {
           return Align(
             alignment: Alignment.topCenter,
-            child: CarouselSlider.builder(
-              itemCount: home_controller.myContacts!.length,
-              itemBuilder: (context, index, realIndex) {
-                return GestureDetector(
-                  onTap: () {
-                    logic.Navigation(MyPages.chattingScreen);
-                  },
-                  child: Contacts_Carousel_Items_Widget(homeController: home_controller, index: index),
-                );
+            child: StreamBuilder(
+              stream: logic.availableUsers.value,
+              builder: (BuildContext context, snapshot) {
+                if (snapshot.hasData) {
+                  return CarouselSlider.builder(
+                    itemCount: widget.home_controller.listLength.value,
+                    itemBuilder: (context, index, realIndex) {
+                      return GestureDetector(
+                        onTap: () {
+                          widget.home_controller.settingChatID = widget.home_controller.RetrievingChatMessages(snapshot: snapshot, index: index).id;
+                          widget.home_controller.settingUserChatName =
+                              widget.home_controller.RetrievingChatMessages(snapshot: snapshot, index: index).displayName!;
+                          widget.home_controller.Navigation(MyPages.chattingScreen);
+                        },
+                        child: Contacts_Carousel_Items_Widget(
+                          homeController: widget.home_controller,
+                          index: index,
+                          snapshot: snapshot,
+                        ),
+                      );
+                    },
+                    carouselController: CarouselController(),
+                    options: CarouselOptions(
+                      height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 5.5.h,
+                      scrollDirection: Axis.horizontal,
+                      enlargeCenterPage: false,
+                      enableInfiniteScroll: false,
+                      initialPage: 0,
+                      viewportFraction: 0.25,
+                    ),
+                  );
+                } else {
+                  return Container();
+                }
               },
-              carouselController: CarouselController(),
-              options: CarouselOptions(
-                height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 5.5.h,
-                scrollDirection: Axis.horizontal,
-                enlargeCenterPage: false,
-                initialPage: 0,
-                viewportFraction: 0.25,
-              ),
             ),
           );
         } else {

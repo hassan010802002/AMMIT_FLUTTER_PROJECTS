@@ -2,6 +2,7 @@
 
 import 'package:chatbox_project/Components/CustomTextField/CustomTextField.dart';
 import 'package:chatbox_project/Components/Custom_Divider/Custom_Divider.dart';
+import 'package:chatbox_project/Screens/SignUp_Screen/Consts/SignUp_Consts.dart';
 import 'package:flutter/material.dart';
 
 class Confirmation_Password_TextField extends StatefulWidget {
@@ -15,7 +16,7 @@ class _Confirmation_Password_TextField_State extends State<Confirmation_Password
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
-      labelText: "Confirm Password",
+      labelText: SignUp_Consts.text1,
       keyboardType: TextInputType.name,
       fillColor: Colors.white,
       opsecure: true,

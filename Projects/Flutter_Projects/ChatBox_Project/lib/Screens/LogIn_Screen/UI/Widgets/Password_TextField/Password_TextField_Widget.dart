@@ -2,6 +2,7 @@
 
 import 'package:chatbox_project/Components/CustomTextField/CustomTextField.dart';
 import 'package:chatbox_project/Components/Custom_Divider/Custom_Divider.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/LogIn_Consts.dart';
 import 'package:chatbox_project/Screens/LogIn_Screen/Controller/LogIn_Controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,9 +24,9 @@ class _Password_TextField_Widget_State extends State<Password_TextField_Widget> 
       builder: ( controller) {
         return CustomTextField(
           textEditingController: controller.passwordController.value,
-          labelText: "Password",
+          labelText: LogIn_Consts.text4,
           keyboardType: TextInputType.emailAddress,
-          fillColor: Colors.white,
+          fillColor: LogIn_Consts.color2,
           opsecure: true,
         );
       },

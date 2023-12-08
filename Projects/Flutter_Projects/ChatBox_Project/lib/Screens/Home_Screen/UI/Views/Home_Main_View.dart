@@ -8,14 +8,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class Home_Main_View extends StatefulWidget{
-  const Home_Main_View({super.key});
+  final Home_Controller home_controller;
+
+  const Home_Main_View({super.key, required this.home_controller});
 
   @override
   State<Home_Main_View> createState() => _Home_Main_View_State();
 }
 
 class _Home_Main_View_State extends State<Home_Main_View>{
-  Home_Controller home_controller = Get.put(Home_Controller());
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,7 +28,7 @@ class _Home_Main_View_State extends State<Home_Main_View>{
       decoration: const BoxDecoration(
         color: Color(0xff000E08),
       ),
-      child: const Align(
+      child: Align(
         alignment: Alignment.topCenter,
         child: SingleChildScrollView(
           primary: true,
@@ -35,8 +37,8 @@ class _Home_Main_View_State extends State<Home_Main_View>{
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CarouselSlider_View(),
-              SlidingUpPannel_View(),
+              CarouselSlider_View(home_controller: widget.home_controller),
+              SlidingUpPannel_View(home_controller: widget.home_controller),
             ],
           ),
         ),

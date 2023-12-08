@@ -12,7 +12,8 @@ import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class Splash_Controller extends GetxController {
-  final RxBool? networkStatus = false.obs ;
+  final RxBool? networkStatus = false.obs;
+
   BuildContext context;
   String message, errorMessage, permissionGrantedMessage, failedPermissionMessage;
 
@@ -26,19 +27,17 @@ class Splash_Controller extends GetxController {
 
   @override
   void onInit() async {
-    super.onInit();
-    Contacts_Permission_Availability();
+    Permissions_Availability();
     ConnectivityResult result = await Connectivity().checkConnectivity();
     Network_Connection_Repository.init();
     networkStatus!.value = await Network_Connection_Repository.isInternetConnected(result);
-    if (networkStatus!.value ) {
-      SnackBar_Helper.showSuccessToast(context, message);
+    if (networkStatus!.value) {
       Future.delayed(
         const Duration(seconds: 3),
-        () {
+            () {
           Timer(
             const Duration(seconds: 3),
-            () {
+                () {
               if (CacheHelper.returningPreferences().containsKey("ID")) {
                 Navigation(MyPages.baseScreen);
               } else {
@@ -49,27 +48,28 @@ class Splash_Controller extends GetxController {
         },
       );
     } else {
-      SnackBar_Helper.showErrorToast(context, errorMessage);
+      Permissions_Availability();
     }
+    super.onInit();
   }
 
-  void Contacts_Permission_Availability() async {
-    PermissionStatus contactsPermission = await Permission.contacts.status;
-    if (contactsPermission.isPermanentlyDenied) {
-      await openAppSettings();
-    } else if (contactsPermission.isDenied || contactsPermission.isLimited || contactsPermission.isRestricted || contactsPermission.isProvisional) {
-
-      contactsPermission = await Permission.contacts.request();
-      if (contactsPermission.isGranted) {
-
-        SnackBar_Helper.showSuccessToast(context, permissionGrantedMessage);
-      } else {
-
-        SnackBar_Helper.showErrorToast(context, failedPermissionMessage);
+  void Permissions_Availability() async {
+    Map<Permission, PermissionStatus> permissions = await [
+      Permission.camera,
+      Permission.microphone,
+      Permission.photos,
+      Permission.videos,
+      Permission.audio,
+    ].request();
+    permissions.forEach((key, value) async {
+      if (!value.isGranted) {
+        if (value.isPermanentlyDenied) {
+          await openAppSettings();
+        }
+        await key.request();
       }
-    }else{
-      SnackBar_Helper.showSuccessToast(context, permissionGrantedMessage);
-    }
+      print(value.isGranted);
+    });
   }
 
   void Navigation(dynamic page) {

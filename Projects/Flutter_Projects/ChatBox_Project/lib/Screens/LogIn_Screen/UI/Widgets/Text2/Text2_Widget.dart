@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types
 
 import 'package:chatbox_project/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/LogIn_Consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,15 +18,10 @@ class _Text2_Widget_State extends State<Text2_Widget> {
     return Align(
       alignment: Alignment.topCenter,
       child: Text(
-        "Welcome back! Sign in using your social account or email to continue us",
+        LogIn_Consts.text6,
         softWrap: true,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: const Color(0xff797C7B),
-          fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/28.0.w,
-          fontWeight: FontWeight.w400,
-          fontFamily: "Circular Std",
-        ),
+        style: LogIn_Consts.style5(context),
       ),
     );
   }

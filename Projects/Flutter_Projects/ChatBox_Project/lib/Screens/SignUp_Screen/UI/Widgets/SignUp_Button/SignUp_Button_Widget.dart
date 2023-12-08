@@ -2,6 +2,7 @@
 
 import 'package:chatbox_project/Components/Custom_Button/Custom_Button.dart';
 import 'package:chatbox_project/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:chatbox_project/Screens/SignUp_Screen/Consts/SignUp_Consts.dart';
 import 'package:chatbox_project/Screens/SignUp_Screen/Controller/SignUp_Controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,17 +21,12 @@ class _SignUp_Button_Widget_State extends State<SignUp_Button_Widget> {
   @override
   Widget build(BuildContext context) {
     return CustomButton(
-      buttonText: "Create an account",
-      backgroundColor: const MaterialStatePropertyAll(Color(0xff24786D)),
+      buttonText: SignUp_Consts.text5,
+      backgroundColor: const MaterialStatePropertyAll(SignUp_Consts.color3),
       onPressed: () {
         widget.controller.customRegistration(context, "Successful SignUp" ,  errorMessage: "SignUp Failure");
       },
-      style: TextStyle(
-        fontWeight: FontWeight.w600,
-        fontFamily: "Caros",
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 20.0.w,
-        color: Colors.white,
-      ),
+      style: SignUp_Consts.style1(context),
       fixedSize: MaterialStatePropertyAll(
         Size(
           MediaQuery_Size_Helper.MAX_WIDTH(context)!,

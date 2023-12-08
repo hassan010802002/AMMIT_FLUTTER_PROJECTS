@@ -1,6 +1,8 @@
 // ignore_for_file: camel_case_types
 
 import 'package:chatbox_project/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/Colors/LogIn_Colors.dart';
+import 'package:chatbox_project/Screens/LogIn_Screen/Consts/LogIn_Consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,15 +19,10 @@ class _Text1_Widget_State extends State<Text1_Widget> {
     return Align(
       alignment: Alignment.topCenter,
       child: Text(
-        "Log in to Chatbox",
+        LogIn_Consts.text5,
         softWrap: true,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: const Color(0xff000E08),
-          fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/20.0.w,
-          fontWeight: FontWeight.w600,
-          fontFamily: "Caros",
-        ),
+        style: LogIn_Consts.style4(context),
       ),
     );
   }
