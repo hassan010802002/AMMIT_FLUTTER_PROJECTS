@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/Logo_Widget/logo_widget.dart';
 import 'package:octo_image/octo_image.dart';
@@ -19,7 +20,7 @@ class _AppBarViewState extends State<AppBarView> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: RegistrationConsts.whiteColor,
       primary: true,
       elevation: 0.0,
       leading: const BackButtonWidget(),

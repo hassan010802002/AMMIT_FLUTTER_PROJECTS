@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
+import 'package:jobsque_app/Screens/Home_Screen/home__screen.dart';
+import 'package:jobsque_app/Screens/Job_Application_Screen/job_application_screen.dart';
 import 'package:jobsque_app/Screens/Location_Screen/location_screen.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/login__screen.dart';
 import 'package:jobsque_app/Screens/OnBoarding_Screen/OnBoardingScreen.dart';
+import 'package:jobsque_app/Screens/SearchScreen/search_screen.dart';
 import 'package:jobsque_app/Screens/Success_Screen/success__screen.dart';
 import 'package:jobsque_app/Screens/Work_Type_Screen/work_type_screen.dart';
 
@@ -16,5 +19,7 @@ class AppPages {
     AppRoutes.locationScreen: (p0) =>  LocationScreen(),
     AppRoutes.successScreen: (p0) =>  SuccessScreen(),
     AppRoutes.loginScreen: (p0) =>  LogIn_Screen(),
+    AppRoutes.homeScreen: (p0) =>  HomeScreen(baseIndex: 0),
+    AppRoutes.searchScreen: (p0) =>  const SearchScreen(),
   };
 }

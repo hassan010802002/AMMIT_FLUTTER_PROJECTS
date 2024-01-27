@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Components/CustomTextField/CustomTextField.dart';
@@ -30,25 +31,20 @@ class _Password_TextField_WidgetState extends State<Password_TextField_Widget> {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0.sp),
             borderSide: BorderSide(
-              color: const Color(0xffD1D5DB),
+              color: RegistrationConsts.color1,
               width: 1.5.w,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0.sp),
             borderSide: BorderSide(
-              color: state is WrongUserPasswordLength ? const Color(0xffFF472B) : const Color(0xff3366FF),
+              color: state is WrongUserPasswordLength ? RegistrationConsts.color6 : RegistrationConsts.color3,
               width: 1.5.w,
             ),
           ),
-          hintStyle: TextStyle(
-            color: const Color(0xff9CA3AF),
-            fontFamily: TextFontFamily,
-            fontWeight: FontWeight.w400,
-            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
-          ),
-          hintText: "Password",
-          fillColor: Colors.white,
+          hintStyle: RegistrationConsts.style6(context),
+          hintText: RegistrationConsts.text6,
+          fillColor: RegistrationConsts.whiteColor,
           keyboardType: TextInputType.text,
           opsecure: true,
           prefixIcon: Padding(
@@ -56,7 +52,7 @@ class _Password_TextField_WidgetState extends State<Password_TextField_Widget> {
             child: OctoImage(
               fit: BoxFit.contain,
               alignment: Alignment.center,
-              image: const AssetImage("Assets/Images/lock.png"),
+              image: const AssetImage(RegistrationConsts.image5),
               filterQuality: FilterQuality.high,
               width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.w,
               height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.h,

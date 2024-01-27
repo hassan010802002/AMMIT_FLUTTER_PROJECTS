@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 
 import '../../../../../Config/AppConfig.dart';
@@ -24,17 +25,8 @@ class _TextWidget3State extends State<TextWidget3> {
       bloc: widget.cubit,
       builder: (context, state) {
         return Text(
-          "Password must be at least 8 characters",
-          style: TextStyle(
-            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
-            fontWeight: FontWeight.w400,
-            fontFamily: TextFontFamily,
-            color: state is CorrectUserPasswordLength
-                ? const Color(0xff60C631)
-                : state is WrongUserPasswordLength
-                    ? const Color(0xffFF472B)
-                    : const Color(0xff9CA3AF),
-          ),
+          RegistrationConsts.text11,
+          style: RegistrationConsts.style11(context, state),
           textAlign: TextAlign.justify,
           softWrap: true,
         );

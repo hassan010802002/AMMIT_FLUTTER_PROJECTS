@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 
 import '../../../../../Config/AppConfig.dart';
 
@@ -17,15 +18,10 @@ class _Text4WidgetState extends State<Text4Widget> {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Already have an account?",
+      RegistrationConsts.text8,
       softWrap: true,
       textAlign: TextAlign.justify,
-      style: TextStyle(
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/24.0.w,
-        fontWeight: FontWeight.w500,
-        fontFamily: TextFontFamily,
-        color: const Color(0xff9CA3AF),
-      ),
+      style: RegistrationConsts.style8(context),
     );
   }
 }

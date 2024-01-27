@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
@@ -22,10 +24,12 @@ class CacheHelper {
     return await preferences!.clear();
   }
 
+  static bool Searching(String key)=> preferences!.containsKey(key);
+
   static Future<bool> removeData({required key}) async {
     return await preferences!.remove(key);
   }
-  static SharedPreferences returningPreference() {
-    return preferences!;
+  static Future<SharedPreferences> returningPreference() async{
+    return await SharedPreferences.getInstance();
   }
 }

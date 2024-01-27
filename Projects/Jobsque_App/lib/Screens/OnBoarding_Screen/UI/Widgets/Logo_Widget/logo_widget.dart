@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/OnBoarding_Screen/Consts/OnBoardingConsts.dart';
 import 'package:octo_image/octo_image.dart';
-
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class LogoWidget extends StatefulWidget {
@@ -19,7 +19,7 @@ class _LogoWidgetState extends State<LogoWidget> {
     return OctoImage(
       fit: BoxFit.fill,
       alignment: Alignment.center,
-      image: const AssetImage("Assets/Images/Logo.png"),
+      image: const AssetImage(OnBoardingConsts.image1),
       filterQuality: FilterQuality.high,
       width: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 10.0.w,
     );

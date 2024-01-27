@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 
 class BackButtonWidget extends StatefulWidget {
   const BackButtonWidget({Key? key}) : super(key: key);
@@ -15,13 +16,8 @@ class _BackButtonWidgetState extends State<BackButtonWidget> {
   Widget build(BuildContext context) {
     return BackButton(
       onPressed: () {},
-      color: Colors.black,
-      style: ButtonStyle(
-        alignment: Alignment.center,
-        visualDensity: VisualDensity.comfortable,
-        padding: MaterialStatePropertyAll(EdgeInsets.all(10.0.sp)),
-        iconSize: MaterialStatePropertyAll(35.0.sp),
-      ),
+      color: RegistrationConsts.blackColor,
+      style: RegistrationConsts.buttonStyle1,
     );
   }
 }

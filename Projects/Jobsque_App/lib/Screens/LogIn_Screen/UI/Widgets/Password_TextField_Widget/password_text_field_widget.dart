@@ -36,7 +36,7 @@ class _Password_TextField_WidgetState extends State<Password_TextField_Widget> {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0.sp),
             borderSide: BorderSide(
-              color: state is WrongUserPasswordLength ? const Color(0xffFF472B) : const Color(0xff3366FF),
+              color: !widget.cubit.isCorrectPasswordLength ? const Color(0xffFF472B) : const Color(0xff3366FF),
               width: 1.5.w,
             ),
           ),

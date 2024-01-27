@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Screens/Splash_Screen/Consts/SplashConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 class LogoWidget extends StatefulWidget {
@@ -15,7 +15,7 @@ class _LogoWidgetState extends State<LogoWidget> {
     return OctoImage(
       fit: BoxFit.fill,
       alignment: Alignment.center,
-      image: const AssetImage("Assets/Images/Logo.png"),
+      image: const AssetImage(SplashConsts.image2),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Config/AppConfig.dart';
@@ -17,27 +18,9 @@ class _FacebookButtonWidgetState extends State<FacebookButtonWidget> {
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
       onPressed: () {},
-      style: ButtonStyle(
-        elevation: const MaterialStatePropertyAll(0.0),
-        backgroundColor: const MaterialStatePropertyAll(Colors.white),
-        fixedSize: MaterialStatePropertyAll(
-          Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.5.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.0.h),
-        ),
-        padding: MaterialStatePropertyAll(EdgeInsets.all(15.0.sp)),
-        visualDensity: VisualDensity.comfortable,
-        alignment: Alignment.center,
-        shape: MaterialStatePropertyAll(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0.sp),
-            side: BorderSide(
-              color: const Color(0xffD1D5DB),
-              width: 2.0.w,
-            ),
-          ),
-        ),
-      ),
+      style: RegistrationConsts.buttonStyle2(context),
       icon: OctoImage(
-        image: const AssetImage("Assets/Images/Facebook.png"),
+        image: const AssetImage(RegistrationConsts.image2),
         alignment: Alignment.centerLeft,
         filterQuality: FilterQuality.high,
         fit: BoxFit.contain,
@@ -45,13 +28,8 @@ class _FacebookButtonWidgetState extends State<FacebookButtonWidget> {
         height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 30.0.h,
       ),
       label: Text(
-        "Facebook",
-        style: TextStyle(
-          fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.w,
-          fontWeight: FontWeight.w500,
-          fontFamily: TextFontFamily,
-          color: const Color(0xff363F5E),
-        ),
+        RegistrationConsts.text3,
+        style: RegistrationConsts.style3(context),
         textAlign: TextAlign.justify,
         softWrap: true,
       ),

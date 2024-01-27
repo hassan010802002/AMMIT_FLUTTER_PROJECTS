@@ -16,6 +16,10 @@ class CustomTextField extends StatelessWidget {
   InputBorder? focusedBorder, enabledBorder;
   Widget? prefixIcon;
   void Function(String)? onChanged;
+  void Function(String)? onSubmitted;
+  void Function()? onEditingComplete;
+  void Function()? onTap;
+  Widget? suffixIcon;
 
   CustomTextField({
     super.key,
@@ -41,6 +45,10 @@ class CustomTextField extends StatelessWidget {
       ),
     ),
     this.onChanged,
+    this.onSubmitted,
+    this.onEditingComplete,
+    this.suffixIcon,
+    this.onTap,
   });
 
   @override
@@ -56,11 +64,17 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: focusedBorder,
         enabledBorder: enabledBorder,
         filled: true,
-        contentPadding: EdgeInsets.all(20.0.sp),
+        contentPadding: EdgeInsets.all(15.0.sp),
+        prefixIconColor: const Color(0xff292D32),
         prefixIcon: prefixIcon,
+        suffixIcon: suffixIcon,
         prefixIconConstraints: BoxConstraints.tight(
-          Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 12.0.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 12.0.h),
+          Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 6.5.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 18.0.h),
         ),
+        suffixIconConstraints: BoxConstraints.tight(
+          Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 6.5.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 18.0.h),
+        ),
+        suffixIconColor: const Color(0xff111827),
       ),
       obscureText: opsecure!,
       style: TextStyle(
@@ -70,6 +84,8 @@ class CustomTextField extends StatelessWidget {
         fontFamily: TextFontFamily,
       ),
       onChanged: onChanged,
+      onEditingComplete: onEditingComplete,
+      onTap: onTap,
     );
   }
 }

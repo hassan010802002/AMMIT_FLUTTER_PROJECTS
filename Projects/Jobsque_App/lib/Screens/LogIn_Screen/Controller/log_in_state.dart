@@ -16,3 +16,5 @@ class CorrectUserPasswordLength extends LogInState{}
 class InitialLogInState extends LogInState{}
 class FinalLogInState extends LogInState{}
 class FailureLogInState extends LogInState{}
+
+class BoxState extends LogInState{}

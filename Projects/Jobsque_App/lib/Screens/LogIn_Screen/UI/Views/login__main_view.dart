@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Views/Divider_View/divider_view.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Views/Registration_View/registration_view.dart';
+import 'package:jobsque_app/Screens/LogIn_Screen/UI/Views/RessetingPassword_View/resseting_password_view.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Views/SocialButtons_View/social_buttons_view.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Widgets/Email_TextField_Widget/email_text_field_widget.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Widgets/LogIn_Button/login_button.dart';
@@ -53,9 +54,12 @@ class _LogIn_MainView_State extends State<LogIn_MainView> {
               width: MediaQuery_Size_Helper.MAX_WIDTH(context)!,
               height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h,
               child: Password_TextField_Widget(cubit: widget.cubit),
+            ),SizedBox(
+              height: 15.0.h,
             ),
+            RessetingPasswordView(cubit: widget.cubit),
             SizedBox(
-              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 3.8.h,
+              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 5.0.h,
             ),
             const RegistrationView(),
             SizedBox(

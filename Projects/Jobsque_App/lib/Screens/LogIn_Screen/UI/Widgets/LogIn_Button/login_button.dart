@@ -29,21 +29,15 @@ class _LogInButtonState extends State<LogInButton> {
             fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,
             fontWeight: FontWeight.w500,
             fontFamily: TextFontFamily,
-            color: state is UserEntranceState || state is CorrectUserPasswordLength || state is WrongUserPasswordLength
-                ? Colors.white
-                : const Color(0xff6B7280),
+            color: widget.cubit.isUserEntranceState || widget.cubit.isCorrectPasswordLength ? Colors.white : const Color(0xff6B7280),
           ),
           buttonText: "Login",
           onPressed: () {
             widget.cubit.LogIn(context);
           },
-          backgroundColor:
-              state is UserEntranceState
-                  || state is CorrectUserPasswordLength
-                  || state is WrongUserPasswordLength
-                  || state is FinalLogInState
-                  ? const MaterialStatePropertyAll(Color(0xff3366FF))
-                  : const MaterialStatePropertyAll(Color(0xffD1D5DB)),
+          backgroundColor: widget.cubit.isUserEntranceState || widget.cubit.isCorrectPasswordLength
+              ? const MaterialStatePropertyAll(Color(0xff3366FF))
+              : const MaterialStatePropertyAll(Color(0xffD1D5DB)),
           fixedSize: MaterialStatePropertyAll(
             Size(MediaQuery_Size_Helper.MAX_WIDTH(context)!.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.0.h),
           ),

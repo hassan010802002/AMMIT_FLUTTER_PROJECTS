@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Components/Custom_Button/Custom_Button.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 
@@ -27,22 +28,15 @@ class _RegisterButtonState extends State<RegisterButton> {
       bloc: widget.cubit,
       builder: (context, state) {
         return CustomButton(
-          style: TextStyle(
-            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,
-            fontWeight: FontWeight.w500,
-            fontFamily: TextFontFamily,
-            color: state is UserEntranceState || state is CorrectUserPasswordLength || state is WrongUserPasswordLength
-                ? Colors.white
-                : const Color(0xff6B7280),
-          ),
-          buttonText: "Create account",
+          style: RegistrationConsts.style7(context,state),
+          buttonText: RegistrationConsts.text7,
           onPressed: () {
             widget.cubit.Registration(context);
           },
           backgroundColor:
               state is UserEntranceState || state is CorrectUserPasswordLength || state is WrongUserPasswordLength || state is FinalRegistrationState
-                  ? const MaterialStatePropertyAll(Color(0xff3366FF))
-                  : const MaterialStatePropertyAll(Color(0xffD1D5DB)),
+                  ? const MaterialStatePropertyAll(RegistrationConsts.color3)
+                  : const MaterialStatePropertyAll(RegistrationConsts.color1),
           fixedSize: MaterialStatePropertyAll(
             Size(MediaQuery_Size_Helper.MAX_WIDTH(context)!.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.0.h),
           ),

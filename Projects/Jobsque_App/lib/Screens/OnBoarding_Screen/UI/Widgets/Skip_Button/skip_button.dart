@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
+import 'package:jobsque_app/Routes/App_Routes.dart';
+import 'package:jobsque_app/Screens/OnBoarding_Screen/Consts/OnBoardingConsts.dart';
 
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -17,17 +20,14 @@ class _SkipButtonState extends State<SkipButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        NavigatorHelper(context, AppRoutes.registrationScreen);
+      },
       child: Text(
-        "Skip",
+        OnBoardingConsts.text3,
         softWrap: true,
         textAlign: TextAlign.justify,
-        style: TextStyle(
-          fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 25.0.w,
-          fontWeight: FontWeight.w400,
-          fontFamily: TextFontFamily,
-          color: const Color(0xff6B7280),
-        ),
+        style: OnBoardingConsts.style2(context),
       ),
     );
   }

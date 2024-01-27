@@ -17,7 +17,7 @@ class _MySplashState extends State<MySplash> {
 
   @override
   void initState() {
-    widget.cubit.Navigation(context, AppRoutes.onBoardingScreen);
+    widget.cubit.MainScreenNavigation(context);
     super.initState();
   }
 

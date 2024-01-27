@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobsque_app/Screens/Splash_Screen/Consts/SplashConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -18,8 +19,7 @@ class _BlurImageWidgetState extends State<BlurImageWidget> {
       fit: BoxFit.fill,
       alignment: Alignment.center,
       width: MediaQuery_Size_Helper.MAX_WIDTH(context)!,
-      // height: MediaQuery_Size_Helper.MAX_HEIGHT(context)!,
-      image: const AssetImage("Assets/Images/Blur.png"),
+      image: const AssetImage(SplashConsts.image1),
     );
   }
 }

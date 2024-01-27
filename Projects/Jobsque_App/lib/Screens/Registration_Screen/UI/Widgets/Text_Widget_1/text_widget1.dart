@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -17,13 +18,8 @@ class _TextWidget1State extends State<TextWidget1> {
   @override
   Widget build(BuildContext context) {
     return Text(
-      "Create Account",
-      style: TextStyle(
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/12.0.sp,
-        fontWeight: FontWeight.w600,
-        fontFamily: TextFontFamily,
-        color: const Color(0xff111827),
-      ),
+      RegistrationConsts.text9,
+      style: RegistrationConsts.style9(context),
       textAlign: TextAlign.justify,
       softWrap: true,
     );
