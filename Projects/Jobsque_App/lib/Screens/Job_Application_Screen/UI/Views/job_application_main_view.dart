@@ -13,7 +13,6 @@ import '../../Controllers/job_application_cubit.dart';
 import 'Job_Application_Details_View/job_application_details_view.dart';
 
 class JobApplicationMainView extends StatefulWidget {
-  final int? currentJobIndex;
   final JobApplicationCubit mainCubitController;
   final ApplicationCubit applicationCubitController;
   final DetailsCubit detailsCubitController;
@@ -25,7 +24,7 @@ class JobApplicationMainView extends StatefulWidget {
     required this.applicationCubitController,
     required this.detailsCubitController,
     required this.completeApplicationCubitController,
-    required this.currentJobIndex,
+
   }) : super(key: key);
 
   @override
@@ -43,7 +42,7 @@ class _JobApplicationMainViewState extends State<JobApplicationMainView> {
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.0.w , vertical: 15.0.h),
             child: (state is JobApplicationDetailsViewState || state is JobApplicationInitial) && widget.mainCubitController.isJobDetailsView
-                ? JobApplicationDetailsView(detailsCubitController: widget.detailsCubitController, currentJobIndex: widget.currentJobIndex)
+                ? JobApplicationDetailsView(detailsCubitController: widget.detailsCubitController)
                 : state is JobApplicationApplyViewState && widget.mainCubitController.isJobApplyView
                     ? const JobApplicationApplyView()
                     : const JobApplicationApplyCompleteView(),

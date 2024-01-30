@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Local_Cache_Helper/cache_helper.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Models/Jobs_Model/JobsModel.dart';
 import 'package:jobsque_app/Routes/App_Pages.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
@@ -52,20 +53,11 @@ class MyApp extends StatelessWidget {
         initialRoute: AppRoutes.splashScreen,
         routes: AppPages.pages,
         onGenerateRoute: (settings) {
-          final screenArgs = settings.arguments as Map<String, dynamic>;
-          if (settings.name == AppRoutes.applicationScreen ) {
+          final screenArgs = settings.arguments as Data;
+          if (settings.name == AppRoutes.applicationScreen || settings.name == AppRoutes.applicationSearchScreen) {
             return MaterialPageRoute(
               builder: (context) => JobApplicationScreen(
-                currentJobIndex: screenArgs["jobIndex"],
-                homeController: screenArgs["callerBloc"],
-              ),
-            );
-          }
-          if (settings.name == AppRoutes.applicationSearchScreen) {
-            return MaterialPageRoute(
-              builder: (context) => JobApplicationScreen(
-                currentJobIndex: screenArgs["jobIndex"],
-                searchController: screenArgs["callerBloc"],
+                jobDetailsData: screenArgs,
               ),
             );
           }

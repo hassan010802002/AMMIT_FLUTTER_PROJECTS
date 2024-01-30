@@ -9,10 +9,9 @@ import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controllers/Details_Controller/details_cubit.dart';
 
 class JobDetailsTitleWidget extends StatefulWidget {
-  final int? currentJobIndex;
   final DetailsCubit detailsCubitController;
 
-  const JobDetailsTitleWidget({Key? key, required this.currentJobIndex, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsTitleWidget({Key? key, required this.detailsCubitController}) : super(key: key);
 
   @override
   _JobDetailsTitleWidgetState createState() => _JobDetailsTitleWidgetState();
@@ -26,7 +25,7 @@ class _JobDetailsTitleWidgetState extends State<JobDetailsTitleWidget> {
       builder: (context, state) {
         return widget.detailsCubitController.isSuccessJobData
             ? Text(
-                widget.detailsCubitController.currentJobModel!.data![widget.currentJobIndex!].name!,
+                widget.detailsCubitController.currentJobDetailsData!.name!,
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: TextStyle(

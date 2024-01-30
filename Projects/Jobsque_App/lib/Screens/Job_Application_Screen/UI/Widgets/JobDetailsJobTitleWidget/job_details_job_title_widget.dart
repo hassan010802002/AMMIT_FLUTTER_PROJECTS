@@ -1,46 +1,43 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobsque_app/Config/AppConfig.dart';
-import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
-import '../../../Controller/home_bloc.dart';
+import '../../../../../Config/AppConfig.dart';
+import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import '../../../Controllers/Details_Controller/details_cubit.dart';
 
-class DesignContainer extends StatefulWidget {
-  final int? jobIndex;
-  final HomeBloc controller;
+class JobDetailsJobTitleWidget extends StatefulWidget {
+  final DetailsCubit? detailsCubitController;
 
-  const DesignContainer({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  const JobDetailsJobTitleWidget({Key? key, required this.detailsCubitController}) : super(key: key);
 
   @override
-  _DesignContainerState createState() => _DesignContainerState();
+  _JobDetailsJobTitleWidgetState createState() => _JobDetailsJobTitleWidgetState();
 }
 
-class _DesignContainerState extends State<DesignContainer> {
+class _JobDetailsJobTitleWidgetState extends State<JobDetailsJobTitleWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeBloc, HomeState>(
-      bloc: widget.controller,
+    return BlocBuilder<DetailsCubit, DetailsState>(
+      bloc: widget.detailsCubitController,
       builder: (context, state) {
-        return widget.controller.isSuccessJobsData
+        return widget.detailsCubitController!.isSuccessJobData
             ? Container(
                 alignment: Alignment.center,
                 height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 12.0.h,
                 width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 5.0.w,
                 decoration: BoxDecoration(
-                  color: (widget.jobIndex! % 2) == 0 ? Colors.white.withOpacity(0.14) : const Color(0xffD6E4FF),
+                  color: const Color(0xffD6E4FF),
                   borderRadius: BorderRadius.circular(25.0.sp),
                 ),
                 child: Center(
                   child: Text(
-                    widget.controller.jobsModel!.data![widget.jobIndex!].jobType!,
+                    widget.detailsCubitController!.currentJobDetailsData!.jobType!,
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontFamily: TextFontFamily,
                       fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 25.0.sp,
-                      color: (widget.jobIndex! % 2) == 0 ? Colors.white : const Color(0xff111827),
+                      color: const Color(0xff3366FF),
                     ),
                     softWrap: true,
                     textAlign: TextAlign.center,

@@ -39,10 +39,7 @@ class _JobsDemoViewState extends State<JobsDemoView> {
                   NavigatorHelper(
                     context,
                     AppRoutes.applicationScreen,
-                    screenArguments: <String, dynamic>{
-                      "jobIndex": widget.jobIndex,
-                      "callerBloc": widget.controller,
-                    },
+                    screenArguments: widget.controller.jobsModel!.data![widget.jobIndex!],
                   );
                 },
                 child: Column(

@@ -41,10 +41,7 @@ class _JobContainerViewState extends State<JobContainerView> {
                   NavigatorHelper(
                     context,
                     AppRoutes.applicationScreen,
-                    screenArguments: <String, dynamic>{
-                      "jobIndex": widget.jobIndex,
-                      "callerBloc": widget.controller,
-                    },
+                    screenArguments: widget.controller.jobsModel!.data![widget.jobIndex!],
                   );
                 },
                 child: Container(
@@ -91,9 +88,9 @@ class _JobContainerViewState extends State<JobContainerView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          FullTimeContainer(jobIndex: widget.jobIndex),
+                          FullTimeContainer(controller: widget.controller, jobIndex: widget.jobIndex),
                           RemoteContainer(jobIndex: widget.jobIndex),
-                          DesignContainer(jobIndex: widget.jobIndex),
+                          DesignContainer(controller: widget.controller, jobIndex: widget.jobIndex),
                         ],
                       ),
                       SizedBox(

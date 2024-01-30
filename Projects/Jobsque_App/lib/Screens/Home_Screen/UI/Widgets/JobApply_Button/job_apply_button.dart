@@ -28,10 +28,7 @@ class _JobApplyButtonState extends State<JobApplyButton> {
         NavigatorHelper(
           context,
           AppRoutes.applicationScreen,
-          screenArguments: <String, dynamic>{
-            "jobIndex": widget.jobIndex,
-            "callerBloc": widget.controller,
-          },
+          screenArguments: widget.controller.jobsModel!.data![widget.jobIndex!],
         );
       },
       style: TextStyle(
