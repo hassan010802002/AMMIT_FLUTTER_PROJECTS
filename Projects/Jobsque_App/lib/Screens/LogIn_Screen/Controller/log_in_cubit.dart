@@ -4,7 +4,9 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/Service/Repository/LogIn_Service/LogIn_Service.dart';
 import 'package:meta/meta.dart';
+import '../../../Helpers/Navigator_Helper/Navigator_Helper.dart';
 import '../../../Helpers/SnackBar_Helper/SnackBar_helper.dart';
+import '../../../Routes/App_Routes.dart';
 
 part 'log_in_state.dart';
 
@@ -21,11 +23,9 @@ class LogInCubit extends Cubit<LogInState> {
     if (emailController.text.isNotEmpty || passwordController.text.isNotEmpty) {
       isUserEntranceState = true;
       emit(UserEntranceState());
-      print("User Entrance State");
     } else {
       isUserEntranceState = false;
       emit(EmptyUserEntranceState());
-      print("Empty User Entrance State");
     }
   }
 
@@ -42,7 +42,6 @@ class LogInCubit extends Cubit<LogInState> {
     } else if (passwordController.text.length >= 9) {
       isCorrectPasswordLength = true;
       emit(CorrectUserPasswordLength());
-      print("User Entrance State");
       return;
     } else {
       isCorrectPasswordLength = false;
@@ -60,10 +59,10 @@ class LogInCubit extends Cubit<LogInState> {
       if (loginStatusCode == 200) {
         emit(FinalLogInState());
         SnackBar_Helper.showSuccessToast(context, "Successful LogIn");
-        // Future.delayed(
-        //   const Duration(seconds: 2),
-        //       () => NavigatorHelper(context, AppRoutes.workTypeScreen),
-        // );
+        Future.delayed(
+          const Duration(seconds: 2),
+              () => NavigatorHelper(context, AppRoutes.workTypeScreen),
+        );
       } else {
         emit(FailureLogInState());
         SnackBar_Helper.showErrorToast(context, "Check Your User INFO");

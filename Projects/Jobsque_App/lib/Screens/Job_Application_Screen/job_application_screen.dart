@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsque_app/Models/Jobs_Model/JobsModel.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/Controllers/Application_Controller/application_cubit.dart';
-import 'package:jobsque_app/Screens/Job_Application_Screen/Controllers/Complete_Application_Controller/complete_application_cubit.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/Controllers/Details_Controller/details_cubit.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/Controllers/job_application_cubit.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Views/job_application_main_view.dart';
@@ -13,9 +12,8 @@ class JobApplicationScreen extends StatefulWidget {
   final Data? jobDetailsData;
   final JobApplicationCubit mainCubitController = JobApplicationCubit();
   final ApplicationCubit applicationCubitController = ApplicationCubit();
-  final CompleteApplicationCubit completeApplicationCubitController = CompleteApplicationCubit();
 
-  JobApplicationScreen({Key? key, required this.jobDetailsData}) : super(key: key);
+  JobApplicationScreen({super.key, required this.jobDetailsData});
 
   @override
   _JobApplicationScreenState createState() => _JobApplicationScreenState();
@@ -35,9 +33,6 @@ class _JobApplicationScreenState extends State<JobApplicationScreen> {
           create: (context) => widget.applicationCubitController,
         ),
         BlocProvider(
-          create: (context) => widget.completeApplicationCubitController,
-        ),
-        BlocProvider(
           create: (context) => detailsCubitController,
         ),
       ],
@@ -48,7 +43,6 @@ class _JobApplicationScreenState extends State<JobApplicationScreen> {
             mainCubitController: widget.mainCubitController,
             applicationCubitController: widget.applicationCubitController,
             detailsCubitController: detailsCubitController,
-            completeApplicationCubitController: widget.completeApplicationCubitController,
           ),
         ),
       ),

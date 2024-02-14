@@ -10,7 +10,7 @@ class JobImageWidget extends StatefulWidget {
   final SearchBloc controller;
   final int? jobIndex;
 
-  const JobImageWidget({Key? key, required this.controller, required this.jobIndex}) : super(key: key);
+  const JobImageWidget({super.key, required this.controller, required this.jobIndex});
 
   @override
   _JobImageWidgetState createState() => _JobImageWidgetState();

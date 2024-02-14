@@ -27,7 +27,6 @@ class SuccessProfileApiData extends HomeState{
 class SuccessJobsApiData extends HomeState{
   final JobsModel? jobsModel;
 
-
   const SuccessJobsApiData(this.jobsModel);
 
   @override

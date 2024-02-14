@@ -7,13 +7,17 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Models/Jobs_Model/JobsModel.dart';
 import 'package:jobsque_app/Routes/App_Pages.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Controller/applied_jobs_controller_bloc.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/applied_jobs_screen.dart';
 import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
+import 'package:jobsque_app/Screens/ChatScreen/chat_screen.dart';
 import 'package:jobsque_app/Screens/Home_Screen/Controller/home_bloc.dart';
-import 'package:jobsque_app/Screens/Home_Screen/home__screen.dart';
+import 'package:jobsque_app/Screens/JobSavedScreen/Controller/job_saved_controller_bloc.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/Controllers/job_application_cubit.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/job_application_screen.dart';
 import 'package:jobsque_app/Screens/Location_Screen/Controller/location_cubit.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/Controller/log_in_cubit.dart';
+import 'package:jobsque_app/Screens/NotificationScreen/Controllers/notification_controller_cubit.dart';
 import 'package:jobsque_app/Screens/OnBoarding_Screen/Controller/on_boarding_cubit.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 import 'package:jobsque_app/Screens/SearchScreen/Controller/search_bloc.dart';
@@ -53,13 +57,20 @@ class MyApp extends StatelessWidget {
         initialRoute: AppRoutes.splashScreen,
         routes: AppPages.pages,
         onGenerateRoute: (settings) {
-          final screenArgs = settings.arguments as Data;
-          if (settings.name == AppRoutes.applicationScreen || settings.name == AppRoutes.applicationSearchScreen) {
+          if (settings.name == AppRoutes.applicationScreen ||
+              settings.name == AppRoutes.applicationSearchScreen ||
+              settings.name == AppRoutes.applicationSavedScreen ||
+              settings.name == AppRoutes.appliedJobsApplicationScreen) {
+            final screenArgs = settings.arguments as Data;
             return MaterialPageRoute(
               builder: (context) => JobApplicationScreen(
                 jobDetailsData: screenArgs,
               ),
             );
+          }
+          if (settings.name == AppRoutes.chatScreen) {
+            final screenArgs = settings.arguments as Map<String, String>;
+            return MaterialPageRoute(builder: (context) => ChatScreen(screenData: screenArgs));
           }
           return null;
         },
@@ -82,12 +93,15 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context) => LocationCubit()),
             BlocProvider(create: (context) => LogInCubit()),
             BlocProvider(create: (context) => SuccessCubit()),
-            BlocProvider(create: (context) => BaseCubit()),
+            BlocProvider(create: (context) => BaseCubit(context)),
             BlocProvider(create: (context) => HomeBloc()),
             BlocProvider(create: (context) => SearchBloc()),
             BlocProvider(create: (context) => JobApplicationCubit()),
+            BlocProvider(create: (context) => JobSavedControllerBloc()),
+            BlocProvider(create: (context) => NotificationControllerCubit()),
+            BlocProvider(create: (context) => AppliedJobsControllerBloc()),
           ],
-          child: HomeScreen(baseIndex: 0),
+          child: const AppliedJobsScreen(baseIndex: 2),
         ),
       ),
     );

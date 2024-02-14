@@ -23,7 +23,7 @@ class _LogInTextButtonWidgetState extends State<LogInTextButtonWidget> {
       onPressed: () {
         NavigatorHelper(context, AppRoutes.loginScreen);
       },
-      style: RegistrationConsts.buttonStyle3(context),
+      style: RegistrationConsts.buttonStyle4(context),
       child: Text(
         RegistrationConsts.text5,
         style: RegistrationConsts.style5(context),

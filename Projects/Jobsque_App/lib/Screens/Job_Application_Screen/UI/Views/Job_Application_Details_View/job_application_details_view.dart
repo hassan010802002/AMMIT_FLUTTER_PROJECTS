@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Views/Job_Application_Details_View/JobDetailsTabBarView/job_details_tab_bar_view.dart';
-import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Widgets/JobApplicationButtonWidget/job_application_button_widget.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Widgets/JobDetailsImageWidget/job_details_image_widget.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Widgets/JobDetailsJobTitleWidget/job_details_job_title_widget.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Widgets/JobDetailsLocationWidget/job_details_location_widget.dart';
@@ -20,7 +19,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobApplicationDetailsView extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobApplicationDetailsView({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobApplicationDetailsView({super.key, required this.detailsCubitController});
 
   @override
   _JobApplicationDetailsViewState createState() => _JobApplicationDetailsViewState();
@@ -71,10 +70,6 @@ class _JobApplicationDetailsViewState extends State<JobApplicationDetailsView> {
           animationDuration: const Duration(milliseconds: 300),
           child: JobDetailsTabBarView(detailsCubitController: widget.detailsCubitController),
         ),
-        SizedBox(
-          height: 12.0.h,
-        ),
-        JobApplicationButtonWidget(detailsCubitController: widget.detailsCubitController),
       ],
     );
   }

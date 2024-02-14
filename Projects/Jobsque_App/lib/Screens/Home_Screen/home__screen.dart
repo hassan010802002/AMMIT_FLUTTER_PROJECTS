@@ -20,8 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   HomeBloc? blocController;
   @override
   void initState() {
-    // TODO: implement initState
-    blocController = HomeBloc();
+    blocController = HomeBloc()..add(FetchApiDataEvent());
     super.initState();
   }
 
@@ -30,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => blocController!),
-        BlocProvider(create: (context) => BaseCubit(widget.baseIndex!)),
+        BlocProvider(create: (context) => BaseCubit(context , widget.baseIndex!)),
       ],
       child: SafeArea(
         child: Scaffold(

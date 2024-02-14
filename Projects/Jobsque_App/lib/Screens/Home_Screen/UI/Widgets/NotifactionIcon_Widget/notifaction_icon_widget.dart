@@ -2,11 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:octo_image/octo_image.dart';
 
 class NotifactionIconWidget extends StatefulWidget {
-  const NotifactionIconWidget({Key? key}) : super(key: key);
+  const NotifactionIconWidget({super.key});
 
   @override
   _NotifactionIconWidgetState createState() => _NotifactionIconWidgetState();
@@ -16,7 +18,9 @@ class _NotifactionIconWidgetState extends State<NotifactionIconWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        NavigatorHelper(context, AppRoutes.notificationScreen);
+      },
       child: CircleAvatar(
         backgroundColor: Colors.white,
         radius: 30.0.sp,

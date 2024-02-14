@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../Config/AppConfig.dart';
 import '../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
@@ -20,6 +19,7 @@ class CustomTextField extends StatelessWidget {
   void Function()? onEditingComplete;
   void Function()? onTap;
   Widget? suffixIcon;
+  EdgeInsetsGeometry? contentPadding;
 
   CustomTextField({
     super.key,
@@ -49,6 +49,7 @@ class CustomTextField extends StatelessWidget {
     this.onEditingComplete,
     this.suffixIcon,
     this.onTap,
+    this.contentPadding,
   });
 
   @override
@@ -64,7 +65,7 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: focusedBorder,
         enabledBorder: enabledBorder,
         filled: true,
-        contentPadding: EdgeInsets.all(15.0.sp),
+        contentPadding: contentPadding,
         prefixIconColor: const Color(0xff292D32),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
@@ -79,7 +80,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: opsecure!,
       style: TextStyle(
         color: const Color(0xff000E08),
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.w,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,
         fontWeight: FontWeight.w600,
         fontFamily: TextFontFamily,
       ),

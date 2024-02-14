@@ -20,8 +20,8 @@ class _ViewTitleWidgetState extends State<ViewTitleWidget> {
       style: TextStyle(
         color: const Color(0xff111827),
         fontFamily: TextFontFamily,
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
-        fontWeight: FontWeight.w600,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 18.0.sp,
+        fontWeight: FontWeight.w800,
       ),
       softWrap: true,
       textAlign: TextAlign.center,

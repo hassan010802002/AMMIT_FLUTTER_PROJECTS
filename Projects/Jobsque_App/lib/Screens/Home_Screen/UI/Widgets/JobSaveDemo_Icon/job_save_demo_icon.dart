@@ -7,7 +7,7 @@ import 'package:octo_image/octo_image.dart';
 
 class JobSaveDemoIcon extends StatefulWidget {
   final int? jobIndex;
-  const JobSaveDemoIcon({Key? key, required this.jobIndex}) : super(key: key);
+  const JobSaveDemoIcon({super.key, required this.jobIndex});
 
   @override
   _JobSaveDemoIconState createState() => _JobSaveDemoIconState();
@@ -26,9 +26,7 @@ class _JobSaveDemoIconState extends State<JobSaveDemoIcon> {
         alignment: Alignment.center,
         color: const Color(0xff111827),
       ),
-      onPressed: () {
-
-      },
+      onPressed: () {},
       style: ButtonStyle(
         visualDensity: VisualDensity.comfortable,
         alignment: Alignment.center,

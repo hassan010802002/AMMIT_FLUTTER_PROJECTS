@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
+import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
 import 'package:jobsque_app/Screens/Base_Home/UI/Widgets/AppliedNavBar_Item/applied_nav_bar_item.dart';
 import 'package:jobsque_app/Screens/Base_Home/UI/Widgets/HomeNavBar_Item/home_nav_bar_item.dart';
@@ -15,7 +17,7 @@ import 'package:jobsque_app/Screens/Base_Home/UI/Widgets/SavedNavBar_Item/saved_
 class BottomNavBarView extends StatefulWidget {
   final BaseCubit cubit;
 
-  const BottomNavBarView({Key? key, required this.cubit  }) : super(key: key);
+  const BottomNavBarView({super.key, required this.cubit});
 
   @override
   _BottomNavBarViewState createState() => _BottomNavBarViewState();
@@ -50,13 +52,12 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
               label: "Profile",
             ),
           ],
-          // iconSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.sp,
           backgroundColor: Colors.white,
           currentIndex: widget.cubit.baseIndex!,
           selectedItemColor: const Color(0xff3366FF),
           selectedFontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 28.0.sp,
           onTap: (value) {
-            widget.cubit.ChangeBase(value);
+            widget.cubit.ChangeBase(context , value);
           },
           selectedLabelStyle: TextStyle(
             fontFamily: TextFontFamily,

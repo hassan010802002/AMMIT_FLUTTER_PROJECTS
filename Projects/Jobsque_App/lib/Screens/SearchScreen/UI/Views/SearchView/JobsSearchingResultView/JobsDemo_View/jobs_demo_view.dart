@@ -21,7 +21,7 @@ class JobsDemoView extends StatefulWidget {
   final int? jobIndex;
   final SearchBloc controller;
 
-  const JobsDemoView({Key? key, required this.controller, required this.jobIndex}) : super(key: key);
+  const JobsDemoView({super.key, required this.controller, required this.jobIndex});
 
   @override
   _JobsDemoViewState createState() => _JobsDemoViewState();

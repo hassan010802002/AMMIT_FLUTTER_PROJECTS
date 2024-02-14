@@ -9,7 +9,7 @@ import 'package:jobsque_app/Screens/Home_Screen/UI/Views/JobsList_View/JobContai
 class JobsListView extends StatefulWidget {
   final HomeBloc blocController;
 
-  const JobsListView({Key? key, required this.blocController}) : super(key: key);
+  const JobsListView({super.key, required this.blocController});
 
   @override
   _JobsListViewState createState() => _JobsListViewState();

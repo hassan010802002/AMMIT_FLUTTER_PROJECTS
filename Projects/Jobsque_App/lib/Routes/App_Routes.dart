@@ -12,4 +12,11 @@ class AppRoutes {
   static const searchScreen = "/home/search";
   static const applicationScreen = "/home/apply";
   static const applicationSearchScreen = "/home/search/apply";
+  static const jobSavedScreen = "/saved";
+  static const applicationSavedScreen = "/saved/apply";
+  static const notificationScreen = "$homeScreen/notification";
+  static const messagesScreen = "/messages";
+  static const chatScreen = "$messagesScreen/chat";
+  static const appliedJobsScreen = "/applied";
+  static const appliedJobsApplicationScreen = "/applied/apply";
 }

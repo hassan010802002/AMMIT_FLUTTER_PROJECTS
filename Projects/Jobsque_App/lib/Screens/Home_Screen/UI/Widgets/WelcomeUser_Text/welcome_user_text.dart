@@ -20,7 +20,7 @@ class _WelcomeUserTextState extends State<WelcomeUserText> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-      bloc: widget.controller..add(FetchApiDataEvent()),
+      bloc: widget.controller,
       builder: (context, state) {
         return Text(
           widget.controller.isSuccessProfileData? "Hi, ${widget.controller.profileModel!.data!.name}": "Hi, There",

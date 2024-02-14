@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
@@ -11,7 +13,7 @@ import 'JobDetailsCompanyTapView/job_details_company_tap_view.dart';
 class JobDetailsTabBarView extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobDetailsTabBarView({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsTabBarView({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsTabBarViewState createState() => _JobDetailsTabBarViewState();

@@ -10,7 +10,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobDetailsImageWidget extends StatefulWidget {
   final DetailsCubit detailsCubitController;
 
-  const JobDetailsImageWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsImageWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsImageWidgetState createState() => _JobDetailsImageWidgetState();

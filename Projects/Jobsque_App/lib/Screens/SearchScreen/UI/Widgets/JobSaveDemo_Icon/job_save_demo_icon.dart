@@ -12,7 +12,7 @@ class JobSaveDemoIcon extends StatefulWidget {
   final int? jobIndex;
   final SearchBloc controller;
 
-  const JobSaveDemoIcon({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  const JobSaveDemoIcon({super.key, required this.jobIndex, required this.controller});
 
   @override
   _JobSaveDemoIconState createState() => _JobSaveDemoIconState();

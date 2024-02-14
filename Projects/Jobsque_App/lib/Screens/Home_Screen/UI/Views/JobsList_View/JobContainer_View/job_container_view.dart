@@ -23,7 +23,7 @@ class JobContainerView extends StatefulWidget {
   int? jobIndex;
   final HomeBloc controller;
 
-  JobContainerView({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  JobContainerView({super.key, required this.jobIndex, required this.controller});
 
   @override
   _JobContainerViewState createState() => _JobContainerViewState();

@@ -12,7 +12,7 @@ import 'package:jobsque_app/Screens/SearchScreen/Controller/search_bloc.dart';
 class SearchingField extends StatefulWidget {
   final SearchBloc controller;
 
-  const SearchingField({Key? key, required this.controller}) : super(key: key);
+  const SearchingField({super.key, required this.controller});
 
   @override
   _SearchingFieldState createState() => _SearchingFieldState();

@@ -5,27 +5,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Views/Job_Application_Apply_Complete_View/job_application_apply_complete_view.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Views/Job_Application_Apply_View/job_application_apply_view.dart';
-
 import '../../Controllers/Application_Controller/application_cubit.dart';
-import '../../Controllers/Complete_Application_Controller/complete_application_cubit.dart';
 import '../../Controllers/Details_Controller/details_cubit.dart';
 import '../../Controllers/job_application_cubit.dart';
+import '../Widgets/JobApplicationButtonWidget/job_application_button_widget.dart';
 import 'Job_Application_Details_View/job_application_details_view.dart';
 
 class JobApplicationMainView extends StatefulWidget {
   final JobApplicationCubit mainCubitController;
   final ApplicationCubit applicationCubitController;
   final DetailsCubit detailsCubitController;
-  final CompleteApplicationCubit completeApplicationCubitController;
 
   const JobApplicationMainView({
-    Key? key,
+    super.key,
     required this.mainCubitController,
     required this.applicationCubitController,
     required this.detailsCubitController,
-    required this.completeApplicationCubitController,
-
-  }) : super(key: key);
+  });
 
   @override
   _JobApplicationMainViewState createState() => _JobApplicationMainViewState();
@@ -40,13 +36,21 @@ class _JobApplicationMainViewState extends State<JobApplicationMainView> {
         return Align(
           alignment: Alignment.center,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0.w , vertical: 15.0.h),
-            child: (state is JobApplicationDetailsViewState || state is JobApplicationInitial) && widget.mainCubitController.isJobDetailsView
-                ? JobApplicationDetailsView(detailsCubitController: widget.detailsCubitController)
-                : state is JobApplicationApplyViewState && widget.mainCubitController.isJobApplyView
-                    ? const JobApplicationApplyView()
-                    : const JobApplicationApplyCompleteView(),
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 15.0.h),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  (state is JobApplicationDetailsViewState || state is JobApplicationInitial) && widget.mainCubitController.isJobDetailsView
+                      ? JobApplicationDetailsView(detailsCubitController: widget.detailsCubitController)
+                      : state is JobApplicationApplyViewState && widget.mainCubitController.isJobApplyView
+                          ? JobApplicationApplyView(applicationCubitController: widget.applicationCubitController)
+                          : const JobApplicationApplyCompleteView(),
+                  JobApplicationButtonWidget(
+                    mainCubitController: widget.mainCubitController,
+                    applicationCubitController: widget.applicationCubitController,
+                  ),
+                ],
+              )),
         );
       },
     );

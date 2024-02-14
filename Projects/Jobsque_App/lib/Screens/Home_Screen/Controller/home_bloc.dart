@@ -17,7 +17,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   JobsModel? jobsModel = JobsModel();
   ProfileModel? profileModel = ProfileModel();
 
-  HomeBloc() : super(LoadingApiData()) {
+  HomeBloc() : super(HomeInitial()) {
     on<FetchApiDataEvent>((event, emit) async {
       emit(LoadingApiData());
       try {

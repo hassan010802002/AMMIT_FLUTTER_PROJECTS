@@ -9,7 +9,7 @@ import '../../../Controller/base_cubit.dart';
 class HomeNavBarItem extends StatefulWidget {
   BaseCubit cubit;
 
-  HomeNavBarItem({Key? key, required this.cubit}) : super(key: key);
+  HomeNavBarItem({super.key, required this.cubit});
 
   @override
   _HomeNavBarItemState createState() => _HomeNavBarItemState();

@@ -18,7 +18,7 @@ class _BaseHomeState extends State<BaseHome> {
 
   @override
   Widget build(BuildContext context) {
-  BaseCubit cubit = BaseCubit(widget.baseIndex!);
+  BaseCubit cubit = BaseCubit(context , widget.baseIndex!);
     return BlocProvider(
       create: (context) => cubit,
       child: BottomNavBarView(cubit: cubit ),
