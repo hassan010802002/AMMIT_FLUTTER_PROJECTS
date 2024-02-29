@@ -8,6 +8,7 @@ class AppRoutes {
   static const locationScreen = "/location";
   static const successScreen = "/success";
   static const loginScreen = "/login";
+  static const resetPasswordScreen = "$loginScreen/resetPassword";
   static const homeScreen = "/home";
   static const searchScreen = "/home/search";
   static const applicationScreen = "/home/apply";
@@ -19,4 +20,15 @@ class AppRoutes {
   static const chatScreen = "$messagesScreen/chat";
   static const appliedJobsScreen = "/applied";
   static const appliedJobsApplicationScreen = "/applied/apply";
+  static const mainProfileScreen = "/mainProfile";
+  static const editProfileScreen = "$mainProfileScreen/editProfile";
+  static const portfolioScreen = "$mainProfileScreen/portfolio";
+  static const profileLanguageScreen = "$mainProfileScreen/language";
+  static const profileNotificationScreen = "$mainProfileScreen/notification";
+  static const profileSecurityScreen = "$mainProfileScreen/security";
+  static const termsConditionsScreen = "$mainProfileScreen/termsConditions";
+  static const helpCenterScreen = "$mainProfileScreen/helpCenter";
+  static const privacyPolicyScreen = "$mainProfileScreen/privacyPolicy";
+  static const profileSecurityEmailAddressScreen = "$profileSecurityScreen/emailAddress";
+  static const profileSecurityPhoneNumberScreen = "$profileSecurityScreen/phoneNumber";
 }

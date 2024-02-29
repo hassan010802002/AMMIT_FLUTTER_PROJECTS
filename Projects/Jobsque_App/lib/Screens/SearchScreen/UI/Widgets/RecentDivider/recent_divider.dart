@@ -6,7 +6,7 @@ import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class RecentDivider extends StatefulWidget {
-  const RecentDivider({Key? key}) : super(key: key);
+  const RecentDivider({super.key});
 
   @override
   _RecentDividerState createState() => _RecentDividerState();

@@ -45,7 +45,7 @@ class _AppliedJobsEasyStepperContainerWidgetState extends State<AppliedJobsEasyS
               activeStepBorderColor: const Color(0xff3366FF),
               borderThickness: 2.5,
               finishedStepBackgroundColor: Colors.transparent,
-              finishedStepBorderColor: const Color(0xff3366FF),
+              finishedStepBorderColor: const Color(0xffD1D5DB),
               finishedStepBorderType: BorderType.normal,
               stepShape: StepShape.circle,
               maxReachedStep: 3,

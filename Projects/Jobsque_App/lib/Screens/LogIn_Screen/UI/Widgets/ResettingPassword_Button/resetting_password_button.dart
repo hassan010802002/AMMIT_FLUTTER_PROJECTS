@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
+import 'package:jobsque_app/Routes/App_Routes.dart';
 
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -15,7 +17,9 @@ class _ResettingPasswordButtonState extends State<ResettingPasswordButton> {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        NavigatorHelper(context, AppRoutes.resetPasswordScreen);
+      },
       child: Text(
         "Forgot Password?",
         style: TextStyle(

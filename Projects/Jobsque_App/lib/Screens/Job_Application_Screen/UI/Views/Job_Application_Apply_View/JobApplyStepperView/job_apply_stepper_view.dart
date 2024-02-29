@@ -35,7 +35,7 @@ class _JobApplyStepperViewState extends State<JobApplyStepperView> {
           activeStepBorderColor: const Color(0xff3366FF),
           borderThickness: 2.5,
           finishedStepBackgroundColor: Colors.transparent,
-          finishedStepBorderColor: const Color(0xff387FFB),
+          finishedStepBorderColor: const Color(0xffD1D5DB),
           finishedStepBorderType: BorderType.normal,
           stepShape: StepShape.circle,
           maxReachedStep: 3,

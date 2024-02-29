@@ -40,6 +40,7 @@ class BaseCubit extends Cubit<BaseState> {
       NavigatorHelper(context, AppRoutes.jobSavedScreen);
       emit(SavedBase());
     } else {
+      NavigatorHelper(context, AppRoutes.mainProfileScreen);
       emit(ProfileBase());
     }
   }

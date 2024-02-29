@@ -80,7 +80,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: opsecure!,
       style: TextStyle(
         color: const Color(0xff000E08),
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 20.0.sp,
         fontWeight: FontWeight.w600,
         fontFamily: TextFontFamily,
       ),

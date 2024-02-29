@@ -1,4 +1,6 @@
 
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Widgets/JobApplyUploadCVContainerWidget/job_apply_upload_c_v_container_widget.dart';

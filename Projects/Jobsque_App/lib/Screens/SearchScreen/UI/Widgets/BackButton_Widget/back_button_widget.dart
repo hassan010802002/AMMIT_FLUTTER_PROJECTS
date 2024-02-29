@@ -7,7 +7,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 class BackButtonWidget extends StatefulWidget {
   void Function()? onPressed;
 
-  BackButtonWidget({Key? key, this.onPressed}) : super(key: key);
+  BackButtonWidget({super.key, this.onPressed});
 
   @override
   _BackButtonWidgetState createState() => _BackButtonWidgetState();
@@ -23,7 +23,7 @@ class _BackButtonWidgetState extends State<BackButtonWidget> {
           Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.w, MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 20.0.h),
         ),
         visualDensity: VisualDensity.comfortable,
-        alignment: Alignment.center,
+        alignment: Alignment.centerLeft,
         padding: MaterialStatePropertyAll(EdgeInsets.all(0.0.sp)),
         iconSize: MaterialStatePropertyAll(28.0.sp),
       ),
