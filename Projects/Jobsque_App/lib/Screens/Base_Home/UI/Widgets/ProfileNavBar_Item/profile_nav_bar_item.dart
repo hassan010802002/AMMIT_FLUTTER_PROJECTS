@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobsque_app/Screens/Base_Home/Constants/BaseHomeConsts.dart';
 import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
 import 'package:octo_image/octo_image.dart';
 
@@ -22,8 +23,8 @@ class _ProfileNavBarItemState extends State<ProfileNavBarItem> {
       builder: (context, state) {
         return OctoImage(
           image: state is ProfileBase
-              ? const AssetImage("Assets/Images/profile2.png")
-              : const AssetImage("Assets/Images/profile.png"),
+              ? const AssetImage(BaseHomeConsts.image7)
+              : const AssetImage(BaseHomeConsts.image8),
           fit: BoxFit.contain,
           alignment: Alignment.center,
           filterQuality: FilterQuality.high,

@@ -4,9 +4,8 @@ import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Constants/AppliedJobsConsts.dart';
 
-import '../../../../../Config/AppConfig.dart';
-import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controller/applied_jobs_controller_bloc.dart';
 
 class AppliedJobsEasyStepperContainerWidget extends StatefulWidget {
@@ -25,14 +24,7 @@ class _AppliedJobsEasyStepperContainerWidgetState extends State<AppliedJobsEasyS
       bloc: widget.appliedJobsControllerBloc,
       builder: (context, state) {
         return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0.sp),
-            border: Border.all(
-              color: const Color(0xffD1D5DB),
-              strokeAlign: BorderSide.strokeAlignInside,
-              width: 1.5.w,
-            ),
-          ),
+          decoration: AppliedJobsConsts.containerStyle2,
           alignment: Alignment.center,
           child: Center(
             child: EasyStepper(
@@ -42,27 +34,17 @@ class _AppliedJobsEasyStepperContainerWidgetState extends State<AppliedJobsEasyS
               activeStep: widget.appliedJobsControllerBloc.activeStep!,
               stepAnimationDuration: const Duration(milliseconds: 500),
               activeStepBorderType: BorderType.normal,
-              activeStepBorderColor: const Color(0xff3366FF),
+              activeStepBorderColor: AppliedJobsConsts.color6,
               borderThickness: 2.5,
-              finishedStepBackgroundColor: Colors.transparent,
-              finishedStepBorderColor: const Color(0xffD1D5DB),
+              finishedStepBackgroundColor: AppliedJobsConsts.color7,
+              finishedStepBorderColor: AppliedJobsConsts.color5,
               finishedStepBorderType: BorderType.normal,
               stepShape: StepShape.circle,
               maxReachedStep: 3,
-              lineStyle: LineStyle(
-                lineType: LineType.dashed,
-                activeLineColor: const Color(0xffD1D5DB),
-                finishedLineColor: const Color(0xff3366FF),
-                lineLength: 35.0.w,
-                lineSpace: 5.0.w,
-                lineThickness: 1.5.sp,
-                unreachedLineColor: const Color(0xffD1D5DB),
-                unreachedLineType: LineType.dashed,
-                lineWidth: 5.0.w,
-              ),
-              unreachedStepBorderColor: const Color(0xff9CA3AF),
+              lineStyle: AppliedJobsConsts.stepperStyle1,
+              unreachedStepBorderColor: AppliedJobsConsts.color8,
               unreachedStepBorderType: BorderType.normal,
-              finishedStepIconColor: Colors.white,
+              finishedStepIconColor: AppliedJobsConsts.color9,
               internalPadding: 50.0.sp,
               stepRadius: 18.0.sp,
               showStepBorder: true,
@@ -75,35 +57,19 @@ class _AppliedJobsEasyStepperContainerWidgetState extends State<AppliedJobsEasyS
                     widget.appliedJobsControllerBloc.stepsTitles[index],
                     textAlign: TextAlign.center,
                     softWrap: true,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 30.0.sp,
-                      color: widget.appliedJobsControllerBloc.completedSteps.contains(index)
-                          ? const Color(0xff3366FF)
-                          : const Color(0xff111827),
-                      fontFamily: TextFontFamily,
-                    ),
+                    style: AppliedJobsConsts.textStyle3(context,widget,index),
                   ),
                   customStep: ClipOval(
                     child: Container(
                       padding: EdgeInsets.zero,
                       alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: widget.appliedJobsControllerBloc.completedSteps.contains(index)
-                            ? const Color(0xff3366FF)
-                            : Colors.transparent,
-                      ),
+                      decoration: AppliedJobsConsts.containerStyle3(widget , index),
                       child: Center(
                         child: Text(
                           (index + 1).toString(),
                           textAlign: TextAlign.center,
                           softWrap: true,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w800,
-                            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,
-                            color: widget.appliedJobsControllerBloc.completedSteps.contains(index) ? const Color(0xffF4F4F5) : const Color(0xff9CA3AF),
-                            fontFamily: TextFontFamily,
-                          ),
+                          style: AppliedJobsConsts.textStyle4(context , widget , index),
                         ),
                       ),
                     ),

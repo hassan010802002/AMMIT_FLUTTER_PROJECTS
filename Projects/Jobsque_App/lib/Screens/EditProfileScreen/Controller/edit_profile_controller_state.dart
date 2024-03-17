@@ -9,7 +9,11 @@ class EditProfileControllerInitial extends EditProfileControllerState {
   List<Object> get props => [];
 }
 
-class EditProfileSuccessApiUpdateData extends EditProfileControllerState {
+class EditProfileSuccessApiDataUpdate extends EditProfileControllerState {
+  @override
+  List<Object> get props => [];
+}
+class EditProfileSuccessApiUserDataUpdate extends EditProfileControllerState {
   @override
   List<Object> get props => [];
 }
@@ -27,6 +31,10 @@ class EditProfileIdleProfileImage extends EditProfileControllerState {
   List<Object> get props => [];
 }
 class EditProfileUserProfileImage extends EditProfileControllerState {
+  @override
+  List<Object> get props => [];
+}
+class EditProfileSuccessApiPortfolioDataUpdate extends EditProfileControllerState {
   @override
   List<Object> get props => [];
 }

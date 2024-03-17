@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:jobsque_app/Screens/Base_Home/Constants/BaseHomeConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../Controller/base_cubit.dart';
@@ -23,8 +24,8 @@ class _HomeNavBarItemState extends State<HomeNavBarItem> {
       builder: (context, state) {
         return OctoImage(
           image: state is HomeBase
-              ? const AssetImage("Assets/Images/home.png")
-              : const AssetImage("Assets/Images/home1.png"),
+              ? const AssetImage(BaseHomeConsts.image3)
+              : const AssetImage(BaseHomeConsts.image4),
           fit: BoxFit.contain,
           alignment: Alignment.center,
           filterQuality: FilterQuality.high,

@@ -2,12 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
-import 'package:jobsque_app/Screens/Base_Home/base__home.dart';
 import 'package:jobsque_app/Screens/EditProfileScreen/Controller/edit_profile_controller_bloc.dart';
 import 'package:jobsque_app/Screens/EditProfileScreen/UI/Views/EditProfileMainView.dart';
-import 'package:jobsque_app/Screens/MainProfileScreen/Controller/main_profile_controller_bloc.dart';
-import 'package:jobsque_app/Screens/MainProfileScreen/UI/Views/ProfileMainView.dart';
 
 class EditProfileScreen extends StatefulWidget {
 
@@ -18,7 +14,6 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
-
   EditProfileControllerBloc? editProfileControllerBloc;
 
   @override

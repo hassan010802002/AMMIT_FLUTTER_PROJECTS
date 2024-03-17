@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Constants/AppliedJobsConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -28,26 +29,19 @@ class _AppliedJobsSaveIconButtonWidgetState extends State<AppliedJobsSaveIconBut
           icon: OctoImage(
             image: widget.appliedJobsControllerBloc.savedJobs.contains(widget.appliedJobIndex) &&
                     widget.appliedJobsControllerBloc.savedJobIdx == widget.appliedJobIndex
-                ? const AssetImage("Assets/Images/archive-minus2.png")
-                : const AssetImage("Assets/Images/archive-minus.png"),
+                ? const AssetImage(AppliedJobsConsts.image1)
+                : const AssetImage(AppliedJobsConsts.image2),
             filterQuality: FilterQuality.high,
             fit: BoxFit.contain,
             width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.0.w,
             height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.0.h,
             alignment: Alignment.center,
-            color: const Color(0xff111827),
+            color: AppliedJobsConsts.color10,
           ),
           onPressed: () {
             widget.appliedJobsControllerBloc.ChangingJobSaveStatus(widget.appliedJobIndex);
           },
-          style: ButtonStyle(
-            visualDensity: VisualDensity.comfortable,
-            alignment: Alignment.center,
-            padding: MaterialStatePropertyAll(EdgeInsets.all(5.0.sp)),
-            fixedSize: MaterialStatePropertyAll(
-              Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.w, MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h),
-            ),
-          ),
+          style: AppliedJobsConsts.buttonStyle1(context),
         );
       },
     );

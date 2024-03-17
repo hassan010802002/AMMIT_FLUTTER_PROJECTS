@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Constants/AppliedJobsConsts.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controller/applied_jobs_controller_bloc.dart';
@@ -28,15 +29,7 @@ class _AppliedJobsImageWidgetState extends State<AppliedJobsImageWidget> {
           height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.h,
           width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.w,
           alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8.0.sp),
-            image: DecorationImage(
-              image: NetworkImage(widget.appliedJobsControllerBloc.jobsModel!.data![widget.appliedJobIndex].image!),
-              fit: BoxFit.contain,
-              filterQuality: FilterQuality.high,
-            ),
-          ),
+          decoration: AppliedJobsConsts.containerStyle4(widget),
         )
             : const SizedBox();
       },

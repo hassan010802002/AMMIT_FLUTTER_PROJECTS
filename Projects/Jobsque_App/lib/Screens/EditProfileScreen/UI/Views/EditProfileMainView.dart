@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Screens/EditProfileScreen/UI/Widgets/EditProfileEditProfileImageButton/edit_profile_edit_profile_image_button.dart';
@@ -30,68 +31,73 @@ class _EditProfileMainViewState extends State<EditProfileMainView> {
       padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 15.0.h),
       child: SingleChildScrollView(
         primary: true,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
+        child: BlocBuilder<EditProfileControllerBloc, EditProfileControllerState>(
+          bloc: widget.editProfileControllerBloc,
+          builder: (context, state) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BackButtonWidget(),
-                    const EditProfileScreenTitleText(),
-                    const SizedBox(),
-                  ],
-                ),
-                SizedBox(
-                  height: 35.0.h,
-                ),
-                EditProfileEditUserProfileImage(editProfileControllerBloc: widget.editProfileControllerBloc),
-                SizedBox(
-                  height: 8.0.h,
-                ),
-                EditProfileEditProfileImageButton(editProfileControllerBloc: widget.editProfileControllerBloc),
-                SizedBox(
-                  height: 20.0.h,
-                ),
                 Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomEditProfileField(
-                      "Name",
-                      textEditingController: widget.editProfileControllerBloc.nameEditingController!,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        BackButtonWidget(),
+                        const EditProfileScreenTitleText(),
+                        const SizedBox(),
+                      ],
                     ),
                     SizedBox(
-                      height: 20.0.h,
+                      height: 35.0.h,
                     ),
-                    CustomEditProfileField(
-                      "Bio",
-                      textEditingController: widget.editProfileControllerBloc.bioEditingController!,
-                    ),
-                    SizedBox(
-                      height: 20.0.h,
-                    ),
-                    CustomEditProfileField(
-                      "Address",
-                      textEditingController: widget.editProfileControllerBloc.addressEditingController!,
-                    ),
-                    SizedBox(
-                      height: 20.0.h,
-                    ),
-                    const EditProfilePhoneTextWidget(),
+                    EditProfileEditUserProfileImage(editProfileControllerBloc: widget.editProfileControllerBloc),
                     SizedBox(
                       height: 8.0.h,
                     ),
-                    EditProfilePhoneFieldWidget(editProfileControllerBloc: widget.editProfileControllerBloc),
+                    EditProfileEditProfileImageButton(editProfileControllerBloc: widget.editProfileControllerBloc),
+                    SizedBox(
+                      height: 20.0.h,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomEditProfileField(
+                          "Name",
+                          textEditingController: widget.editProfileControllerBloc.nameEditingController!,
+                        ),
+                        SizedBox(
+                          height: 20.0.h,
+                        ),
+                        CustomEditProfileField(
+                          "Bio",
+                          textEditingController: widget.editProfileControllerBloc.bioEditingController!,
+                        ),
+                        SizedBox(
+                          height: 20.0.h,
+                        ),
+                        CustomEditProfileField(
+                          "Address",
+                          textEditingController: widget.editProfileControllerBloc.addressEditingController!,
+                        ),
+                        SizedBox(
+                          height: 20.0.h,
+                        ),
+                        const EditProfilePhoneTextWidget(),
+                        SizedBox(
+                          height: 8.0.h,
+                        ),
+                        EditProfilePhoneFieldWidget(editProfileControllerBloc: widget.editProfileControllerBloc),
+                      ],
+                    ),
                   ],
                 ),
+                SizedBox(
+                  height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 17.0.h,
+                ),
+                EditProfileSaveButton(editProfileControllerBloc: widget.editProfileControllerBloc),
               ],
-            ),
-            SizedBox(
-              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 17.0.h,
-            ),
-            EditProfileSaveButton(editProfileControllerBloc: widget.editProfileControllerBloc),
-          ],
+            );
+          },
         ),
       ),
     );

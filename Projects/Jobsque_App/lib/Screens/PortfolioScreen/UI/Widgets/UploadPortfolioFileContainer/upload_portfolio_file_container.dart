@@ -23,7 +23,7 @@ class _UploadPortfolioFileContainerState extends State<UploadPortfolioFileContai
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.portfolioControllerBloc.add(PortfolioUploadFileEvent());
+        widget.portfolioControllerBloc.add(UploadingPortfolioDataEvent());
       },
       child: DottedBorder(
         color: const Color(0xff6690FF),
@@ -52,7 +52,7 @@ class _UploadPortfolioFileContainerState extends State<UploadPortfolioFileContai
                   alignment: Alignment.center,
                 ),
                 Text(
-                  'Upload your other file',
+                  'Upload your CV file',
                   style: TextStyle(
                     color: const Color(0xff111827),
                     fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 20.0.sp,
@@ -75,7 +75,7 @@ class _UploadPortfolioFileContainerState extends State<UploadPortfolioFileContai
                 ),
                 ElevatedButton.icon(
                   onPressed: () {
-                    widget.portfolioControllerBloc.add(PortfolioUploadFileEvent());
+                    widget.portfolioControllerBloc.add(UploadingPortfolioDataEvent());
                   },
                   style: ButtonStyle(
                     backgroundColor: const MaterialStatePropertyAll(Color(0xffD6E4FF)),

@@ -4,7 +4,13 @@ abstract class PortfolioControllerEvent extends Equatable {
   const PortfolioControllerEvent();
 }
 
-class PortfolioUploadFileEvent extends PortfolioControllerEvent {
+class UploadingPortfolioDataEvent extends PortfolioControllerEvent {
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+}
+
+class FetchingPortfolioDataEvent extends PortfolioControllerEvent {
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();

@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../../Components/Custom_Button/Custom_Button.dart';
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -27,7 +26,7 @@ class _EditProfileSaveButtonState extends State<EditProfileSaveButton> {
         color: Colors.white,
         fontFamily: TextFontFamily,
       ),
-      onPressed: () {
+      onPressed: () async{
         widget.editProfileControllerBloc.UpdatingUserProfileData(context);
       },
       shape: MaterialStatePropertyAll(

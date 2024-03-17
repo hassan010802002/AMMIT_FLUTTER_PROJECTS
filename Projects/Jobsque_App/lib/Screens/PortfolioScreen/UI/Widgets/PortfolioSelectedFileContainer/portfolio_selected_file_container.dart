@@ -56,9 +56,9 @@ class _PortfolioSelectedFileContainerState extends State<PortfolioSelectedFileCo
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      widget.portfolioControllerBloc.portfolioFilesList.elementAt(widget.currentFileIdx).length > 15
-                          ? "${widget.portfolioControllerBloc.portfolioFilesList.elementAt(widget.currentFileIdx).substring(0, 15)}..."
-                          : widget.portfolioControllerBloc.portfolioFilesList.elementAt(widget.currentFileIdx),
+                      widget.portfolioControllerBloc.portfolioFilesList!.elementAt(widget.currentFileIdx).length > 15
+                          ? "${widget.portfolioControllerBloc.portfolioFilesList!.elementAt(widget.currentFileIdx).substring(0, 15)}..."
+                          : widget.portfolioControllerBloc.portfolioFilesList!.elementAt(widget.currentFileIdx),
                       style: TextStyle(
                         color: const Color(0xff111827),
                         fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,

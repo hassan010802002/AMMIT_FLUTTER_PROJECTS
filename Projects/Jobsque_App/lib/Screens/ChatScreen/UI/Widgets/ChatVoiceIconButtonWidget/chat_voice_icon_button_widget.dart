@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
@@ -18,30 +19,11 @@ class _ChatVoiceIconButtonWidgetState extends State<ChatVoiceIconButtonWidget> {
   Widget build(BuildContext context) {
     return IconButton(
       splashRadius: 30.0.sp,
-      style: ButtonStyle(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        iconSize: MaterialStatePropertyAll(20.0.sp),
-        alignment: Alignment.center,
-        fixedSize: MaterialStatePropertyAll(
-          Size(
-            MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 18.0.w,
-            MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 18.0.h,
-          ),
-        ),
-        shape: MaterialStatePropertyAll(
-          CircleBorder(
-            side: BorderSide(
-              width: 1.5.w,
-              strokeAlign: BorderSide.strokeAlignInside,
-              color: const Color(0xffD1D5DB),
-            ),
-          ),
-        ),
-      ),
+      style: ChatConsts.buttonStyle5(context),
       onPressed: () {},
       icon: const Icon(
         FontAwesomeIcons.microphoneLines,
-        color: Color(0xff292D32),
+        color: ChatConsts.color13,
       ),
     );
   }

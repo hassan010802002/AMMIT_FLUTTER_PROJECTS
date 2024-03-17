@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Constants/AppliedJobsConsts.dart';
 import 'package:jobsque_app/Screens/AppliedJobsScreen/UI/Widgets/AppliedJobPostTimeTextWidget/applied_job_post_time_text_widget.dart';
 import 'package:jobsque_app/Screens/AppliedJobsScreen/UI/Widgets/AppliedJobsEasyStepperContainerWidget/applied_jobs_easy_stepper_container_widget.dart';
 
@@ -105,7 +106,7 @@ class _ActiveJobsListViewState extends State<ActiveJobsListView> {
                 separatorBuilder: (context, index) {
                   return Divider(
                     height: 20.0.h,
-                    color: const Color(0xffE5E7EB),
+                    color: AppliedJobsConsts.color3,
                     thickness: 1.5.w,
                   );
                 },

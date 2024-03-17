@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -19,16 +20,7 @@ class _ChatAppBarChatControlsSheetButtonState extends State<ChatAppBarChatContro
   Widget build(BuildContext context) {
     return IconButton(
       splashRadius: 30.0.sp,
-      style: ButtonStyle(
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          iconSize: MaterialStatePropertyAll(35.0.sp),
-          alignment: Alignment.center,
-          fixedSize: MaterialStatePropertyAll(
-            Size(
-              MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.w,
-              MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.h,
-            ),
-          )),
+      style: ChatConsts.buttonStyle1(context),
       onPressed: () {
         showModalBottomSheet(
           context: context,
@@ -44,7 +36,7 @@ class _ChatAppBarChatControlsSheetButtonState extends State<ChatAppBarChatContro
         alignment: Alignment.center,
         fit: BoxFit.contain,
         filterQuality: FilterQuality.high,
-        image: const AssetImage("Assets/Images/more.png"),
+        image: const AssetImage(ChatConsts.image1),
       ),
     );
   }

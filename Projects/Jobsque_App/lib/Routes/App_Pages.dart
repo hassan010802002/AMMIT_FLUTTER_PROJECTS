@@ -17,9 +17,11 @@ import 'package:jobsque_app/Screens/PortfolioScreen/portfolio_screen.dart';
 import 'package:jobsque_app/Screens/PrivacyPolicyScreen/privacy_policy_screen.dart';
 import 'package:jobsque_app/Screens/ProfileLanguageScreen/profile_language_screen.dart';
 import 'package:jobsque_app/Screens/ProfileNotificationScreen/profile_notification_screen.dart';
+import 'package:jobsque_app/Screens/ProfileSecurityChangePasswordScreen/profile_security_change_password_screen.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityEmailAddressScreen/profile_security_email_address_screen.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityPhoneNumberScreen/profile_security_phone_number_screen.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityScreen/profile_security_screen.dart';
+import 'package:jobsque_app/Screens/ProfileSecurityVerificationScreen/profile_security_verfication_screen.dart';
 import 'package:jobsque_app/Screens/ResetPasswordScreen/reset_password_screen.dart';
 import 'package:jobsque_app/Screens/SearchScreen/search_screen.dart';
 import 'package:jobsque_app/Screens/Success_Screen/success__screen.dart';
@@ -52,6 +54,8 @@ class AppPages {
     AppRoutes.privacyPolicyScreen: (p0) => PrivacyPolicyScreen(),
     AppRoutes.profileSecurityEmailAddressScreen: (p0) => ProfileSecurityEmailAddressScreen(),
     AppRoutes.profileSecurityPhoneNumberScreen: (p0) => ProfileSecurityPhoneNumberScreen(),
+    AppRoutes.profileSecurityChangePasswordScreen: (p0) => ProfileSecurityChangePasswordScreen(),
+    AppRoutes.profileSecurityVerificationScreen: (p0) => ProfileSecurityVerificationScreen(),
     AppRoutes.resetPasswordScreen: (p0) => ResetPasswordScreen(),
   };
 }

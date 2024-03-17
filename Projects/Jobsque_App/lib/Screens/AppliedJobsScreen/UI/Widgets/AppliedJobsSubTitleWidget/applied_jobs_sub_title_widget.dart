@@ -2,10 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../../Config/AppConfig.dart';
-import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Constants/AppliedJobsConsts.dart';
 import '../../../Controller/applied_jobs_controller_bloc.dart';
 
 class AppliedJobsSubTitleWidget extends StatefulWidget {
@@ -31,12 +28,7 @@ class _AppliedJobsSubTitleWidgetState extends State<AppliedJobsSubTitleWidget> {
                     : widget.appliedJobsControllerBloc.jobsModel!.data![widget.appliedJobIndex].location!,
                 textAlign: TextAlign.start,
                 softWrap: true,
-                style: TextStyle(
-                  color: const Color(0xff9CA3AF),
-                  fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 26.0.sp,
-                  fontFamily: TextFontFamily,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: AppliedJobsConsts.textStyle6(context),
               )
             : const SizedBox();
       },

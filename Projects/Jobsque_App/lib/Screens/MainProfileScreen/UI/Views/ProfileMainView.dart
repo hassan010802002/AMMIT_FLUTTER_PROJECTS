@@ -61,7 +61,7 @@ class _ProfileMainViewState extends State<ProfileMainView> {
                       SizedBox(
                         height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 10.0.h,
                       ),
-                      const MainProfileImageWidget(),
+                      MainProfileImageWidget(mainProfileControllerBloc: widget.mainProfileControllerBloc),
                       SizedBox(
                         height: 10.0.h,
                       ),
@@ -69,7 +69,7 @@ class _ProfileMainViewState extends State<ProfileMainView> {
                       SizedBox(
                         height: 5.0.h,
                       ),
-                      const MainProfileBioTextWidget(),
+                      MainProfileBioTextWidget(mainProfileControllerBloc: widget.mainProfileControllerBloc),
                       SizedBox(
                         height: 25.0.h,
                       ),

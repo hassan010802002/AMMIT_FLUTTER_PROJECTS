@@ -2,10 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/Constants/AppliedJobsConsts.dart';
 import 'package:jobsque_app/Screens/AppliedJobsScreen/UI/Views/AppliedJobsTabBarView/AppliedJobsActiveJobsTabBarView/applied_jobs_active_jobs_tab_bar_view.dart';
 import 'package:jobsque_app/Screens/AppliedJobsScreen/UI/Views/AppliedJobsTabBarView/AppliedJobsEmptyView/applied_jobs_empty_view.dart';
+import 'package:jobsque_app/Screens/AppliedJobsScreen/UI/Widgets/AppliedJobsTabBarWidget/applied_jobs_tab_bar_widget.dart';
 
-import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controller/applied_jobs_controller_bloc.dart';
 
@@ -29,44 +30,9 @@ class _AppliedJobsTabBarViewState extends State<AppliedJobsTabBarView> {
           child: Container(
             alignment: Alignment.center,
             height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 18.0.h,
-            decoration: BoxDecoration(
-              color: const Color(0xffF4F4F5),
-              borderRadius: BorderRadius.circular(45.0.sp),
-            ),
+            decoration: AppliedJobsConsts.containerStyle6,
             width: MediaQuery_Size_Helper.MAX_HEIGHT(context)!.w,
-            child: TabBar(
-              unselectedLabelColor: const Color(0xff6B7280),
-              unselectedLabelStyle: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
-                fontFamily: TextFontFamily,
-              ),
-              labelStyle: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
-                fontFamily: TextFontFamily,
-              ),
-              labelColor: Colors.white,
-              indicatorPadding: EdgeInsets.zero,
-              indicatorWeight: 0.0.sp,
-              indicator: BoxDecoration(
-                borderRadius: BorderRadius.circular(45.0.sp),
-                color: const Color(0xff02337A),
-              ),
-              dividerHeight: 0,
-              splashBorderRadius: BorderRadius.circular(45.0.sp),
-              indicatorSize: TabBarIndicatorSize.tab,
-              tabs: [
-                Tab(
-                  height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h,
-                  text: "Active",
-                ),
-                Tab(
-                  height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h,
-                  text: "Rejected",
-                ),
-              ],
-            ),
+            child: const AppliedJobsTabBarWidget(),
           ),
         ),
         SizedBox(

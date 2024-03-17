@@ -4,12 +4,11 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Models/ProfileUpdateDataModel/ProfileDataModel.dart';
 
-class ProfileDataService{
-  static Future<ProfileUpdateDataModel?> FetchingProfile({
+class ProfileUpdateDataService{
+  static Future<ProfileUpdateDataModel?> UpdatingProfileDataService({
     String? bio = "",
     String? address = "",
     String? mobile = "",
@@ -22,11 +21,9 @@ class ProfileDataService{
     String? education = "Education",
 }) async {
     try {
-      final profileAPIresponse = await http.get(
-        Uri.tryParse("${profileUpdateDataApiUrl}bio=tena&address=mohamed&mobile=tena&language=en&interested_work=data&offline_place=data&remote_place=data&experience=data&personal_detailed=data&education=education")!,
+      final profileAPIresponse = await http.put(
+        Uri.tryParse("${profileUpdateDataApiUrl}bio=${bio!}&address=${address!}&mobile=${mobile!}&language=${language!}&interested_work=${interested_work!}&offline_place=${offline_place!}&remote_place=${remote_place!}&experience=${experience!}&personal_detailed=${personal_detailed!}&education=${education!}")!,
         headers: {
-          HttpHeaders.contentTypeHeader: "application/json;",
-          HttpHeaders.acceptHeader: "application/json;",
           HttpHeaders.authorizationHeader: "Bearer ${ApiTokenKey!}",
         },
       );

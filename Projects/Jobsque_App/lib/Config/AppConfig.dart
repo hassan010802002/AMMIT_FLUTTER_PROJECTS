@@ -8,6 +8,7 @@ String loginApiUrl = "https://project2.amit-learning.com/api/auth/login";
 String profileApiUrl = "https://project2.amit-learning.com/api/auth/profile";
 String profileUpdateDataApiUrl = "https://project2.amit-learning.com/api/user/profile/edit?";
 String profileUpdateUserDataApiUrl = "https://project2.amit-learning.com/api/auth/user/update";
+String mainProfileDataApiUrl = "https://project2.amit-learning.com/api/user/profile/portofolios";
 String JobsApiUrl = "https://project2.amit-learning.com/api/jobs";
 String filterJobsApiUrl = "https://project2.amit-learning.com/api/jobs/filter";
 

@@ -7,6 +7,7 @@ import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
+import 'package:jobsque_app/Screens/Base_Home/Constants/BaseHomeConsts.dart';
 import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
 import 'package:jobsque_app/Screens/Base_Home/UI/Widgets/AppliedNavBar_Item/applied_nav_bar_item.dart';
 import 'package:jobsque_app/Screens/Base_Home/UI/Widgets/HomeNavBar_Item/home_nav_bar_item.dart';
@@ -33,46 +34,38 @@ class _BottomNavBarViewState extends State<BottomNavBarView> {
           items: [
             BottomNavigationBarItem(
               icon: HomeNavBarItem(cubit: widget.cubit),
-              label: "Home",
+              label: BaseHomeConsts.text1,
             ),
             BottomNavigationBarItem(
               icon: MessagesNavBarItem(cubit: widget.cubit),
-              label: "Messages",
+              label: BaseHomeConsts.text2,
             ),
             BottomNavigationBarItem(
               icon: AppliedNavBarItem(cubit: widget.cubit),
-              label: "Applied",
+              label: BaseHomeConsts.text3,
             ),
             BottomNavigationBarItem(
               icon: SavedNavBarItem(cubit: widget.cubit),
-              label: "Saved",
+              label: BaseHomeConsts.text4,
             ),
             BottomNavigationBarItem(
               icon: ProfileNavBarItem(cubit: widget.cubit),
-              label: "Profile",
+              label: BaseHomeConsts.text5,
             ),
           ],
-          backgroundColor: Colors.white,
+          backgroundColor: BaseHomeConsts.color9,
           currentIndex: widget.cubit.baseIndex!,
-          selectedItemColor: const Color(0xff3366FF),
+          selectedItemColor: BaseHomeConsts.color6,
           selectedFontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 28.0.sp,
           onTap: (value) {
             widget.cubit.ChangeBase(context , value);
           },
-          selectedLabelStyle: TextStyle(
-            fontFamily: TextFontFamily,
-            fontWeight: FontWeight.w500,
-            color: const Color(0xff9CA3AF),
-          ),
+          selectedLabelStyle: BaseHomeConsts.textStyle1(context),
           showSelectedLabels: true,
           showUnselectedLabels: true,
           unselectedFontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 28.0.sp,
-          unselectedLabelStyle: TextStyle(
-            fontFamily: TextFontFamily,
-            fontWeight: FontWeight.w500,
-            color: const Color(0xff9CA3AF),
-          ),
-          unselectedItemColor: const Color(0xff9CA3AF),
+          unselectedLabelStyle: BaseHomeConsts.textStyle1(context),
+          unselectedItemColor: BaseHomeConsts.color8,
           type: BottomNavigationBarType.shifting,
         );
       },

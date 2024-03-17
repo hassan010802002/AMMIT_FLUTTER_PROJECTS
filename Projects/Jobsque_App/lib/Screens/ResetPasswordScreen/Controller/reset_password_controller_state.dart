@@ -8,3 +8,16 @@ class ResetPasswordControllerInitial extends ResetPasswordControllerState {
   @override
   List<Object> get props => [];
 }
+
+class ResetPasswordFirstView extends ResetPasswordControllerState {
+  @override
+  List<Object> get props => [];
+}
+class ResetPasswordSecondView extends ResetPasswordControllerState {
+  @override
+  List<Object> get props => [];
+}
+class ResetPasswordThirdView extends ResetPasswordControllerState {
+  @override
+  List<Object> get props => [];
+}

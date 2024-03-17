@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -18,7 +19,7 @@ class _ChatAppBarLogoIconWidgetState extends State<ChatAppBarLogoIconWidget> {
   @override
   Widget build(BuildContext context) {
     return OctoImage(
-      image: AssetImage(widget.screenData["message_icon"]!),
+      image: AssetImage(widget.screenData[ChatConsts.image2]!),
       alignment: Alignment.center,
       height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.h,
       width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 10.0.w,

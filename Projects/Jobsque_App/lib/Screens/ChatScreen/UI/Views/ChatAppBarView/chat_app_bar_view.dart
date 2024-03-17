@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Views/ChatBottomSheetView/chat_bottom_sheet_view.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatAppBarChatControlsSheetButton/chat_app_bar_chat_controls_sheet_button.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatAppBarLogoIconWidget/chat_app_bar_logo_icon_widget.dart';
@@ -26,7 +27,7 @@ class _ChatAppBarViewState extends State<ChatAppBarView> {
   Widget build(BuildContext context) {
     return AppBar(
       leading: BackButtonWidget(),
-      backgroundColor: Colors.white,
+      backgroundColor: ChatConsts.color9,
       primary: true,
       title: Row(
         children: [

@@ -1,16 +1,13 @@
 // ignore_for_file: non_constant_identifier_names, invalid_use_of_visible_for_testing_member
 
 import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
-
-import '../../../Models/ProfileUpdateDataModel/ProfileDataModel.dart';
-import '../../../Models/ProfileUpdateUserDataModel/ProfileDataUpdateModel.dart';
+import 'package:jobsque_app/Screens/EditProfileScreen/Service/Repository/ProfileUpdatePortfolioDataService/ProfileUpdatePortfolioDataService.dart';
 import '../Service/Repository/ProfileUpdateDataService/ProfileUpdateDataService.dart';
 import '../Service/Repository/ProfileUpdateUserDataService/ProfileUpdateUserDataService.dart';
 
@@ -21,6 +18,7 @@ part 'edit_profile_controller_state.dart';
 class EditProfileControllerBloc extends Bloc<EditProfileControllerEvent, EditProfileControllerState> {
   bool isSuccessProfileUpdateData = false;
   bool isSuccessProfileUpdateUserData = false;
+  bool isSuccessProfileUpdatePortfolioData = false;
   bool isUserProfileImage = false;
   final TextEditingController? nameEditingController = TextEditingController();
   final TextEditingController? bioEditingController = TextEditingController();
@@ -28,29 +26,25 @@ class EditProfileControllerBloc extends Bloc<EditProfileControllerEvent, EditPro
   final TextEditingController? phoneEditingController = TextEditingController();
   final ImagePicker picker = ImagePicker();
   String? profileImageFile;
-  ProfileUpdateDataModel? profileUpdateDataModel = ProfileUpdateDataModel();
-  ProfileUpdateUserDataModel? profileUpdateUserDataModel = ProfileUpdateUserDataModel();
 
   EditProfileControllerBloc() : super(EditProfileControllerInitial()) {
     on<UpdateUserProfileApiData>((event, emit) async {
       emit(EditProfileLoadingApiData());
       try {
-        profileUpdateDataModel = await ProfileUpdateDataService.UpdatingProfileDataService(
+        isSuccessProfileUpdateData = (await ProfileUpdateDataService.UpdatingProfileDataService(
           bio: bioEditingController!.text,
           address: addressEditingController!.text,
           mobile: phoneEditingController!.text,
-        );
-        isSuccessProfileUpdateData = true;
-        if (nameEditingController!.text.isNotEmpty) {
-          profileUpdateUserDataModel = await ProfileUpdateUserDataService.UpdatingProfileUserDataService(
-            userName: nameEditingController!.text,
-          );
-          print(profileUpdateUserDataModel!.data!.name);
-          print(nameEditingController?.text);
-          isSuccessProfileUpdateUserData = true;
-        }
-        log("Profile Update User Data Service Status : $isSuccessProfileUpdateUserData", name: "Update Profile User Data");
-        emit(EditProfileSuccessApiUpdateData());
+        ))!;
+        emit(EditProfileSuccessApiDataUpdate());
+        isSuccessProfileUpdateUserData = (await ProfileUpdateUserDataService.UpdatingProfileUserDataService(
+          userName: nameEditingController!.text,
+        ))!;
+        emit(EditProfileSuccessApiUserDataUpdate());
+        isSuccessProfileUpdatePortfolioData = (await ProfileUpdatePortfolioDataService.UpdatingProfilePortfolioDataService(
+          profileImagePath: profileImageFile!,
+        ))!;
+        emit(EditProfileSuccessApiPortfolioDataUpdate());
       } on Exception catch (e) {
         isSuccessProfileUpdateData = false;
         isSuccessProfileUpdateUserData = false;
@@ -62,10 +56,10 @@ class EditProfileControllerBloc extends Bloc<EditProfileControllerEvent, EditPro
 
   void UpdatingUserProfileData(BuildContext context) {
     add(UpdateUserProfileApiData());
-    // log("Profile Update Data Service Status : $isSuccessProfileUpdateData" , name: "Update Profile Data");
-    if (isSuccessProfileUpdateUserData) {
+    if (isSuccessProfileUpdateData && isSuccessProfileUpdateUserData && isSuccessProfileUpdatePortfolioData) {
       NavigatorHelper(context, AppRoutes.mainProfileScreen);
     }
+    log("Current State is : $state" , name: "Controller Current State");
   }
 
   void UpdatingUserProfileImage() async {

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 
 import '../../../../../Components/CustomTextField/CustomTextField.dart';
 import '../../../../../Config/AppConfig.dart';
@@ -18,20 +19,15 @@ class _ChatMessageTextFieldWidgetState extends State<ChatMessageTextFieldWidget>
   @override
   Widget build(BuildContext context) {
     return CustomTextField(
-      fillColor: const Color(0xffFAFAFA),
+      fillColor: ChatConsts.color15,
       textEditingController: TextEditingController(),
       keyboardType: TextInputType.name,
-      hintText: "Write a message...",
-      hintStyle: TextStyle(
-        fontWeight: FontWeight.w500,
-        color: const Color(0xff9CA3AF),
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
-        fontFamily: TextFontFamily,
-      ),
+      hintText: ChatConsts.text4,
+      hintStyle: ChatConsts.textStyle5(context),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(45.0.sp),
         borderSide: BorderSide(
-          color: const Color(0xffD1D5DB),
+          color: ChatConsts.color5,
           strokeAlign: BorderSide.strokeAlignOutside,
           width: 1.5.w,
         ),
@@ -39,7 +35,7 @@ class _ChatMessageTextFieldWidgetState extends State<ChatMessageTextFieldWidget>
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(45.0.sp),
         borderSide: BorderSide(
-          color: const Color(0xffD1D5DB),
+          color: ChatConsts.color5,
           strokeAlign: BorderSide.strokeAlignOutside,
           width: 1.5.w,
         ),

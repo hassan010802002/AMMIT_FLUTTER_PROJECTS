@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatFileIconButtonWidget/chat_file_icon_button_widget.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatMessageTextFieldWidget/chat_message_text_field_widget.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatVoiceIconButtonWidget/chat_voice_icon_button_widget.dart';
@@ -19,7 +20,7 @@ class _ChatBottomViewState extends State<ChatBottomView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: ChatConsts.color9,
       padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 15.0.h),
       alignment: Alignment.center,
       child: Row(

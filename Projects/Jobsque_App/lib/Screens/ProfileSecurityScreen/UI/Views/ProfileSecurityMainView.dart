@@ -65,7 +65,9 @@ class _ProfileSecurityMainViewState extends State<ProfileSecurityMainView> {
                 color: const Color(0xffE5E7EB),
               ),
               CustomProfileOtherButton(
-                "Change password", onPressed: () {  },
+                "Change password", onPressed: () {
+                  NavigatorHelper(context, AppRoutes.profileSecurityChangePasswordScreen);
+              },
               ),
               Divider(
                 thickness: 1.5.h,

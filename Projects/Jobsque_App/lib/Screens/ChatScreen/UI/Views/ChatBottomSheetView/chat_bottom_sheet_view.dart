@@ -2,16 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatSheetArchiveButton/chat_sheet_archive_button.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatSheetDeleteButton/chat_sheet_delete_button.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatSheetJobVisitButton/chat_sheet_job_visit_button.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatSheetMuteButton/chat_sheet_mute_button.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatSheetUnReadButton/chat_sheet_unread_button.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatSheetViewApplicationButton/chat_sheet_view_application_button.dart';
-import 'package:octo_image/octo_image.dart';
 
-import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class ChatBottomSheetView extends StatefulWidget {

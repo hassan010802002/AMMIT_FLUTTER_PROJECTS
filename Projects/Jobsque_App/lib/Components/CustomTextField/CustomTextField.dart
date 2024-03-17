@@ -49,7 +49,10 @@ class CustomTextField extends StatelessWidget {
     this.onEditingComplete,
     this.suffixIcon,
     this.onTap,
-    this.contentPadding,
+    this.contentPadding = const EdgeInsets.symmetric(
+      horizontal: 15.0,
+      vertical: 15.0,
+    ),
   });
 
   @override

@@ -12,7 +12,7 @@ import '../../../Controller/FilterBottomSheetCubit/filter_bottom_sheet_cubit.dar
 class SalaryFilterMenu extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const SalaryFilterMenu({Key? key , required this.bottomSheetCubit}) : super(key: key);
+  const SalaryFilterMenu({super.key , required this.bottomSheetCubit});
 
   @override
   _SalaryFilterMenuState createState() => _SalaryFilterMenuState();

@@ -9,11 +9,15 @@ class PortfolioControllerInitial extends PortfolioControllerState {
   List<Object> get props => [];
 }
 
-class PortfolioSuccessUploadFile extends PortfolioControllerState {
+class PortfolioSuccessApiUploadCvFile extends PortfolioControllerState {
   @override
   List<Object> get props => [];
 }
-class PortfolioIdleUploadFile extends PortfolioControllerState {
+class PortfolioIdleApiUploadCvFile extends PortfolioControllerState {
+  @override
+  List<Object> get props => [];
+}
+class PortfolioFailureApiUploadCvFile extends PortfolioControllerState {
   @override
   List<Object> get props => [];
 }

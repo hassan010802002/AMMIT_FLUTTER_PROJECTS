@@ -31,4 +31,6 @@ class AppRoutes {
   static const privacyPolicyScreen = "$mainProfileScreen/privacyPolicy";
   static const profileSecurityEmailAddressScreen = "$profileSecurityScreen/emailAddress";
   static const profileSecurityPhoneNumberScreen = "$profileSecurityScreen/phoneNumber";
+  static const profileSecurityChangePasswordScreen = "$profileSecurityScreen/changePassword";
+  static const profileSecurityVerificationScreen = "$profileSecurityScreen/verification";
 }

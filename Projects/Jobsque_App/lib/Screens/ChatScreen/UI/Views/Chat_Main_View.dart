@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
+import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Views/ChatBottomView/chat_bottom_view.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Views/ChatMessagesListView/chat_messages_list_view.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatDividerTextWidget/chat_divider_text_widget.dart';
@@ -39,7 +40,7 @@ class _ChatMainViewState extends State<ChatMainView> {
                         width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 3.2.w,
                         child: Divider(
                           height: 20.0.h,
-                          color: const Color(0xff9CA3AF),
+                          color: ChatConsts.color8,
                           thickness: 1.5.w,
                         ),
                       ),
@@ -48,7 +49,7 @@ class _ChatMainViewState extends State<ChatMainView> {
                         width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 3.2.w,
                         child: Divider(
                           height: 20.0.h,
-                          color: const Color(0xff9CA3AF),
+                          color: ChatConsts.color8,
                           thickness: 1.5.w,
                         ),
                       ),
