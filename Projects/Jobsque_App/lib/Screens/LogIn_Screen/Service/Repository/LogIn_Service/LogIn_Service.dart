@@ -26,6 +26,8 @@ class LogInService {
         final responseData = jsonDecode(loginAPIresponse.body);
         ApiTokenKey = responseData[responseTokenKey]!;
         await CacheHelper.saveData(key: MainTokenKey, value: responseData[responseTokenKey]!);
+        await CacheHelper.saveData(key: EmailCacheKey, value: responseData["user"][EmailKey]!);
+        await CacheHelper.saveData(key: UserNameCacheKey, value: responseData["user"][UserNameKey]!);
         ApiTokenKey = CacheHelper.getData(key: MainTokenKey);
       }
       return loginAPIresponse.statusCode;

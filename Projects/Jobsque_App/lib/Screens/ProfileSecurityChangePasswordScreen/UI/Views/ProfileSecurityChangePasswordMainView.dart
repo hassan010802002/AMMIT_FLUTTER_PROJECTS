@@ -52,7 +52,7 @@ class _ProfileSecurityChangePasswordMainViewState extends State<ProfileSecurityC
                 SizedBox(
                   height: 8.0.h,
                 ),
-                const ProfileSecurityOldPasswordTextField(),
+                ProfileSecurityOldPasswordTextField(profileSecurityChangePasswordControllerBloc: widget.profileSecurityChangePasswordControllerBloc),
                 SizedBox(
                   height: 25.0.h,
                 ),
@@ -60,7 +60,7 @@ class _ProfileSecurityChangePasswordMainViewState extends State<ProfileSecurityC
                 SizedBox(
                   height: 8.0.h,
                 ),
-                const ProfileSecurityNewPasswordTextField(),
+                ProfileSecurityNewPasswordTextField(profileSecurityChangePasswordControllerBloc: widget.profileSecurityChangePasswordControllerBloc),
                 SizedBox(
                   height: 25.0.h,
                 ),
@@ -68,11 +68,12 @@ class _ProfileSecurityChangePasswordMainViewState extends State<ProfileSecurityC
                 SizedBox(
                   height: 8.0.h,
                 ),
-                const ProfileSecurityConfirmNewPasswordTextField(),
+                ProfileSecurityConfirmNewPasswordTextField(
+                    profileSecurityChangePasswordControllerBloc: widget.profileSecurityChangePasswordControllerBloc),
               ],
             ),
             SizedBox(
-              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)!/3.0.h,
+              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 3.0.h,
             ),
             const ProfileSecurityChangePasswordSaveButton(),
           ],

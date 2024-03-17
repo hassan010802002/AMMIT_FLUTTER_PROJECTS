@@ -55,7 +55,7 @@ class _ProfileMainViewState extends State<ProfileMainView> {
                         children: [
                           BackButtonWidget(),
                           const MainProfileTitleTextWidget(),
-                          const MainProfileLogoutIconButton(),
+                          MainProfileLogoutIconButton(mainProfileControllerBloc: widget.mainProfileControllerBloc),
                         ],
                       ),
                       SizedBox(

@@ -9,6 +9,7 @@ import '../../../../../Models/ProfileUpdateUserDataModel/ProfileDataUpdateModel.
 class ProfileUpdateUserDataService {
   static Future<ProfileUpdateUserDataModel?> UpdatingProfileUserDataService({
     String? userName,
+    String? newPassword,
 }) async {
     try {
       final profileAPIresponse = await http.post(
@@ -21,7 +22,7 @@ class ProfileUpdateUserDataService {
         body: jsonEncode(
           <String , String>{
             "name" : userName!,
-            "password" : "12345",
+            "password" : newPassword!,
           }
         ),
       );

@@ -2,13 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/ProfileSecurityChangePasswordScreen/Controller/profile_security_change_password_controller_bloc.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Components/CustomTextField/CustomTextField.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class ProfileSecurityNewPasswordTextField extends StatefulWidget {
-  const ProfileSecurityNewPasswordTextField({super.key});
+  final ProfileSecurityChangePasswordControllerBloc profileSecurityChangePasswordControllerBloc;
+
+  const ProfileSecurityNewPasswordTextField({super.key, required this.profileSecurityChangePasswordControllerBloc});
 
   @override
   _ProfileSecurityNewPasswordTextFieldState createState() => _ProfileSecurityNewPasswordTextFieldState();
@@ -20,7 +23,7 @@ class _ProfileSecurityNewPasswordTextFieldState extends State<ProfileSecurityNew
     return CustomTextField(
       opsecure: true,
       fillColor: Colors.white,
-      textEditingController: TextEditingController(),
+      textEditingController: widget.profileSecurityChangePasswordControllerBloc.newPasswordController,
       prefixIcon: OctoImage(
         image: const AssetImage("Assets/Images/lock.png"),
         height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.h,

@@ -2,12 +2,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/MainProfileScreen/Controller/main_profile_controller_bloc.dart';
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class MainProfileLogoutIconButton extends StatefulWidget {
-  const MainProfileLogoutIconButton({super.key});
+  final MainProfileControllerBloc mainProfileControllerBloc;
+
+  const MainProfileLogoutIconButton({super.key, required this.mainProfileControllerBloc});
 
   @override
   _MainProfileLogoutIconButtonState createState() => _MainProfileLogoutIconButtonState();
@@ -25,7 +28,9 @@ class _MainProfileLogoutIconButtonState extends State<MainProfileLogoutIconButto
         height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 12.0.h,
         alignment: Alignment.center,
       ),
-      onPressed: () {},
+      onPressed: () {
+        widget.mainProfileControllerBloc.LogOut(context);
+      },
       style: ButtonStyle(
         visualDensity: VisualDensity.comfortable,
         alignment: Alignment.center,

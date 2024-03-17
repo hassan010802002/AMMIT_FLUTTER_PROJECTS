@@ -14,6 +14,11 @@ String filterJobsApiUrl = "https://project2.amit-learning.com/api/jobs/filter";
 
 String MainTokenKey = "API_TOKEN_KEY";
 String registrationTokenKey = "Registration Token";
+String EmailKey = "email";
+String UserNameKey = "name";
+String EmailCacheKey = "UserEmail";
+String UserNameCacheKey = "UserName";
+String UserPasswordCacheKey = "UserPassword";
 
 String? _API_TOKEN_KEY ;
 set ApiTokenKey(String? ApiToken) => _API_TOKEN_KEY=ApiToken;
