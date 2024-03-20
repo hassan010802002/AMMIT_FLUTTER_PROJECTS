@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsque_app/Screens/HelpCenterScreen/Controller/help_center_controller_cubit.dart';
 import 'package:jobsque_app/Screens/HelpCenterScreen/UI/Views/HelpCenterMainView.dart';
-import 'package:jobsque_app/Screens/TermsConditionsScreen/UI/Views/TermsConditionsMainView.dart';
 
 
 class HelpCenterScreen extends StatefulWidget {

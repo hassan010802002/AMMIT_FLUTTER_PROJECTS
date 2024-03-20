@@ -1,7 +1,5 @@
 // ignore_for_file: non_constant_identifier_names, invalid_use_of_visible_for_testing_member
 
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 

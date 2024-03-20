@@ -7,7 +7,6 @@ import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConst
 import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Components/CustomTextField/CustomTextField.dart';
-import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controller/registration_cubit.dart';
 

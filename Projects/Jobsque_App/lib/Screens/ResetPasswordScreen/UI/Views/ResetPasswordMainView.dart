@@ -37,10 +37,10 @@ class _ResetPasswordMainViewState extends State<ResetPasswordMainView> {
               widget.resetPasswordControllerBloc.isResetPasswordFirstView
                   ? const ResetPasswordEmailCheckView()
                   : widget.resetPasswordControllerBloc.isResetPasswordSecondView
-                      ? const ResetPasswordNewPasswordView()
+                      ? ResetPasswordNewPasswordView(resetPasswordControllerBloc: widget.resetPasswordControllerBloc,)
                       : widget.resetPasswordControllerBloc.isResetPasswordThirdView
                           ? const ResetPasswordSuccessfulView()
-                          : const ResetPasswordInitialView(),
+                          : ResetPasswordInitialView(resetPasswordControllerBloc: widget.resetPasswordControllerBloc),
               Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [

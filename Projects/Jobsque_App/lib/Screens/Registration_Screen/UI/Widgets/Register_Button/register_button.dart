@@ -5,12 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Components/Custom_Button/Custom_Button.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
-import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
-import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 
-import '../../../../../Config/AppConfig.dart';
 
 class RegisterButton extends StatefulWidget {
   final RegistrationCubit cubit;

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobsque_app/Screens/ResetPasswordScreen/Controller/reset_password_controller_bloc.dart';
 import 'package:jobsque_app/Screens/ResetPasswordScreen/UI/Widgets/ResetPasswordConfirmPasswordField/reset_password_confirm_password_field.dart';
 import 'package:jobsque_app/Screens/ResetPasswordScreen/UI/Widgets/ResetPasswordNewPasswordField/reset_password_new_password_field.dart';
 import 'package:jobsque_app/Screens/ResetPasswordScreen/UI/Widgets/ResetPasswordScreenAppLogo/reset_password_screen_app_logo.dart';
@@ -13,7 +14,9 @@ import 'package:jobsque_app/Screens/ResetPasswordScreen/UI/Widgets/ResetPassword
 import '../../../../SearchScreen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 
 class ResetPasswordNewPasswordView extends StatefulWidget {
-  const ResetPasswordNewPasswordView({super.key});
+  final ResetPasswordControllerBloc resetPasswordControllerBloc;
+
+  const ResetPasswordNewPasswordView({super.key, required this.resetPasswordControllerBloc});
 
   @override
   _ResetPasswordNewPasswordViewState createState() => _ResetPasswordNewPasswordViewState();
@@ -44,7 +47,7 @@ class _ResetPasswordNewPasswordViewState extends State<ResetPasswordNewPasswordV
         SizedBox(
           height: 50.0.h,
         ),
-        const ResetPasswordNewPasswordField(),
+        ResetPasswordNewPasswordField(resetPasswordControllerBloc: widget.resetPasswordControllerBloc),
         SizedBox(
           height: 15.0.h,
         ),
@@ -52,7 +55,7 @@ class _ResetPasswordNewPasswordViewState extends State<ResetPasswordNewPasswordV
         SizedBox(
           height: 25.0.h,
         ),
-        const ResetPasswordConfirmPasswordField(),
+        ResetPasswordConfirmPasswordField(resetPasswordControllerBloc: widget.resetPasswordControllerBloc),
         SizedBox(
           height: 15.0.h,
         ),

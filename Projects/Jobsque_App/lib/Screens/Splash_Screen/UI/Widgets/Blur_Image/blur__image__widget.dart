@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobsque_app/Screens/Splash_Screen/Consts/SplashConsts.dart';
 import 'package:octo_image/octo_image.dart';
 

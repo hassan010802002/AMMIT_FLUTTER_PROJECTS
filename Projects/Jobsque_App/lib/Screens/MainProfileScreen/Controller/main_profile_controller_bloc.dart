@@ -1,12 +1,8 @@
-
 // ignore_for_file: non_constant_identifier_names
-
-import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:jobsque_app/Helpers/Local_Cache_Helper/cache_helper.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Models/MainProfileDataModel/MainProfileDataModel.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
@@ -16,6 +12,7 @@ import '../../../Models/Profile_Model/ProfileModel.dart';
 import '../Service/Repository/Profile_Service/Profile_Service.dart';
 
 part 'main_profile_controller_event.dart';
+
 part 'main_profile_controller_state.dart';
 
 class MainProfileControllerBloc extends Bloc<MainProfileControllerEvent, MainProfileControllerState> {
@@ -25,7 +22,7 @@ class MainProfileControllerBloc extends Bloc<MainProfileControllerEvent, MainPro
   MainProfileDataModel? mainProfileDataModel = MainProfileDataModel();
 
   MainProfileControllerBloc() : super(MainProfileControllerInitial()) {
-    on<FetchingProfileApiData>((event, emit) async{
+    on<FetchingProfileApiData>((event, emit) async {
       emit(MainProfileLoadingProfileApiData());
       try {
         profileModel = await ProfileService.FetchingProfile();
@@ -41,11 +38,7 @@ class MainProfileControllerBloc extends Bloc<MainProfileControllerEvent, MainPro
     });
   }
 
-  void LogOut(BuildContext context) async{
-    bool logOutStatus = await CacheHelper.clearData();
-    log("User LogOut Status: $logOutStatus",name: "User LogOut");
-    if (logOutStatus) {
-      NavigatorHelper(context, AppRoutes.loginScreen);
-    }
+  void LogOut(BuildContext context) async {
+    NavigatorHelper(context, AppRoutes.loginScreen);
   }
 }

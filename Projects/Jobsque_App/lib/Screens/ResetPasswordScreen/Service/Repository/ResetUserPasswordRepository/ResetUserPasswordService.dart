@@ -5,13 +5,13 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import '../../../../../Config/AppConfig.dart';
 
-class ProfileUpdateUserDataService {
-  static Future<bool?> UpdatingProfileUserDataService({
+class ResetUserPasswordService {
+  static Future<bool?> ResettingUserPasswordService({
     required String? userName,
     required String? newPassword,
   }) async {
     try {
-      final bool profileAPIresponse = await http
+      final bool resetPasswordAPIresponse = await http
           .post(
             Uri.tryParse(profileUpdateUserDataApiUrl)!,
             headers: {
@@ -25,8 +25,8 @@ class ProfileUpdateUserDataService {
           )
           .then((value) => true)
           .onError((error, stackTrace) => false);
-      log("User Password Update Status: $profileAPIresponse", name: "User Password Status");
-      return profileAPIresponse;
+      log("User Password Update Status: $resetPasswordAPIresponse", name: "User Password Status");
+      return resetPasswordAPIresponse;
     } on Exception catch (e) {
       print(e.toString());
     }

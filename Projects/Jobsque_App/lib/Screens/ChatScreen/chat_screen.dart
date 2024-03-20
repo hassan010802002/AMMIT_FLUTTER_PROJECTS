@@ -2,13 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
-import 'package:jobsque_app/Screens/Base_Home/base__home.dart';
 import 'package:jobsque_app/Screens/ChatScreen/Controller/chat_controller_cubit.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Views/ChatAppBarView/chat_app_bar_view.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Views/Chat_Main_View.dart';
-import 'package:jobsque_app/Screens/MessagesScreen/Controller/messages_controller_cubit.dart';
-import 'package:jobsque_app/Screens/MessagesScreen/UI/Views/Messages_Main_View.dart';
 
 class ChatScreen extends StatefulWidget {
   final ChatControllerCubit chatControllerCubit = ChatControllerCubit();

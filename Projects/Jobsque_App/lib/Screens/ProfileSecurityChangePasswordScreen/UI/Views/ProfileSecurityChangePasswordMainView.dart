@@ -75,7 +75,7 @@ class _ProfileSecurityChangePasswordMainViewState extends State<ProfileSecurityC
             SizedBox(
               height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 3.0.h,
             ),
-            const ProfileSecurityChangePasswordSaveButton(),
+            ProfileSecurityChangePasswordSaveButton(profileSecurityChangePasswordControllerBloc: widget.profileSecurityChangePasswordControllerBloc),
           ],
         ),
       ),

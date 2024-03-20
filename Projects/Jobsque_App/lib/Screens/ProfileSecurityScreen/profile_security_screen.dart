@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsque_app/Screens/ProfileLanguageScreen/Controller/profile_language_controller_cubit.dart';
-import 'package:jobsque_app/Screens/ProfileNotificationScreen/Controller/profile_notification_controller_cubit.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityScreen/Controller/profile_security_controller_cubit.dart';
 import 'UI/Views/ProfileSecurityMainView.dart';
 

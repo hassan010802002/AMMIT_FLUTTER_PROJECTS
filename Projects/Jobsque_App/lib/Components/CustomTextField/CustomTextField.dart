@@ -7,6 +7,7 @@ import '../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class CustomTextField extends StatelessWidget {
   bool? opsecure;
+  bool? enabled;
   Color? fillColor;
   TextInputType? keyboardType;
   TextEditingController? textEditingController;
@@ -53,6 +54,7 @@ class CustomTextField extends StatelessWidget {
       horizontal: 15.0,
       vertical: 15.0,
     ),
+    this.enabled = true,
   });
 
   @override
@@ -90,6 +92,7 @@ class CustomTextField extends StatelessWidget {
       onChanged: onChanged,
       onEditingComplete: onEditingComplete,
       onTap: onTap,
+      enabled: enabled,
     );
   }
 }

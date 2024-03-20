@@ -3,12 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jobsque_app/Screens/PortfolioScreen/UI/Widgets/PortfolioSelectedFileContainer/portfolio_selected_file_container.dart';
-import 'package:octo_image/octo_image.dart';
 
-import '../../../../../Config/AppConfig.dart';
-import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controller/portfolio_controller_bloc.dart';
 
 class PortfolioSelectedFilesView extends StatefulWidget {

@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/MessagesScreen/UI/Views/UnReadMessagesView/UnReadMessagesListView/un_read_messages_list_view.dart';
 import 'package:jobsque_app/Screens/MessagesScreen/UI/Widgets/UnReadMessagesDividerContainerWidget/un_read_messages_divider_container_widget.dart';
 
-import '../../Widgets/JobMessagesListTileWidget/job_messages_list_tile_widget.dart';
 
 class UnReadMessagesView extends StatefulWidget {
   const UnReadMessagesView({super.key});

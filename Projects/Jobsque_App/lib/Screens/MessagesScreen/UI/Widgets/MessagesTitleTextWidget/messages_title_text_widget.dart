@@ -26,6 +26,6 @@ class _MessagesTitleTextWidgetState extends State<MessagesTitleTextWidget> {
         fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/18.0.sp,
         fontFamily: TextFontFamily,
       ),
-    );;
+    );
   }
 }

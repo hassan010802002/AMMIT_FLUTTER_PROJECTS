@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/Logo_Widget/logo_widget.dart';
-import 'package:octo_image/octo_image.dart';
 
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 

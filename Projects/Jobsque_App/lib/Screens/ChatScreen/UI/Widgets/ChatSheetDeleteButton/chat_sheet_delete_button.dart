@@ -6,9 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 import 'package:octo_image/octo_image.dart';
 
-import '../../../../../Config/AppConfig.dart';
-import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
-
 class ChatSheetDeleteButton extends StatefulWidget {
   const ChatSheetDeleteButton({super.key});
 

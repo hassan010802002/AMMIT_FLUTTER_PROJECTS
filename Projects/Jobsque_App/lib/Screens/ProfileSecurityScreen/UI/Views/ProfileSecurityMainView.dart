@@ -8,8 +8,6 @@ import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityScreen/UI/Widgets/AccountAccessDividerContainer/account_access_divider_container.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityScreen/UI/Widgets/ProfileSecurityScreenTitle/profile_security_screen_title.dart';
 
-import '../../../../Config/AppConfig.dart';
-import '../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../SearchScreen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 import '../../Controller/profile_security_controller_cubit.dart';
 

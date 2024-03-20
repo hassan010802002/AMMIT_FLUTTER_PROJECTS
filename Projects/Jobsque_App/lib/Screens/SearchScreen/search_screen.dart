@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsque_app/Screens/SearchScreen/Controller/FilterBottomSheetCubit/filter_bottom_sheet_cubit.dart';
-import 'package:jobsque_app/Screens/SearchScreen/UI/Views/SearchView/FilterModalBottomSheetView/filter_modal_bottom_sheet_view.dart';
 import 'package:jobsque_app/Screens/SearchScreen/UI/Views/Search_MainView.dart';
 
 import 'Controller/search_bloc.dart';

@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobsque_app/Config/AppConfig.dart';
-import 'package:jobsque_app/Helpers/ChatMessagesHelper/ChatMessagesHelper.dart';
-import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Screens/ChatScreen/UI/Widgets/ChatMessageContainerWidget/chat_message_container_widget.dart';
 
 class ChatMessagesListView extends StatefulWidget {

@@ -3,10 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobsque_app/Config/AppConfig.dart';
-import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
-import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/Base_Home/Constants/BaseHomeConsts.dart';
 import 'package:jobsque_app/Screens/Base_Home/Controller/base_cubit.dart';
 import 'package:jobsque_app/Screens/Base_Home/UI/Widgets/AppliedNavBar_Item/applied_nav_bar_item.dart';

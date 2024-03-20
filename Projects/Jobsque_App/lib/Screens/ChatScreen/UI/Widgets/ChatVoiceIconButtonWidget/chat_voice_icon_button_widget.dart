@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 
-import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class ChatVoiceIconButtonWidget extends StatefulWidget {
   const ChatVoiceIconButtonWidget({super.key});

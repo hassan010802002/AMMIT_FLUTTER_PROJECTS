@@ -1,14 +1,10 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
-import '../../../Controller/home_bloc.dart';
 
 class JobSalaryUnitText extends StatefulWidget {
   final int? index;

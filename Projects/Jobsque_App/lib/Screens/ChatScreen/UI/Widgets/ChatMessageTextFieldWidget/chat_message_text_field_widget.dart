@@ -5,8 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/ChatScreen/Constants/ChatConsts.dart';
 
 import '../../../../../Components/CustomTextField/CustomTextField.dart';
-import '../../../../../Config/AppConfig.dart';
-import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class ChatMessageTextFieldWidget extends StatefulWidget {
   const ChatMessageTextFieldWidget({super.key});

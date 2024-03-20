@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/Splash_Screen/Controller/splash_controller_cubit.dart';
 import 'package:jobsque_app/Screens/Splash_Screen/UI/Views/Splash_Main_View.dart';
 
