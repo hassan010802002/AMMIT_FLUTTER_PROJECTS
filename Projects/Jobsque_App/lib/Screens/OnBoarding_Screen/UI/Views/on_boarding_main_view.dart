@@ -10,9 +10,9 @@ import 'package:jobsque_app/Screens/OnBoarding_Screen/UI/Widgets/Skip_Button/ski
 import 'OnBoarding_View/on_boarding_view.dart';
 
 class OnBoardingMainView extends StatefulWidget {
-  OnBoardingCubit cubit;
+  final OnBoardingCubit cubit;
 
-  OnBoardingMainView({required this.cubit,super.key});
+  const OnBoardingMainView({required this.cubit, super.key});
 
   @override
   _OnBoardingMainViewState createState() => _OnBoardingMainViewState();
@@ -31,18 +31,18 @@ class _OnBoardingMainViewState extends State<OnBoardingMainView> {
         ),
         Padding(
           padding: EdgeInsets.symmetric(vertical: 35.0.h, horizontal: 15.0.w),
-          child: const Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              LogoWidget(),
-              SkipButton(),
+              const LogoWidget(),
+              SkipButton(cubit: widget.cubit),
             ],
           ),
         ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0.w , vertical: 35.0.h),
+            padding: EdgeInsets.symmetric(horizontal: 15.0.w, vertical: 35.0.h),
             child: NextOnBoardingViewButton(cubit: widget.cubit),
           ),
         )

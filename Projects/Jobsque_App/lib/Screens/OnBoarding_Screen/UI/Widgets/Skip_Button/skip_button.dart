@@ -1,13 +1,12 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
-import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/OnBoarding_Screen/Consts/OnBoardingConsts.dart';
-
+import 'package:jobsque_app/Screens/OnBoarding_Screen/Controller/on_boarding_cubit.dart';
 
 class SkipButton extends StatefulWidget {
-  const SkipButton({Key? key}) : super(key: key);
+  final OnBoardingCubit cubit;
+  const SkipButton({super.key, required this.cubit});
 
   @override
   _SkipButtonState createState() => _SkipButtonState();
@@ -18,7 +17,7 @@ class _SkipButtonState extends State<SkipButton> {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        NavigatorHelper(context, AppRoutes.registrationScreen);
+        widget.cubit.SkippingButton(context);
       },
       child: Text(
         OnBoardingConsts.text3,
