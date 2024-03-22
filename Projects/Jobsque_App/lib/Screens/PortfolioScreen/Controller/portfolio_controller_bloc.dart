@@ -5,9 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:jobsque_app/Screens/PortfolioScreen/Service/Repository/ProfileUpdatePortfolioDataService/ProfileUpdatePortfolioDataService.dart';
 
-
 part 'portfolio_controller_event.dart';
-
 part 'portfolio_controller_state.dart';
 
 class PortfolioControllerBloc extends Bloc<PortfolioControllerEvent, PortfolioControllerState> {
@@ -21,7 +19,7 @@ class PortfolioControllerBloc extends Bloc<PortfolioControllerEvent, PortfolioCo
       emit(PortfolioIdleApiUploadCvFile());
       try {
         FilePickerResult? myFile = await FilePicker.platform.pickFiles(dialogTitle: "Upload Your CV");
-        if (myFile != null || myFile!.names.isNotEmpty) {
+        if (myFile != null) {
           if (myFile.files[0].name != portfolioCurrentFile && !portfolioFilesList!.contains(myFile.files[0].name)) {
             portfolioCurrentFile = myFile.files[0].name;
             portfolioFilesList!.add(portfolioCurrentFile!);
@@ -31,6 +29,9 @@ class PortfolioControllerBloc extends Bloc<PortfolioControllerEvent, PortfolioCo
             log("Portfolio Selected Files Counter $filesCounter", name: "Files Counter");
             emit(PortfolioSuccessApiUploadCvFile());
           }
+        } else {
+          isSuccessPortfolioUploadCvFileService = false;
+          emit(PortfolioFailureApiUploadCvFile());
         }
       } on Exception catch (e) {
         print(e.toString());
