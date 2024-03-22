@@ -77,7 +77,8 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "Assets/Icons/AppIcon.png"
+  remove_alpha_ios: true
+  image_path: "Assets/Icons/Jobsque_App_Icon.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
