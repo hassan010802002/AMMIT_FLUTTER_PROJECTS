@@ -3,6 +3,7 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
+
 import 'package:http/http.dart' as http;
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Models/Jobs_Model/JobsModel.dart';
@@ -16,13 +17,11 @@ class FilterJobsService {
         headers: <String, String>{
           HttpHeaders.authorizationHeader: 'Bearer ${ApiTokenKey!}',
         },
-        body: jsonEncode(
-          <String, String>{
-            "name": jobName!,
-            "location": jobLocation!,
-            "salary": salary!,
-          },
-        ),
+        body: <String, String>{
+          "name": jobName!,
+          "location": jobLocation!,
+          "salary": salary!,
+        },
       );
       if (jobsAPIresponse.statusCode == 200) {
         return JobsModel.fromJson(jsonDecode(jobsAPIresponse.body));

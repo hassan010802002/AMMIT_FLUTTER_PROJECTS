@@ -13,12 +13,29 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
   OnBoardingCubit() : super(OnBoardingInitial());
   int viewIndex = 0;
 
-  void ChangeOnBoardingView() {
+  void ChangeOnBoardingView(BuildContext context) {
     emit(ViewInitialState());
     if (viewIndex == 2) {
-      viewIndex = 0;
+      Future.delayed(
+        const Duration(seconds: 1),
+        () {
+          viewIndex = 0;
+        },
+      );
     } else {
       viewIndex++;
+      if (viewIndex == 2) {
+        Future.delayed(
+          const Duration(seconds: 1),
+          () {
+            if (CacheHelper.preferences!.containsKey("API_TOKEN_KEY") && ApiTokenKey != null && CacheHelper.getData(key: "API_TOKEN_KEY") != null) {
+              NavigatorHelper(context, AppRoutes.homeScreen);
+            } else {
+              NavigatorHelper(context, AppRoutes.loginScreen);
+            }
+          },
+        );
+      }
     }
     emit(ViewChangeState());
   }

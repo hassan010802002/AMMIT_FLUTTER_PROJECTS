@@ -8,7 +8,7 @@ import 'package:jobsque_app/Screens/OnBoarding_Screen/Controller/on_boarding_cub
 
 class OnBoardingView extends StatefulWidget {
   OnBoardingCubit cubit;
-  OnBoardingView({required this.cubit , super.key});
+  OnBoardingView({required this.cubit, super.key});
 
   @override
   _OnBoardingViewState createState() => _OnBoardingViewState();
@@ -53,7 +53,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             );
           },
           onPageChanged: (value) {
-            widget.cubit.ChangeOnBoardingView();
+            widget.cubit.ChangeOnBoardingView(context);
           },
         );
       },

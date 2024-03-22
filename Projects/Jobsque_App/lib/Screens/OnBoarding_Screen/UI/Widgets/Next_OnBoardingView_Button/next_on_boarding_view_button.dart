@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
-import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/OnBoarding_Screen/Consts/OnBoardingConsts.dart';
+
 import '../../../../../Components/Custom_Button/Custom_Button.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../Controller/on_boarding_cubit.dart';
@@ -28,14 +27,10 @@ class _NextOnBoardingViewButtonState extends State<NextOnBoardingViewButton> {
         return CustomButton(
           buttonText: widget.cubit.viewIndex < 2 ? OnBoardingConsts.text1 : OnBoardingConsts.text2,
           backgroundColor: const MaterialStatePropertyAll(OnBoardingConsts.color1),
-          fixedSize:
-          MaterialStatePropertyAll(Size(MediaQuery_Size_Helper.MAX_WIDTH(context)!, MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h)),
+          fixedSize: MaterialStatePropertyAll(Size(MediaQuery_Size_Helper.MAX_WIDTH(context)!, MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h)),
           style: OnBoardingConsts.style1(context),
           onPressed: () {
-            widget.cubit.ChangeOnBoardingView();
-            if (widget.cubit.viewIndex == 2) {
-              NavigatorHelper(context, AppRoutes.registrationScreen);
-            }  
+            widget.cubit.ChangeOnBoardingView(context);
           },
           shape: MaterialStatePropertyAll(
             RoundedRectangleBorder(
