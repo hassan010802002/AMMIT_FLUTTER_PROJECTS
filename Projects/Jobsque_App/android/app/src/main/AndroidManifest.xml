@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="jobsque_app"
+        android:label="JOBSQUE"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
