@@ -1,7 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 
 part 'work_type_state.dart';
 
@@ -14,11 +14,11 @@ class WorkTypeCubit extends Cubit<WorkTypeState> {
 
   void CheckingUserWorkTypeSelection(int currentIndex) {
     selectedIndex = currentIndex;
-    isSelected = selectedWorkTypes.contains(selectedIndex)? true : false;
+    isSelected = selectedWorkTypes.contains(selectedIndex) ? true : false;
     if (!isSelected) {
       selectedWorkTypes.add(selectedIndex!);
       emit(SelectedWorkType());
-    }else{
+    } else {
       selectedWorkTypes.remove(selectedIndex!);
       emit(UnSelectedWorkType());
     }

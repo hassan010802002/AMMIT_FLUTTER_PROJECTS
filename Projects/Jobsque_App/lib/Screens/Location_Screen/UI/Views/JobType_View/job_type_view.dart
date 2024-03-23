@@ -11,7 +11,7 @@ import '../../../Controller/location_cubit.dart';
 class JobTypeView extends StatefulWidget {
   final LocationCubit cubit;
 
-  const JobTypeView({Key? key, required this.cubit}) : super(key: key);
+  const JobTypeView({super.key, required this.cubit});
 
   @override
   _JobTypeViewState createState() => _JobTypeViewState();

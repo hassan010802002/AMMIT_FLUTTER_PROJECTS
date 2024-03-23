@@ -12,7 +12,7 @@ class JobTitleDemoWidget extends StatefulWidget {
   final int? jobIndex;
   final HomeBloc controller;
 
-  const JobTitleDemoWidget({Key? key, required this.controller, required this.jobIndex}) : super(key: key);
+  const JobTitleDemoWidget({super.key, required this.controller, required this.jobIndex});
 
   @override
   _JobTitleDemoWidgetState createState() => _JobTitleDemoWidgetState();

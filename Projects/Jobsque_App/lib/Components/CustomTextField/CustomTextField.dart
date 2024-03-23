@@ -1,11 +1,12 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../Config/AppConfig.dart';
 import '../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   bool? opsecure;
   bool? enabled;
   Color? fillColor;
@@ -58,22 +59,27 @@ class CustomTextField extends StatelessWidget {
   });
 
   @override
+  State<CustomTextField> createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  @override
   Widget build(BuildContext context) {
     return TextField(
-      keyboardType: keyboardType,
+      keyboardType: widget.keyboardType,
       textAlign: TextAlign.start,
-      controller: textEditingController,
+      controller: widget.textEditingController,
       decoration: InputDecoration(
-        fillColor: fillColor,
-        hintText: hintText,
-        hintStyle: hintStyle,
-        focusedBorder: focusedBorder,
-        enabledBorder: enabledBorder,
+        fillColor: widget.fillColor,
+        hintText: widget.hintText,
+        hintStyle: widget.hintStyle,
+        focusedBorder: widget.focusedBorder,
+        enabledBorder: widget.enabledBorder,
         filled: true,
-        contentPadding: contentPadding,
+        contentPadding: widget.contentPadding,
         prefixIconColor: const Color(0xff292D32),
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
+        prefixIcon: widget.prefixIcon,
+        suffixIcon: widget.suffixIcon,
         prefixIconConstraints: BoxConstraints.tight(
           Size(MediaQuery_Size_Helper.MAX_WIDTH(context)! / 6.5.w, MediaQuery_Size_Helper.MAX_WIDTH(context)! / 18.0.h),
         ),
@@ -82,17 +88,17 @@ class CustomTextField extends StatelessWidget {
         ),
         suffixIconColor: const Color(0xff111827),
       ),
-      obscureText: opsecure!,
+      obscureText: widget.opsecure!,
       style: TextStyle(
         color: const Color(0xff000E08),
         fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 20.0.sp,
         fontWeight: FontWeight.w600,
         fontFamily: TextFontFamily,
       ),
-      onChanged: onChanged,
-      onEditingComplete: onEditingComplete,
-      onTap: onTap,
-      enabled: enabled,
+      onChanged: widget.onChanged,
+      onEditingComplete: widget.onEditingComplete,
+      onTap: widget.onTap,
+      enabled: widget.enabled,
     );
   }
 }

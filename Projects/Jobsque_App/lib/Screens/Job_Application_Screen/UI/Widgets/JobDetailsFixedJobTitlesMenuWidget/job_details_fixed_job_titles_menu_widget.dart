@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,7 +12,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobDetailsFixedJobTitlesMenuWidget extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobDetailsFixedJobTitlesMenuWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsFixedJobTitlesMenuWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsFixedJobTitlesMenuWidgetState createState() => _JobDetailsFixedJobTitlesMenuWidgetState();

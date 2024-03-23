@@ -7,7 +7,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../../../Config/AppConfig.dart';
 
 class DividerTextWidget extends StatefulWidget {
-  const DividerTextWidget({Key? key}) : super(key: key);
+  const DividerTextWidget({super.key});
 
   @override
   _DividerTextWidgetState createState() => _DividerTextWidgetState();
@@ -24,7 +24,7 @@ class _DividerTextWidgetState extends State<DividerTextWidget> {
         color: const Color(0xff6B7280),
         fontFamily: TextFontFamily,
         fontWeight: FontWeight.w500,
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/24.0.w,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.w,
       ),
     );
   }

@@ -8,7 +8,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class FixedRecentSearchText extends StatefulWidget {
   final int? textIndex;
-  const FixedRecentSearchText({Key? key, required this.textIndex}) : super(key: key);
+  const FixedRecentSearchText({super.key, required this.textIndex});
 
   @override
   _FixedRecentSearchTextState createState() => _FixedRecentSearchTextState();
@@ -24,7 +24,7 @@ class _FixedRecentSearchTextState extends State<FixedRecentSearchText> {
       style: TextStyle(
         color: const Color(0xff111827),
         fontWeight: FontWeight.w500,
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/22.5.sp,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.5.sp,
         fontFamily: TextFontFamily,
       ),
     );

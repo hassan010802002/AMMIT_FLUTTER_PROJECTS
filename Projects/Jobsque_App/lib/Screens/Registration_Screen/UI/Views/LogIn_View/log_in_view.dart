@@ -5,7 +5,7 @@ import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/LogIn_TextBut
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/Text4_Widget/text4_widget.dart';
 
 class LogInView extends StatefulWidget {
-  const LogInView({Key? key}) : super(key: key);
+  const LogInView({super.key});
 
   @override
   _LogInViewState createState() => _LogInViewState();
@@ -16,10 +16,7 @@ class _LogInViewState extends State<LogInView> {
   Widget build(BuildContext context) {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text4Widget(),
-        LogInTextButtonWidget()
-      ],
+      children: [Text4Widget(), LogInTextButtonWidget()],
     );
   }
 }

@@ -9,7 +9,7 @@ import '../../../Controller/log_in_cubit.dart';
 class RememberPasswordBox extends StatefulWidget {
   final LogInCubit cubit;
 
-  const RememberPasswordBox({Key? key, required this.cubit}) : super(key: key);
+  const RememberPasswordBox({super.key, required this.cubit});
 
   @override
   _RememberPasswordBoxState createState() => _RememberPasswordBoxState();
@@ -34,8 +34,7 @@ class _RememberPasswordBoxState extends State<RememberPasswordBox> {
               side: BorderSide(
                 color: const Color(0xff9CA3AF),
                 width: 1.5.w,
-              )
-          ),
+              )),
         );
       },
     );

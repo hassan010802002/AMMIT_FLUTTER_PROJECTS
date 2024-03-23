@@ -6,7 +6,7 @@ import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class SearchResultDivider extends StatefulWidget {
-  const SearchResultDivider({Key? key}) : super(key: key);
+  const SearchResultDivider({super.key});
 
   @override
   _SearchResultDividerState createState() => _SearchResultDividerState();

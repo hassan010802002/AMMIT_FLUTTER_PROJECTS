@@ -5,9 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
-
 class JobSalaryDemoUnitText extends StatefulWidget {
-  const JobSalaryDemoUnitText({Key? key}) : super(key: key);
+  const JobSalaryDemoUnitText({super.key});
 
   @override
   _JobSalaryDemoUnitTextState createState() => _JobSalaryDemoUnitTextState();

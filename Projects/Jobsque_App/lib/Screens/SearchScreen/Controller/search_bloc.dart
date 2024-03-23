@@ -4,13 +4,13 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Screens/SearchScreen/Service/Repository/Jobs_Repository/Jobs_Service.dart';
 
 import '../../../Models/Jobs_Model/JobsModel.dart';
 
 part 'search_event.dart';
-
 part 'search_state.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
@@ -39,7 +39,9 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
       } on Exception catch (e) {
         isSuccessJobsData = false;
         emit(FailureApiData());
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
       }
     });
   }

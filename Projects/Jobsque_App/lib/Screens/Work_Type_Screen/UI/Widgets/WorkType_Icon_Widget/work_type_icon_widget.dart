@@ -11,7 +11,7 @@ class WorkTypeIconWidget extends StatefulWidget {
   final WorkTypeCubit cubit;
   int index;
 
-  WorkTypeIconWidget({Key? key, required this.index, required this.cubit}) : super(key: key);
+  WorkTypeIconWidget({super.key, required this.index, required this.cubit});
 
   @override
   _WorkTypeIconWidgetState createState() => _WorkTypeIconWidgetState();
@@ -29,7 +29,7 @@ class _WorkTypeIconWidgetState extends State<WorkTypeIconWidget> {
             child: Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: widget.cubit.selectedWorkTypes.contains(widget.index)? const Color(0xff3366FF) : const Color(0xffD1D5DB),
+                  color: widget.cubit.selectedWorkTypes.contains(widget.index) ? const Color(0xff3366FF) : const Color(0xffD1D5DB),
                   width: 1.5.w,
                 ),
                 borderRadius: BorderRadius.circular(30.0.sp),

@@ -12,7 +12,7 @@ class WorkTypeContainerView extends StatefulWidget {
   final WorkTypeCubit cubit;
   int index;
 
-  WorkTypeContainerView({Key? key, required this.index, required this.cubit}) : super(key: key);
+  WorkTypeContainerView({super.key, required this.index, required this.cubit});
 
   @override
   _WorkTypeContainerViewState createState() => _WorkTypeContainerViewState();
@@ -30,7 +30,7 @@ class _WorkTypeContainerViewState extends State<WorkTypeContainerView> {
         builder: (context, state) {
           return Container(
             decoration: BoxDecoration(
-              color: widget.cubit.selectedWorkTypes.contains(widget.index) ? const Color(0xffD6E4FF): const Color(0xffFAFAFA),
+              color: widget.cubit.selectedWorkTypes.contains(widget.index) ? const Color(0xffD6E4FF) : const Color(0xffFAFAFA),
               border: Border.all(
                 color: widget.cubit.selectedWorkTypes.contains(widget.index) ? const Color(0xff3366FF) : const Color(0xffD1D5DB),
                 width: 1.5.w,

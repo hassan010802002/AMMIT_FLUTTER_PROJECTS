@@ -9,7 +9,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
 
 class SearchingWidget extends StatefulWidget {
-  const SearchingWidget({Key? key}) : super(key: key);
+  const SearchingWidget({super.key});
 
   @override
   _SearchingWidgetState createState() => _SearchingWidgetState();
@@ -52,7 +52,7 @@ class _SearchingWidgetState extends State<SearchingWidget> {
                 color: const Color(0xff9CA3AF),
                 fontWeight: FontWeight.w500,
                 fontFamily: TextFontFamily,
-                fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/22.0.sp,
+                fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,
               ),
             ),
           ],

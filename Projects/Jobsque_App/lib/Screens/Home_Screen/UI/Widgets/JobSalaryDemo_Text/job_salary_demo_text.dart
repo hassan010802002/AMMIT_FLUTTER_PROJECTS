@@ -12,7 +12,7 @@ class JobSalaryDemoText extends StatefulWidget {
   final int? jobIndex;
   final HomeBloc controller;
 
-  const JobSalaryDemoText({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  const JobSalaryDemoText({super.key, required this.jobIndex, required this.controller});
 
   @override
   _JobSalaryDemoTextState createState() => _JobSalaryDemoTextState();

@@ -6,7 +6,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:octo_image/octo_image.dart';
 
 class EmptySearchIcon extends StatefulWidget {
-  const EmptySearchIcon({Key? key}) : super(key: key);
+  const EmptySearchIcon({super.key});
 
   @override
   _EmptySearchIconState createState() => _EmptySearchIconState();
@@ -19,8 +19,8 @@ class _EmptySearchIconState extends State<EmptySearchIcon> {
       image: const AssetImage("Assets/Images/SearchIlustration.png"),
       fit: BoxFit.contain,
       filterQuality: FilterQuality.high,
-      width: MediaQuery_Size_Helper.MAX_WIDTH(context)!/2.0.w,
-      height: MediaQuery_Size_Helper.MAX_WIDTH(context)!/2.0.h,
+      width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.0.w,
+      height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.0.h,
       alignment: Alignment.center,
     );
   }

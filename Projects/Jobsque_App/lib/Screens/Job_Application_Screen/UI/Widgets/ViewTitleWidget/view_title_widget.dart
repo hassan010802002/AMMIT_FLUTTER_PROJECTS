@@ -6,7 +6,7 @@ import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class ViewTitleWidget extends StatefulWidget {
-  const ViewTitleWidget({Key? key}) : super(key: key);
+  const ViewTitleWidget({super.key});
 
   @override
   _ViewTitleWidgetState createState() => _ViewTitleWidgetState();

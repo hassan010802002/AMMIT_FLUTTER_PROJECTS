@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
@@ -6,7 +8,7 @@ import 'package:octo_image/octo_image.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class FacebookButtonWidget extends StatefulWidget {
-  const FacebookButtonWidget({Key? key}) : super(key: key);
+  const FacebookButtonWidget({super.key});
 
   @override
   _FacebookButtonWidgetState createState() => _FacebookButtonWidgetState();

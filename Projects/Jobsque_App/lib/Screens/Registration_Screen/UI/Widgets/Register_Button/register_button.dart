@@ -8,11 +8,10 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 
-
 class RegisterButton extends StatefulWidget {
   final RegistrationCubit cubit;
 
-  const RegisterButton({required this.cubit, Key? key}) : super(key: key);
+  const RegisterButton({required this.cubit, super.key});
 
   @override
   _RegisterButtonState createState() => _RegisterButtonState();
@@ -25,7 +24,7 @@ class _RegisterButtonState extends State<RegisterButton> {
       bloc: widget.cubit,
       builder: (context, state) {
         return CustomButton(
-          style: RegistrationConsts.style7(context,state),
+          style: RegistrationConsts.style7(context, state),
           buttonText: RegistrationConsts.text7,
           onPressed: () {
             widget.cubit.Registration(context);

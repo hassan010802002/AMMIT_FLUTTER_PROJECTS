@@ -12,7 +12,7 @@ class MultiJobTypeContainer extends StatefulWidget {
   int? index;
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  MultiJobTypeContainer({Key? key, required this.bottomSheetCubit, required this.index}) : super(key: key);
+  MultiJobTypeContainer({super.key, required this.bottomSheetCubit, required this.index});
 
   @override
   _MultiJobTypeContainerState createState() => _MultiJobTypeContainerState();
@@ -30,14 +30,10 @@ class _MultiJobTypeContainerState extends State<MultiJobTypeContainer> {
           },
           child: Container(
             decoration: BoxDecoration(
-              color: widget.bottomSheetCubit.selectedJobTypeFilters.contains(widget.index)
-                  ? const Color(0xffD6E4FF)
-                  : Colors.white,
+              color: widget.bottomSheetCubit.selectedJobTypeFilters.contains(widget.index) ? const Color(0xffD6E4FF) : Colors.white,
               borderRadius: BorderRadius.circular(45.0.sp),
               border: Border.all(
-                color: widget.bottomSheetCubit.selectedJobTypeFilters.contains(widget.index)
-                    ? const Color(0xff3366FF)
-                    : const Color(0xff9CA3AF),
+                color: widget.bottomSheetCubit.selectedJobTypeFilters.contains(widget.index) ? const Color(0xff3366FF) : const Color(0xff9CA3AF),
                 width: 1.5.w,
               ),
             ),
@@ -48,9 +44,7 @@ class _MultiJobTypeContainerState extends State<MultiJobTypeContainer> {
                 textAlign: TextAlign.center,
                 softWrap: true,
                 style: TextStyle(
-                  color: widget.bottomSheetCubit.selectedJobTypeFilters.contains(widget.index)
-                      ? const Color(0xff3366FF)
-                      : const Color(0xff6B7280),
+                  color: widget.bottomSheetCubit.selectedJobTypeFilters.contains(widget.index) ? const Color(0xff3366FF) : const Color(0xff6B7280),
                   fontFamily: TextFontFamily,
                   fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 25.0.sp,
                   fontWeight: FontWeight.w500,

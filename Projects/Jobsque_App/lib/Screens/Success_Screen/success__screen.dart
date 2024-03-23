@@ -4,15 +4,20 @@ import 'package:jobsque_app/Screens/Success_Screen/Controller/success_cubit.dart
 import 'package:jobsque_app/Screens/Success_Screen/UI/Views/Success_MainView.dart';
 
 class SuccessScreen extends StatefulWidget {
-  final SuccessCubit cubit = SuccessCubit();
-
-  SuccessScreen({ super.key});
+  const SuccessScreen({super.key});
 
   @override
   State<SuccessScreen> createState() => _SuccessScreenState();
 }
 
 class _SuccessScreenState extends State<SuccessScreen> {
+  SuccessCubit? cubit;
+
+  @override
+  void initState() {
+    cubit = SuccessCubit();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +25,10 @@ class _SuccessScreenState extends State<SuccessScreen> {
       child: Scaffold(
         primary: true,
         body: BlocProvider(
-          create: (context) => widget.cubit,
-          child: Success_MainView(cubit: widget.cubit),
+          create: (context) => cubit!,
+          child: Success_MainView(cubit: cubit!),
         ),
       ),
     );
   }
 }
-
-

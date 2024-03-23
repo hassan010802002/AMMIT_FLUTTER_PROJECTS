@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, must_be_immutable
+// ignore_for_file: camel_case_types, must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -45,41 +45,46 @@ class _ProfileSecurityMainViewState extends State<ProfileSecurityMainView> {
           child: Column(
             children: [
               CustomProfileOtherButton(
-                "Email address", onPressed: () {
+                "Email address",
+                onPressed: () {
                   NavigatorHelper(context, AppRoutes.profileSecurityEmailAddressScreen);
-              },
+                },
               ),
               Divider(
                 thickness: 1.5.h,
                 color: const Color(0xffE5E7EB),
               ),
               CustomProfileOtherButton(
-                "Phone number", onPressed: () {
+                "Phone number",
+                onPressed: () {
                   NavigatorHelper(context, AppRoutes.profileSecurityPhoneNumberScreen);
-              },
+                },
               ),
               Divider(
                 thickness: 1.5.h,
                 color: const Color(0xffE5E7EB),
               ),
               CustomProfileOtherButton(
-                "Change password", onPressed: () {
+                "Change password",
+                onPressed: () {
                   NavigatorHelper(context, AppRoutes.profileSecurityChangePasswordScreen);
-              },
+                },
               ),
               Divider(
                 thickness: 1.5.h,
                 color: const Color(0xffE5E7EB),
               ),
               CustomProfileOtherButton(
-                "Two-step verification", onPressed: () {  },
+                "Two-step verification",
+                onPressed: () {},
               ),
               Divider(
                 thickness: 1.5.h,
                 color: const Color(0xffE5E7EB),
               ),
               CustomProfileOtherButton(
-                "Face ID", onPressed: () {  },
+                "Face ID",
+                onPressed: () {},
               ),
               Divider(
                 thickness: 1.5.h,

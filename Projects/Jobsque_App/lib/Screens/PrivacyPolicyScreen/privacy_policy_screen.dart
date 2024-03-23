@@ -2,34 +2,38 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'Controller/privacy_policy_controller_cubit.dart';
 import 'UI/Views/PrivacyPolicyMainView.dart';
 
 class PrivacyPolicyScreen extends StatefulWidget {
-  final PrivacyPolicyControllerCubit privacyPolicyControllerCubit = PrivacyPolicyControllerCubit();
-
-  PrivacyPolicyScreen({ super.key });
+  const PrivacyPolicyScreen({super.key});
 
   @override
   State<PrivacyPolicyScreen> createState() => _PrivacyPolicyScreenState();
 }
 
 class _PrivacyPolicyScreenState extends State<PrivacyPolicyScreen> {
+  PrivacyPolicyControllerCubit? privacyPolicyControllerCubit;
+
+  @override
+  void initState() {
+    privacyPolicyControllerCubit = PrivacyPolicyControllerCubit();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => widget.privacyPolicyControllerCubit),
+        BlocProvider(create: (context) => privacyPolicyControllerCubit!),
       ],
       child: SafeArea(
         child: Scaffold(
           primary: true,
-          body: PrivacyPolicyMainView(privacyPolicyControllerCubit: widget.privacyPolicyControllerCubit),
+          body: PrivacyPolicyMainView(privacyPolicyControllerCubit: privacyPolicyControllerCubit!),
         ),
       ),
     );
   }
 }
-
-

@@ -11,7 +11,7 @@ import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 class JobDetailsTimeTypeContainerWidget extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobDetailsTimeTypeContainerWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsTimeTypeContainerWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsTimeTypeContainerWidgetState createState() => _JobDetailsTimeTypeContainerWidgetState();

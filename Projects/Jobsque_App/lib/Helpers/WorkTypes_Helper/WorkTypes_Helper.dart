@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names
+// ignore_for_file: camel_case_types, non_constant_identifier_names, file_names
 
 class WorkTypes_Helper {
   static final List<String> _WorkTitles = <String>[

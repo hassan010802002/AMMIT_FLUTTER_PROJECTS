@@ -1,5 +1,8 @@
 /// data : {"id":482,"name":"ahmed2023","email":"ahmed2023@gmail.com","created_at":"2023-12-06T00:16:10.000000Z","updated_at":"2023-12-06T00:16:10.000000Z"}
 /// status : true
+// ignore_for_file: file_names, duplicate_ignore
+
+library;
 
 class ProfileModel {
   ProfileModel({

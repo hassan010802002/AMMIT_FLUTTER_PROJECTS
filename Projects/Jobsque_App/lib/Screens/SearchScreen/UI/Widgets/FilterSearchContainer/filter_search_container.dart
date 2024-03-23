@@ -14,7 +14,7 @@ class FilterSearchContainer extends StatefulWidget {
   final SearchBloc controller;
   int filterIndex;
 
-  FilterSearchContainer({Key? key, required this.filterIndex, required this.controller}) : super(key: key);
+  FilterSearchContainer({super.key, required this.filterIndex, required this.controller});
 
   @override
   _FilterSearchContainerState createState() => _FilterSearchContainerState();

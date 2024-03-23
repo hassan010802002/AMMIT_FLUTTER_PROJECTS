@@ -7,7 +7,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class RemoteDemoContainer extends StatefulWidget {
-  const RemoteDemoContainer({Key? key}) : super(key: key);
+  const RemoteDemoContainer({super.key});
 
   @override
   _RemoteDemoContainerState createState() => _RemoteDemoContainerState();
@@ -23,7 +23,7 @@ class _RemoteDemoContainerState extends State<RemoteDemoContainer> {
         height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 12.0.h,
         width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 5.0.w,
         decoration: BoxDecoration(
-          color: const Color(0xffD6E4FF) ,
+          color: const Color(0xffD6E4FF),
           borderRadius: BorderRadius.circular(25.0.sp),
         ),
         child: Center(

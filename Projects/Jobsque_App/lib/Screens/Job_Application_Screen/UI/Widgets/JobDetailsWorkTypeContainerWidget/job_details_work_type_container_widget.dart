@@ -7,7 +7,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class JobDetailsWorkTypeContainerWidget extends StatefulWidget {
-  const JobDetailsWorkTypeContainerWidget({Key? key}) : super(key: key);
+  const JobDetailsWorkTypeContainerWidget({super.key});
 
   @override
   _JobDetailsWorkTypeContainerWidgetState createState() => _JobDetailsWorkTypeContainerWidgetState();

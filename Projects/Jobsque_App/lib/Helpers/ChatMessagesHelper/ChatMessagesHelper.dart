@@ -1,4 +1,6 @@
-class ChatMessagesHelper{
+// ignore_for_file: file_names
+
+class ChatMessagesHelper {
   static const List<String> _messages = <String>[
     "Hi Rafif!, I'm Melan the selection team from Twitter. Thank you for applying for a job at our company. We have announced that you are eligible for the interview stage.",
     "Hi Melan, thank you for considering me, this is good news for me.",

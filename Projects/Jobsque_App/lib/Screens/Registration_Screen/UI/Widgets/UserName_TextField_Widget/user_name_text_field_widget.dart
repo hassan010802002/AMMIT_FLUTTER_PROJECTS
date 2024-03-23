@@ -12,7 +12,7 @@ import '../../../Controller/registration_cubit.dart';
 class UserNameTextFieldWidget extends StatefulWidget {
   final RegistrationCubit cubit;
 
-  const UserNameTextFieldWidget({Key? key , required this.cubit}) : super(key: key);
+  const UserNameTextFieldWidget({super.key, required this.cubit});
 
   @override
   _UserNameTextFieldWidgetState createState() => _UserNameTextFieldWidgetState();
@@ -48,8 +48,8 @@ class _UserNameTextFieldWidgetState extends State<UserNameTextFieldWidget> {
           alignment: Alignment.center,
           image: const AssetImage(RegistrationConsts.image6),
           filterQuality: FilterQuality.high,
-          width: MediaQuery_Size_Helper.MAX_WIDTH(context)!/15.0.w,
-          height: MediaQuery_Size_Helper.MAX_WIDTH(context)!/15.0.h,
+          width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.w,
+          height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.h,
         ),
       ),
       onChanged: (p0) {

@@ -6,7 +6,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:octo_image/octo_image.dart';
 
 class SearchingListIcon extends StatefulWidget {
-  const SearchingListIcon({Key? key}) : super(key: key);
+  const SearchingListIcon({super.key});
 
   @override
   _SearchingListIconState createState() => _SearchingListIconState();

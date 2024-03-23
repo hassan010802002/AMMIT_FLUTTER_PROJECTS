@@ -6,23 +6,31 @@ import 'package:jobsque_app/Screens/Location_Screen/Controller/location_cubit.da
 import 'package:jobsque_app/Screens/Location_Screen/UI/Views/location_main_view.dart';
 
 class LocationScreen extends StatefulWidget {
-  final LocationCubit cubit = LocationCubit();
-
-  LocationScreen({Key? key}) : super(key: key);
+  const LocationScreen({super.key});
 
   @override
   _LocationScreenState createState() => _LocationScreenState();
 }
 
 class _LocationScreenState extends State<LocationScreen> {
+  LocationCubit? cubit;
+
+  @override
+  void initState() {
+    cubit = LocationCubit();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: BlocBuilder<LocationCubit, LocationState>(
-          bloc: widget.cubit,
+          bloc: cubit!,
           builder: (context, state) {
-            return LocationMainView(cubit: widget.cubit,);
+            return LocationMainView(
+              cubit: cubit!,
+            );
           },
         ),
       ),

@@ -7,27 +7,31 @@ import 'package:jobsque_app/Screens/ProfileSecurityVerificationScreen/Controller
 import 'UI/Views/ProfileSecurityVerificationMainView.dart';
 
 class ProfileSecurityVerificationScreen extends StatefulWidget {
-  final ProfileSecurityVerificationControllerCubit profileSecurityVerificationControllerCubit = ProfileSecurityVerificationControllerCubit();
-
-  ProfileSecurityVerificationScreen({ super.key});
+  const ProfileSecurityVerificationScreen({super.key});
 
   @override
   State<ProfileSecurityVerificationScreen> createState() => _ProfileSecurityVerificationScreenState();
 }
 
 class _ProfileSecurityVerificationScreenState extends State<ProfileSecurityVerificationScreen> {
+  ProfileSecurityVerificationControllerCubit? profileSecurityVerificationControllerCubit;
+
+  @override
+  void initState() {
+    profileSecurityVerificationControllerCubit = ProfileSecurityVerificationControllerCubit();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => widget.profileSecurityVerificationControllerCubit,
+      create: (BuildContext context) => profileSecurityVerificationControllerCubit!,
       child: SafeArea(
         child: Scaffold(
           primary: true,
-          body: ProfileSecurityVerificationMainView(profileSecurityVerificationControllerCubit: widget.profileSecurityVerificationControllerCubit),
+          body: ProfileSecurityVerificationMainView(profileSecurityVerificationControllerCubit: profileSecurityVerificationControllerCubit!),
         ),
       ),
     );
   }
 }
-
-

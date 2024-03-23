@@ -11,7 +11,7 @@ import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 class JobDetailsLocationWidget extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobDetailsLocationWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsLocationWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsLocationWidgetState createState() => _JobDetailsLocationWidgetState();

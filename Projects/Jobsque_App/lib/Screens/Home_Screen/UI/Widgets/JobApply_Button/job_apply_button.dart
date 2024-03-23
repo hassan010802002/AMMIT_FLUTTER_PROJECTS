@@ -14,7 +14,7 @@ class JobApplyButton extends StatefulWidget {
   int? jobIndex;
   final HomeBloc controller;
 
-  JobApplyButton({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  JobApplyButton({super.key, required this.jobIndex, required this.controller});
 
   @override
   _JobApplyButtonState createState() => _JobApplyButtonState();

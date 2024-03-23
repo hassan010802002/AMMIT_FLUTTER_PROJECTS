@@ -7,7 +7,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class TextWidget2 extends StatefulWidget {
-  const TextWidget2({Key? key}) : super(key: key);
+  const TextWidget2({super.key});
 
   @override
   _TextWidget2State createState() => _TextWidget2State();
@@ -19,7 +19,7 @@ class _TextWidget2State extends State<TextWidget2> {
     return Text(
       "Please login to find your dream job",
       style: TextStyle(
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/24.0.sp,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
         fontWeight: FontWeight.w500,
         fontFamily: TextFontFamily,
         color: const Color(0xff6B7280),

@@ -12,7 +12,7 @@ class JobTitleWidget extends StatefulWidget {
   final int? jobIndex;
   final HomeBloc controller;
 
-  const JobTitleWidget({Key? key, required this.controller, required this.jobIndex}) : super(key: key);
+  const JobTitleWidget({super.key, required this.controller, required this.jobIndex});
 
   @override
   _JobTitleWidgetState createState() => _JobTitleWidgetState();
@@ -30,7 +30,7 @@ class _JobTitleWidgetState extends State<JobTitleWidget> {
                 textAlign: TextAlign.start,
                 softWrap: true,
                 style: TextStyle(
-                  color:(widget.jobIndex! % 2) == 0? Colors.white : const Color(0xff111827),
+                  color: (widget.jobIndex! % 2) == 0 ? Colors.white : const Color(0xff111827),
                   fontSize: widget.controller.jobsModel!.data![widget.jobIndex!].name!.length <= 15
                       ? MediaQuery_Size_Helper.MAX_WIDTH(context)! / 20.sp
                       : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 22.0.sp,

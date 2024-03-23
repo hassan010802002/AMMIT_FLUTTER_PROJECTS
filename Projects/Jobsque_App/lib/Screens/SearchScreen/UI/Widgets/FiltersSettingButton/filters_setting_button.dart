@@ -14,7 +14,7 @@ class FiltersSettingButton extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
   final SearchBloc controller;
 
-  const FiltersSettingButton({Key? key, required this.controller, required this.bottomSheetCubit}) : super(key: key);
+  const FiltersSettingButton({super.key, required this.controller, required this.bottomSheetCubit});
 
   @override
   _FiltersSettingButtonState createState() => _FiltersSettingButtonState();

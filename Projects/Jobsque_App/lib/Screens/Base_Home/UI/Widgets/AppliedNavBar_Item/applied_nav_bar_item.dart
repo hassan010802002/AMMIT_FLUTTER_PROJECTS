@@ -10,7 +10,7 @@ import '../../../Controller/base_cubit.dart';
 class AppliedNavBarItem extends StatefulWidget {
   BaseCubit cubit;
 
-  AppliedNavBarItem({Key? key, required this.cubit}) : super(key: key);
+  AppliedNavBarItem({super.key, required this.cubit});
 
   @override
   _AppliedNavBarItemState createState() => _AppliedNavBarItemState();
@@ -23,9 +23,7 @@ class _AppliedNavBarItemState extends State<AppliedNavBarItem> {
       bloc: widget.cubit,
       builder: (context, state) {
         return OctoImage(
-          image: state is ApplicationBase
-              ? const AssetImage(BaseHomeConsts.image1)
-              : const AssetImage(BaseHomeConsts.image2),
+          image: state is ApplicationBase ? const AssetImage(BaseHomeConsts.image1) : const AssetImage(BaseHomeConsts.image2),
           fit: BoxFit.contain,
           alignment: Alignment.center,
           filterQuality: FilterQuality.high,

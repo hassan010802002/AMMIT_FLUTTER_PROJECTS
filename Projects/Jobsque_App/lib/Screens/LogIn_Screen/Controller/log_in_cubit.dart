@@ -1,11 +1,12 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, non_constant_identifier_names
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Local_Cache_Helper/cache_helper.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/Service/Repository/LogIn_Service/LogIn_Service.dart';
-import 'package:meta/meta.dart';
+
 import '../../../Helpers/Navigator_Helper/Navigator_Helper.dart';
 import '../../../Helpers/SnackBar_Helper/SnackBar_helper.dart';
 import '../../../Routes/App_Routes.dart';
@@ -16,13 +17,13 @@ class LogInCubit extends Cubit<LogInState> {
   bool isBoxChecked = false;
   bool isCorrectPasswordLength = false;
   bool isUserEntranceState = false;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController? emailController = TextEditingController();
+  TextEditingController? passwordController = TextEditingController();
 
   LogInCubit() : super(LogInInitial());
 
   void checkingUserEntrance() {
-    if (emailController.text.isNotEmpty || passwordController.text.isNotEmpty) {
+    if (emailController!.text.isNotEmpty || passwordController!.text.isNotEmpty) {
       isUserEntranceState = true;
       emit(UserEntranceState());
     } else {
@@ -37,34 +38,36 @@ class LogInCubit extends Cubit<LogInState> {
   }
 
   void checkingUserPasswordLength() {
-    if (passwordController.text.isEmpty) {
+    if (passwordController!.text.isEmpty) {
       isCorrectPasswordLength = false;
       emit(InitialUserPasswordLength());
       return;
-    } else if (passwordController.text.length >= 9) {
+    } else if (passwordController!.text.length >= 9) {
       isCorrectPasswordLength = true;
       emit(CorrectUserPasswordLength());
       return;
     } else {
       isCorrectPasswordLength = false;
       emit(WrongUserPasswordLength());
-      print("Empty User Entrance State");
+      if (kDebugMode) {
+        print("Empty User Entrance State");
+      }
       return;
     }
   }
 
   void LogIn(BuildContext context) async {
     int? loginStatusCode;
-    if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+    if (emailController!.text.isNotEmpty && passwordController!.text.isNotEmpty) {
       emit(InitialLogInState());
-      loginStatusCode = await LogInService.UserLogIn(email: emailController.text, password: passwordController.text);
-      await CacheHelper.saveData(key: UserPasswordCacheKey, value: passwordController.text);
+      loginStatusCode = await LogInService.UserLogIn(email: emailController!.text, password: passwordController!.text);
+      await CacheHelper.saveData(key: UserPasswordCacheKey, value: passwordController!.text);
       if (loginStatusCode == 200) {
         emit(FinalLogInState());
         SnackBar_Helper.showSuccessToast(context, "Successful LogIn");
         Future.delayed(
           const Duration(seconds: 2),
-              () => NavigatorHelper(context, AppRoutes.homeScreen),
+          () => NavigatorHelper(context, AppRoutes.homeScreen),
         );
       } else {
         emit(FailureLogInState());

@@ -10,7 +10,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobDetailsDescriptionTextWidget extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobDetailsDescriptionTextWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsDescriptionTextWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsDescriptionTextWidgetState createState() => _JobDetailsDescriptionTextWidgetState();
@@ -26,7 +26,7 @@ class _JobDetailsDescriptionTextWidgetState extends State<JobDetailsDescriptionT
       style: TextStyle(
         color: const Color(0xff4B5563),
         fontWeight: FontWeight.w500,
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/30.0.sp,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 30.0.sp,
         fontFamily: TextFontFamily,
       ),
     );

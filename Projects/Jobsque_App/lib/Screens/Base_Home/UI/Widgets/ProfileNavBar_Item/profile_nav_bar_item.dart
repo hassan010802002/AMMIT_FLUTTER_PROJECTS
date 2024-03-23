@@ -9,7 +9,7 @@ import 'package:octo_image/octo_image.dart';
 class ProfileNavBarItem extends StatefulWidget {
   BaseCubit cubit;
 
-  ProfileNavBarItem({Key? key, required this.cubit}) : super(key: key);
+  ProfileNavBarItem({super.key, required this.cubit});
 
   @override
   _ProfileNavBarItemState createState() => _ProfileNavBarItemState();
@@ -22,9 +22,7 @@ class _ProfileNavBarItemState extends State<ProfileNavBarItem> {
       bloc: widget.cubit,
       builder: (context, state) {
         return OctoImage(
-          image: state is ProfileBase
-              ? const AssetImage(BaseHomeConsts.image7)
-              : const AssetImage(BaseHomeConsts.image8),
+          image: state is ProfileBase ? const AssetImage(BaseHomeConsts.image7) : const AssetImage(BaseHomeConsts.image8),
           fit: BoxFit.contain,
           alignment: Alignment.center,
           filterQuality: FilterQuality.high,

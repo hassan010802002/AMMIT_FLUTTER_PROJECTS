@@ -10,7 +10,7 @@ import '../../../Controller/FilterBottomSheetCubit/filter_bottom_sheet_cubit.dar
 class LocationField extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const LocationField({Key? key , required this.bottomSheetCubit}) : super(key: key);
+  const LocationField({super.key, required this.bottomSheetCubit});
 
   @override
   _LocationFieldState createState() => _LocationFieldState();

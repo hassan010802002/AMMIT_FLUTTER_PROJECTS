@@ -2,6 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Models/MainProfileDataModel/MainProfileDataModel.dart';
@@ -12,7 +13,6 @@ import '../../../Models/Profile_Model/ProfileModel.dart';
 import '../Service/Repository/Profile_Service/Profile_Service.dart';
 
 part 'main_profile_controller_event.dart';
-
 part 'main_profile_controller_state.dart';
 
 class MainProfileControllerBloc extends Bloc<MainProfileControllerEvent, MainProfileControllerState> {
@@ -33,7 +33,9 @@ class MainProfileControllerBloc extends Bloc<MainProfileControllerEvent, MainPro
       } on Exception catch (e) {
         isSuccessProfile = false;
         emit(MainProfileFailureProfileApiData());
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
       }
     });
   }

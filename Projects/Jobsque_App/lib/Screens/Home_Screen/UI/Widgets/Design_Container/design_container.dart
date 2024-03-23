@@ -12,7 +12,7 @@ class DesignContainer extends StatefulWidget {
   final int? jobIndex;
   final HomeBloc controller;
 
-  const DesignContainer({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  const DesignContainer({super.key, required this.jobIndex, required this.controller});
 
   @override
   _DesignContainerState createState() => _DesignContainerState();

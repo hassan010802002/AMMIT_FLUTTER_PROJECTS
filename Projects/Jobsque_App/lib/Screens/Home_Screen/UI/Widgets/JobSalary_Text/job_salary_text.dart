@@ -12,7 +12,7 @@ class JobSalaryText extends StatefulWidget {
   final int? jobIndex;
   final HomeBloc controller;
 
-  const JobSalaryText({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  const JobSalaryText({super.key, required this.jobIndex, required this.controller});
 
   @override
   _JobSalaryTextState createState() => _JobSalaryTextState();
@@ -30,7 +30,7 @@ class _JobSalaryTextState extends State<JobSalaryText> {
                 textAlign: TextAlign.start,
                 softWrap: true,
                 style: TextStyle(
-                  color: (widget.jobIndex! % 2) == 0? Colors.white : const Color(0xff111827),
+                  color: (widget.jobIndex! % 2) == 0 ? Colors.white : const Color(0xff111827),
                   fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.sp,
                   fontFamily: TextFontFamily,
                   fontWeight: FontWeight.w600,

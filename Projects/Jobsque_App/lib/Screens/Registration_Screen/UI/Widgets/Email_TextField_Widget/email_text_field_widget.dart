@@ -12,7 +12,7 @@ import '../../../Controller/registration_cubit.dart';
 class Email_TextField_Widget extends StatefulWidget {
   final RegistrationCubit cubit;
 
-  const Email_TextField_Widget({Key? key , required this.cubit}) : super(key: key);
+  const Email_TextField_Widget({super.key, required this.cubit});
 
   @override
   _Email_TextField_WidgetState createState() => _Email_TextField_WidgetState();
@@ -48,8 +48,8 @@ class _Email_TextField_WidgetState extends State<Email_TextField_Widget> {
           alignment: Alignment.center,
           image: const AssetImage(RegistrationConsts.image1),
           filterQuality: FilterQuality.high,
-          width: MediaQuery_Size_Helper.MAX_WIDTH(context)!/15.0.w,
-          height: MediaQuery_Size_Helper.MAX_WIDTH(context)!/15.0.h,
+          width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.w,
+          height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.h,
         ),
       ),
       onChanged: (p0) {

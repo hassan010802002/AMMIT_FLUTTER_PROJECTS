@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, must_be_immutable
+// ignore_for_file: camel_case_types, must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +6,7 @@ import 'package:jobsque_app/Screens/ProfileSecurityEmailAddressScreen/UI/Widgets
 import 'package:jobsque_app/Screens/ProfileSecurityEmailAddressScreen/UI/Widgets/ProfileSecurityEmailAddressText1/profile_security_email_address_text1.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityEmailAddressScreen/UI/Widgets/ProfileSecurityEmailAddressTextField/profile_security_email_address_text_field.dart';
 import 'package:jobsque_app/Screens/ProfileSecurityEmailAddressScreen/UI/Widgets/ProfileSecurityEmailAddressTitle/profile_security_email_address_title.dart';
+
 import '../../../SearchScreen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 import '../../Controller/profile_security_email_address_controller_cubit.dart';
 

@@ -7,7 +7,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class RememberPasswordBoxLabel extends StatefulWidget {
-  const RememberPasswordBoxLabel({Key? key}) : super(key: key);
+  const RememberPasswordBoxLabel({super.key});
 
   @override
   _RememberPasswordBoxLabelState createState() => _RememberPasswordBoxLabelState();

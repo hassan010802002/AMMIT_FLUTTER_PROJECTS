@@ -10,16 +10,22 @@ import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Views/job_applicat
 
 class JobApplicationScreen extends StatefulWidget {
   final Data? jobDetailsData;
-  final JobApplicationCubit mainCubitController = JobApplicationCubit();
-  final ApplicationCubit applicationCubitController = ApplicationCubit();
-
-  JobApplicationScreen({super.key, required this.jobDetailsData});
+  const JobApplicationScreen({super.key, required this.jobDetailsData});
 
   @override
   _JobApplicationScreenState createState() => _JobApplicationScreenState();
 }
 
 class _JobApplicationScreenState extends State<JobApplicationScreen> {
+  JobApplicationCubit? mainCubitController;
+  ApplicationCubit? applicationCubitController;
+
+  @override
+  void initState() {
+    mainCubitController = JobApplicationCubit();
+    applicationCubitController = ApplicationCubit();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +33,10 @@ class _JobApplicationScreenState extends State<JobApplicationScreen> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => widget.mainCubitController,
+          create: (context) => mainCubitController!,
         ),
         BlocProvider(
-          create: (context) => widget.applicationCubitController,
+          create: (context) => applicationCubitController!,
         ),
         BlocProvider(
           create: (context) => detailsCubitController,
@@ -40,8 +46,8 @@ class _JobApplicationScreenState extends State<JobApplicationScreen> {
         child: Scaffold(
           primary: true,
           body: JobApplicationMainView(
-            mainCubitController: widget.mainCubitController,
-            applicationCubitController: widget.applicationCubitController,
+            mainCubitController: mainCubitController!,
+            applicationCubitController: applicationCubitController!,
             detailsCubitController: detailsCubitController,
           ),
         ),

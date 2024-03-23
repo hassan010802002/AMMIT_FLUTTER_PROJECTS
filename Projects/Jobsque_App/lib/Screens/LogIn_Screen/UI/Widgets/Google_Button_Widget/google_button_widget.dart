@@ -8,7 +8,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class GoogleButtonWidget extends StatefulWidget {
-  const GoogleButtonWidget({Key? key}) : super(key: key);
+  const GoogleButtonWidget({super.key});
 
   @override
   _GoogleButtonWidgetState createState() => _GoogleButtonWidgetState();

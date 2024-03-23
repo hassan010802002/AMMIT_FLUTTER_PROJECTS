@@ -54,7 +54,8 @@ class _LogIn_MainView_State extends State<LogIn_MainView> {
               width: MediaQuery_Size_Helper.MAX_WIDTH(context)!,
               height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 15.0.h,
               child: Password_TextField_Widget(cubit: widget.cubit),
-            ),SizedBox(
+            ),
+            SizedBox(
               height: 15.0.h,
             ),
             RessetingPasswordView(cubit: widget.cubit),

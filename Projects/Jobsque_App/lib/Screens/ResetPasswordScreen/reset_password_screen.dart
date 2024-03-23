@@ -7,28 +7,31 @@ import 'package:jobsque_app/Screens/ResetPasswordScreen/Controller/reset_passwor
 import 'UI/Views/ResetPasswordMainView.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
-  final ResetPasswordControllerBloc resetPasswordControllerBloc = ResetPasswordControllerBloc();
-
-  ResetPasswordScreen({ super.key});
+  const ResetPasswordScreen({super.key});
 
   @override
   State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
+  ResetPasswordControllerBloc? resetPasswordControllerBloc;
+
+  @override
+  void initState() {
+    resetPasswordControllerBloc = ResetPasswordControllerBloc();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => widget.resetPasswordControllerBloc,
+      create: (BuildContext context) => resetPasswordControllerBloc!,
       child: SafeArea(
         child: Scaffold(
           primary: true,
-          body: ResetPasswordMainView(resetPasswordControllerBloc: widget.resetPasswordControllerBloc),
+          body: ResetPasswordMainView(resetPasswordControllerBloc: resetPasswordControllerBloc!),
         ),
       ),
     );
   }
 }
-
-

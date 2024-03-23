@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Widgets/Logo_Widget/logo_widget.dart';
+
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class AppBarView extends AppBar {
-  AppBarView({Key? key}) : super(key: key);
+  AppBarView({super.key});
 
   @override
   _AppBarViewState createState() => _AppBarViewState();

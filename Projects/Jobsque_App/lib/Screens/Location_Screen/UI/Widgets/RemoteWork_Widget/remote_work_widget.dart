@@ -11,7 +11,7 @@ import '../../../../../Config/AppConfig.dart';
 class RemoteWorkWidget extends StatefulWidget {
   final LocationCubit cubit;
 
-  const RemoteWorkWidget({Key? key, required this.cubit}) : super(key: key);
+  const RemoteWorkWidget({super.key, required this.cubit});
 
   @override
   _RemoteWorkWidgetState createState() => _RemoteWorkWidgetState();
@@ -41,7 +41,7 @@ class _RemoteWorkWidgetState extends State<RemoteWorkWidget> {
                 softWrap: true,
                 style: TextStyle(
                   color: widget.cubit.currentSelectedIndex == 1 ? Colors.white : const Color(0xff6B7280),
-                  fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/28.0.sp,
+                  fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 28.0.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: TextFontFamily,
                 ),

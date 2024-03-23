@@ -6,7 +6,7 @@ import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class PopularDivider extends StatefulWidget {
-  const PopularDivider({Key? key}) : super(key: key);
+  const PopularDivider({super.key});
 
   @override
   _PopularDividerState createState() => _PopularDividerState();

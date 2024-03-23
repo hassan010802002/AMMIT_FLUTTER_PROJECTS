@@ -1,11 +1,13 @@
-class CountryModel{
+// ignore_for_file: file_names
+
+class CountryModel {
   String? title;
   String? assetImage;
 
   CountryModel(this.title, this.assetImage);
 }
 
-class LocationCountryHelper{
+class LocationCountryHelper {
   static final List<CountryModel> locationCountries = <CountryModel>[
     CountryModel("Argentina", "Assets/Images/Flags/Argentina.png"),
     CountryModel("Brazil", "Assets/Images/Flags/Brazil.png"),

@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 
-
 class TextWidget1 extends StatefulWidget {
-  const TextWidget1({Key? key}) : super(key: key);
+  const TextWidget1({super.key});
 
   @override
   _TextWidget1State createState() => _TextWidget1State();

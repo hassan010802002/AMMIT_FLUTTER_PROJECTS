@@ -7,23 +7,29 @@ import 'package:jobsque_app/Screens/Registration_Screen/UI/Views/AppBar_View/app
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Views/registration__main_view.dart';
 
 class Registration_Screen extends StatefulWidget {
-  final RegistrationCubit cubit = RegistrationCubit();
-
-  Registration_Screen({super.key});
+  const Registration_Screen({super.key});
 
   @override
   State<Registration_Screen> createState() => _Registration_Screen_State();
 }
 
 class _Registration_Screen_State extends State<Registration_Screen> {
+  RegistrationCubit? cubit;
+
+  @override
+  void initState() {
+    cubit = RegistrationCubit();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBarView(),
         body: BlocProvider(
-          create: (context) => widget.cubit,
-          child: Registration_MainView(cubit: widget.cubit),
+          create: (context) => cubit!,
+          child: Registration_MainView(cubit: cubit!),
         ),
       ),
     );

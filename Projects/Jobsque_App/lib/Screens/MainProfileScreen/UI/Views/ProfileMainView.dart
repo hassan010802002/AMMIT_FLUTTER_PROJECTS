@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, must_be_immutable
+// ignore_for_file: camel_case_types, must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -150,34 +150,38 @@ class _ProfileMainViewState extends State<ProfileMainView> {
                   child: Column(
                     children: [
                       CustomProfileOtherButton(
-                        "Accessibility", onPressed: () {  },
+                        "Accessibility",
+                        onPressed: () {},
                       ),
                       Divider(
                         thickness: 1.5.h,
                         color: const Color(0xffE5E7EB),
                       ),
                       CustomProfileOtherButton(
-                        "Help Center", onPressed: () {
+                        "Help Center",
+                        onPressed: () {
                           NavigatorHelper(context, AppRoutes.helpCenterScreen);
-                      },
+                        },
                       ),
                       Divider(
                         thickness: 1.5.h,
                         color: const Color(0xffE5E7EB),
                       ),
                       CustomProfileOtherButton(
-                        "Terms & Conditions", onPressed: () {
+                        "Terms & Conditions",
+                        onPressed: () {
                           NavigatorHelper(context, AppRoutes.termsConditionsScreen);
-                      },
+                        },
                       ),
                       Divider(
                         thickness: 1.5.h,
                         color: const Color(0xffE5E7EB),
                       ),
                       CustomProfileOtherButton(
-                        "Privacy Policy", onPressed: () {
+                        "Privacy Policy",
+                        onPressed: () {
                           NavigatorHelper(context, AppRoutes.privacyPolicyScreen);
-                      },
+                        },
                       ),
                       Divider(
                         thickness: 1.5.h,

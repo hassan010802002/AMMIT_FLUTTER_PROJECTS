@@ -2,6 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../../Models/Jobs_Model/JobsModel.dart';
 import '../Service/Repository/Jobs_Repository/Jobs_Service.dart';
@@ -25,7 +26,7 @@ class AppliedJobsControllerBloc extends Bloc<AppliedJobsControllerEvent, Applied
   JobsModel? jobsModel = JobsModel();
 
   AppliedJobsControllerBloc() : super(AppliedJobsControllerInitial()) {
-    on<AppliedJobsFetchingApiData>((event, emit) async{
+    on<AppliedJobsFetchingApiData>((event, emit) async {
       emit(LoadingAppliedJobsApiData());
       try {
         jobsModel = await JobsService.JobFetchingService();
@@ -34,7 +35,9 @@ class AppliedJobsControllerBloc extends Bloc<AppliedJobsControllerEvent, Applied
       } on Exception catch (e) {
         isSuccessJobsData = false;
         emit(FailureAppliedJobsApiData());
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
       }
     });
   }
@@ -52,12 +55,12 @@ class AppliedJobsControllerBloc extends Bloc<AppliedJobsControllerEvent, Applied
     }
   }
 
-  void UpdatingActiveStep(int? stepIndex){
+  void UpdatingActiveStep(int? stepIndex) {
     emit(AppliedJobsIdleStep());
     activeStep = stepIndex;
     completedSteps.clear();
     idleSteps.clear();
-    for(int counter = 0 ; counter <= 2 ; counter++){
+    for (int counter = 0; counter <= 2; counter++) {
       if (counter > activeStep!) {
         idleSteps.add(counter);
       } else {

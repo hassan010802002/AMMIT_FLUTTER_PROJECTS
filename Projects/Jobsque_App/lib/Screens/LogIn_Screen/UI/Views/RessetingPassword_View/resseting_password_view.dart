@@ -10,7 +10,7 @@ import '../../../Controller/log_in_cubit.dart';
 class RessetingPasswordView extends StatefulWidget {
   final LogInCubit cubit;
 
-  const RessetingPasswordView({Key? key, required this.cubit}) : super(key: key);
+  const RessetingPasswordView({super.key, required this.cubit});
 
   @override
   _RessetingPasswordViewState createState() => _RessetingPasswordViewState();

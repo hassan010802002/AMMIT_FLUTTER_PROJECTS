@@ -10,7 +10,7 @@ import 'package:jobsque_app/Routes/App_Routes.dart';
 import '../../../../../Config/AppConfig.dart';
 
 class NextButtonWidget extends StatefulWidget {
-  const NextButtonWidget({Key? key}) : super(key: key);
+  const NextButtonWidget({super.key});
 
   @override
   _NextButtonWidgetState createState() => _NextButtonWidgetState();

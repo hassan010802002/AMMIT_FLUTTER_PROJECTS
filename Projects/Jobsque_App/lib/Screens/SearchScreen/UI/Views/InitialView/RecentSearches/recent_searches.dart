@@ -9,7 +9,7 @@ import 'package:jobsque_app/Screens/SearchScreen/UI/Widgets/FixedRecentSearchTex
 import '../../../../../../Helpers/FixedSearchViewHelper/FixedSearchViewHelper.dart';
 
 class RecentSearches extends StatefulWidget {
-  const RecentSearches({Key? key}) : super(key: key);
+  const RecentSearches({super.key});
 
   @override
   _RecentSearchesState createState() => _RecentSearchesState();

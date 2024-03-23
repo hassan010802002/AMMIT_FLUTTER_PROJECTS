@@ -7,7 +7,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class Text3Widget extends StatefulWidget {
-  const Text3Widget({Key? key}) : super(key: key);
+  const Text3Widget({super.key});
 
   @override
   _Text3WidgetState createState() => _Text3WidgetState();
@@ -22,7 +22,7 @@ class _Text3WidgetState extends State<Text3Widget> {
       softWrap: true,
       style: TextStyle(
         color: const Color(0xff737379),
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/23.0.sp,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 23.0.sp,
         fontWeight: FontWeight.w400,
         fontFamily: TextFontFamily,
       ),

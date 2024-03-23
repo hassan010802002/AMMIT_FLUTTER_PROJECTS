@@ -11,7 +11,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobSaveIconButton extends StatefulWidget {
   final DetailsCubit detailsCubitController;
 
-  const JobSaveIconButton({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobSaveIconButton({super.key, required this.detailsCubitController});
 
   @override
   _JobSaveIconButtonState createState() => _JobSaveIconButtonState();

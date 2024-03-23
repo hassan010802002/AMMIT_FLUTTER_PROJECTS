@@ -6,7 +6,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:octo_image/octo_image.dart';
 
 class SuccessLogoWidget extends StatefulWidget {
-  const SuccessLogoWidget({Key? key}) : super(key: key);
+  const SuccessLogoWidget({super.key});
 
   @override
   _SuccessLogoWidgetState createState() => _SuccessLogoWidgetState();
@@ -20,8 +20,8 @@ class _SuccessLogoWidgetState extends State<SuccessLogoWidget> {
       fit: BoxFit.contain,
       filterQuality: FilterQuality.high,
       alignment: Alignment.center,
-      width: MediaQuery_Size_Helper.MAX_WIDTH(context)!/2.0.w,
-      height: MediaQuery_Size_Helper.MAX_WIDTH(context)!/2.0.h,
+      width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.0.w,
+      height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.0.h,
     );
   }
 }

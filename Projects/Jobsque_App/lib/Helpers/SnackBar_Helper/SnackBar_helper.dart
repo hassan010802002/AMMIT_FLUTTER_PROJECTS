@@ -1,11 +1,13 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, file_names
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 
 class SnackBar_Helper {
-
-  static void showSuccessToast(BuildContext context,String? message,) {
+  static void showSuccessToast(
+    BuildContext context,
+    String? message,
+  ) {
     final snackBar = SnackBar(
       elevation: 0.0,
       behavior: SnackBarBehavior.floating,
@@ -26,7 +28,10 @@ class SnackBar_Helper {
       ..showSnackBar(snackBar);
   }
 
-  static void showGeneralToast(BuildContext context, String? message,) {
+  static void showGeneralToast(
+    BuildContext context,
+    String? message,
+  ) {
     final snackBar = SnackBar(
       elevation: 0.0,
       behavior: SnackBarBehavior.floating,
@@ -47,7 +52,10 @@ class SnackBar_Helper {
       ..showSnackBar(snackBar);
   }
 
-  static void showErrorToast(BuildContext context, String? message,) {
+  static void showErrorToast(
+    BuildContext context,
+    String? message,
+  ) {
     final snackBar = SnackBar(
       elevation: 0.0,
       behavior: SnackBarBehavior.floating,

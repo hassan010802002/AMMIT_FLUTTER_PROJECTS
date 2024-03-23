@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, must_be_immutable
+// ignore_for_file: camel_case_types, must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -37,7 +37,9 @@ class _ResetPasswordMainViewState extends State<ResetPasswordMainView> {
               widget.resetPasswordControllerBloc.isResetPasswordFirstView
                   ? const ResetPasswordEmailCheckView()
                   : widget.resetPasswordControllerBloc.isResetPasswordSecondView
-                      ? ResetPasswordNewPasswordView(resetPasswordControllerBloc: widget.resetPasswordControllerBloc,)
+                      ? ResetPasswordNewPasswordView(
+                          resetPasswordControllerBloc: widget.resetPasswordControllerBloc,
+                        )
                       : widget.resetPasswordControllerBloc.isResetPasswordThirdView
                           ? const ResetPasswordSuccessfulView()
                           : ResetPasswordInitialView(resetPasswordControllerBloc: widget.resetPasswordControllerBloc),

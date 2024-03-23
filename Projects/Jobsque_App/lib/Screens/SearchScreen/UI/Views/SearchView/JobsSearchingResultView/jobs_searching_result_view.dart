@@ -10,7 +10,7 @@ import 'JobsDemo_View/jobs_demo_view.dart';
 class JobsSearchingResultView extends StatefulWidget {
   final SearchBloc blocController;
 
-  const JobsSearchingResultView({Key? key, required this.blocController}) : super(key: key);
+  const JobsSearchingResultView({super.key, required this.blocController});
 
   @override
   _JobsSearchingResultViewState createState() => _JobsSearchingResultViewState();

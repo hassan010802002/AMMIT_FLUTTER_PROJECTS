@@ -14,7 +14,7 @@ class CountryWidget extends StatefulWidget {
   final LocationCubit cubit;
   final int? index;
 
-  const CountryWidget({Key? key, required this.cubit, required this.index}) : super(key: key);
+  const CountryWidget({super.key, required this.cubit, required this.index});
 
   @override
   _CountryWidgetState createState() => _CountryWidgetState();

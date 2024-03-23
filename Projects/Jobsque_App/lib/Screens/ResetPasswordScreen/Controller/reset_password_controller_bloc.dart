@@ -2,6 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Screens/ResetPasswordScreen/Service/Repository/ResetUserPasswordRepository/ResetUserPasswordService.dart';
 
@@ -9,7 +10,6 @@ import '../../../Config/AppConfig.dart';
 import '../../../Helpers/Local_Cache_Helper/cache_helper.dart';
 
 part 'reset_password_controller_event.dart';
-
 part 'reset_password_controller_state.dart';
 
 class ResetPasswordControllerBloc extends Bloc<ResetPasswordControllerEvent, ResetPasswordControllerState> {
@@ -39,7 +39,9 @@ class ResetPasswordControllerBloc extends Bloc<ResetPasswordControllerEvent, Res
         }
         emit(ResetPasswordSuccessApiDataState());
       } on Exception catch (e) {
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
         emit(ResetPasswordFailureApiDataState());
       }
     });

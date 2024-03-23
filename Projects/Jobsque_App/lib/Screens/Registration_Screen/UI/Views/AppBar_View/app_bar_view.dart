@@ -9,7 +9,7 @@ import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/Logo_Widget/l
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class AppBarView extends AppBar {
-  AppBarView({Key? key}) : super(key: key);
+  AppBarView({super.key});
 
   @override
   _AppBarViewState createState() => _AppBarViewState();

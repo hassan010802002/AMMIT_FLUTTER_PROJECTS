@@ -9,7 +9,7 @@ import '../../../Controller/work_type_cubit.dart';
 class WorkTypesGridView extends StatefulWidget {
   final WorkTypeCubit cubit;
 
-  const WorkTypesGridView({Key? key , required this.cubit}) : super(key: key);
+  const WorkTypesGridView({super.key, required this.cubit});
 
   @override
   _WorkTypesGridViewState createState() => _WorkTypesGridViewState();

@@ -7,27 +7,33 @@ import 'package:jobsque_app/Screens/ChatScreen/UI/Views/ChatAppBarView/chat_app_
 import 'package:jobsque_app/Screens/ChatScreen/UI/Views/Chat_Main_View.dart';
 
 class ChatScreen extends StatefulWidget {
-  final ChatControllerCubit chatControllerCubit = ChatControllerCubit();
-  final Map<String , String> screenData;
+  final Map<String, String> screenData;
 
-  ChatScreen({ super.key, required this.screenData});
+  const ChatScreen({super.key, required this.screenData});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  ChatControllerCubit? chatControllerCubit;
+
+  @override
+  void initState() {
+    chatControllerCubit = ChatControllerCubit();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => widget.chatControllerCubit,
+      create: (BuildContext context) => chatControllerCubit!,
       child: SafeArea(
         child: Scaffold(
           primary: true,
           appBar: ChatAppBarView(screenData: widget.screenData),
           backgroundColor: const Color(0xffFAFAFA),
-          body: ChatMainView(chatControllerCubit: widget.chatControllerCubit),
+          body: ChatMainView(chatControllerCubit: chatControllerCubit!),
         ),
       ),
     );

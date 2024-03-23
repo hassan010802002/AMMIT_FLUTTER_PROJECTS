@@ -5,7 +5,7 @@ import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/Facebook_Butt
 import 'package:jobsque_app/Screens/Registration_Screen/UI/Widgets/Google_Button_Widget/google_button_widget.dart';
 
 class SocialButtonsView extends StatefulWidget {
-  const SocialButtonsView({Key? key}) : super(key: key);
+  const SocialButtonsView({super.key});
 
   @override
   _SocialButtonsViewState createState() => _SocialButtonsViewState();
@@ -16,10 +16,7 @@ class _SocialButtonsViewState extends State<SocialButtonsView> {
   Widget build(BuildContext context) {
     return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        GoogleButtonWidget(),
-        FacebookButtonWidget()
-      ],
+      children: [GoogleButtonWidget(), FacebookButtonWidget()],
     );
   }
 }

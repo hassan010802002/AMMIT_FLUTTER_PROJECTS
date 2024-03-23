@@ -8,7 +8,7 @@ import 'package:octo_image/octo_image.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class LogoWidget extends StatefulWidget {
-  const LogoWidget({Key? key}) : super(key: key);
+  const LogoWidget({super.key});
 
   @override
   _LogoWidgetState createState() => _LogoWidgetState();

@@ -58,8 +58,8 @@ class _NotificationListWidgetState extends State<NotificationListWidget> {
                     SizedBox(
                       width: NotificationHelper.titles(index).length > 5
                           ? NotificationHelper.titles(index).length < 8
-                          ? MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.9.w
-                          : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 3.35.w
+                              ? MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.9.w
+                              : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 3.35.w
                           : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.53.w,
                     ),
                     Icon(
@@ -83,7 +83,7 @@ class _NotificationListWidgetState extends State<NotificationListWidget> {
                     ),
                   ],
                 ),
-                SizedBox(),
+                const SizedBox(),
                 Text(
                   "Posted new design jobs",
                   softWrap: true,

@@ -11,7 +11,7 @@ import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 class OfficeWorkWidget extends StatefulWidget {
   final LocationCubit cubit;
 
-  const OfficeWorkWidget({Key? key, required this.cubit}) : super(key: key);
+  const OfficeWorkWidget({super.key, required this.cubit});
 
   @override
   _OfficeWorkWidgetState createState() => _OfficeWorkWidgetState();
@@ -41,7 +41,7 @@ class _OfficeWorkWidgetState extends State<OfficeWorkWidget> {
                 softWrap: true,
                 style: TextStyle(
                   color: widget.cubit.currentSelectedIndex == 0 ? Colors.white : const Color(0xff6B7280),
-                  fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/28.0.sp,
+                  fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 28.0.sp,
                   fontWeight: FontWeight.w500,
                   fontFamily: TextFontFamily,
                 ),

@@ -2,10 +2,13 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
+
 import '../../../Models/Jobs_Model/JobsModel.dart';
 import '../../../Models/Profile_Model/ProfileModel.dart';
 import '../Service/Repository/Jobs_Repository/Jobs_Service.dart';
 import '../Service/Repository/Profile_Service/Profile_Service.dart';
+
 part 'home_event.dart';
 part 'home_state.dart';
 
@@ -31,24 +34,27 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         isSuccessProfileData = false;
         isSuccessJobsData = false;
         emit(FailureApiData());
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
       }
     });
   }
 
-  void SelectingJobType(){
+  void SelectingJobType() {
     isJobSelected = !isJobSelected;
     if (isJobSelected) {
       emit(SelectedJob());
-    }else{
+    } else {
       emit(UnSelectedJob());
     }
   }
-  void SavingJobType(){
+
+  void SavingJobType() {
     isJobSaved = !isJobSaved;
     if (isJobSaved) {
       emit(SavedJob());
-    }else{
+    } else {
       emit(UnSavedJob());
     }
   }

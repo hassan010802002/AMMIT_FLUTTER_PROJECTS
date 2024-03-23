@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +11,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobDetailsEmailContainerWidget extends StatefulWidget {
   final DetailsCubit? detailsCubitController;
 
-  const JobDetailsEmailContainerWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsEmailContainerWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsEmailContainerWidgetState createState() => _JobDetailsEmailContainerWidgetState();

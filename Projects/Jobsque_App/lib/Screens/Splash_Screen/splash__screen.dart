@@ -4,19 +4,18 @@ import 'package:jobsque_app/Screens/Splash_Screen/Controller/splash_controller_c
 import 'package:jobsque_app/Screens/Splash_Screen/UI/Views/Splash_Main_View.dart';
 
 class MySplash extends StatefulWidget {
-  final SplashControllerCubit cubit = SplashControllerCubit();
-
-  MySplash({ super.key});
+  const MySplash({super.key});
 
   @override
   State<MySplash> createState() => _MySplashState();
 }
 
 class _MySplashState extends State<MySplash> {
-
+  SplashControllerCubit? cubit;
   @override
   void initState() {
-    widget.cubit.MainScreenNavigation(context);
+    cubit = SplashControllerCubit();
+    cubit!.MainScreenNavigation(context);
     super.initState();
   }
 
@@ -26,12 +25,10 @@ class _MySplashState extends State<MySplash> {
       child: Scaffold(
         primary: true,
         body: BlocProvider(
-          create: (context) => widget.cubit,
-          child: Splash_Main_View(cubit: widget.cubit),
+          create: (context) => cubit!,
+          child: Splash_Main_View(cubit: cubit!),
         ),
       ),
     );
   }
 }
-
-

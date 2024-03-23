@@ -15,7 +15,7 @@ class FilterSearchResultButton extends StatefulWidget {
   final SearchBloc controller;
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const FilterSearchResultButton({Key? key, required this.controller, required this.bottomSheetCubit}) : super(key: key);
+  const FilterSearchResultButton({super.key, required this.controller, required this.bottomSheetCubit});
 
   @override
   _FilterSearchResultButtonState createState() => _FilterSearchResultButtonState();
@@ -33,15 +33,15 @@ class _FilterSearchResultButtonState extends State<FilterSearchResultButton> {
       ),
       buttonText: "Show result",
       onPressed: () {
-        widget.bottomSheetCubit.JobFiltrationResult( context , widget.controller.jobsModel);
-        log("Search Jobs Model Data Length is ${widget.controller.jobsModel!.data!.length}" , name: "Main Search Data");
+        widget.bottomSheetCubit.JobFiltrationResult(context, widget.controller.jobsModel);
+        log("Search Jobs Model Data Length is ${widget.controller.jobsModel!.data!.length}", name: "Main Search Data");
       },
       backgroundColor: const MaterialStatePropertyAll(Color(0xff3366FF)),
       shape: MaterialStatePropertyAll(
         RoundedRectangleBorder(borderRadius: BorderRadius.circular(45.0.sp)),
       ),
       fixedSize: MaterialStatePropertyAll(
-        Size(MediaQuery_Size_Helper.MAX_WIDTH(context)!, MediaQuery_Size_Helper.MAX_HEIGHT(context)!/16.5.h),
+        Size(MediaQuery_Size_Helper.MAX_WIDTH(context)!, MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 16.5.h),
       ),
     );
   }

@@ -5,11 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Controller/registration_cubit.dart';
 
-
 class TextWidget3 extends StatefulWidget {
   final RegistrationCubit cubit;
 
-  const TextWidget3({Key? key, required this.cubit}) : super(key: key);
+  const TextWidget3({super.key, required this.cubit});
 
   @override
   _TextWidget3State createState() => _TextWidget3State();

@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Models/Jobs_Model/JobsModel.dart';
@@ -29,7 +30,9 @@ class FilterJobsService {
         throw Exception("Jobs API Failure");
       }
     } on Exception catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
     return null;
   }

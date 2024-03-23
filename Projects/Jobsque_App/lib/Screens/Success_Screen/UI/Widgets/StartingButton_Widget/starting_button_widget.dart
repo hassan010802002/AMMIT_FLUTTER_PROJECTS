@@ -9,7 +9,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
 
 class StartingButtonWidget extends StatefulWidget {
-  const StartingButtonWidget({Key? key}) : super(key: key);
+  const StartingButtonWidget({super.key});
 
   @override
   _StartingButtonWidgetState createState() => _StartingButtonWidgetState();

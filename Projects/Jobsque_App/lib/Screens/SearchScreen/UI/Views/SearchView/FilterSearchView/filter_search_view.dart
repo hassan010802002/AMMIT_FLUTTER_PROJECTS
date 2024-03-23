@@ -9,7 +9,7 @@ import '../../../../Controller/search_bloc.dart';
 class FilterSearchView extends StatefulWidget {
   final SearchBloc controller;
 
-  const FilterSearchView({Key? key, required this.controller}) : super(key: key);
+  const FilterSearchView({super.key, required this.controller});
 
   @override
   _FilterSearchViewState createState() => _FilterSearchViewState();

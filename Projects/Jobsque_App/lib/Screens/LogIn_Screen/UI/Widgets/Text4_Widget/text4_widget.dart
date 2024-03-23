@@ -7,7 +7,7 @@ import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../../../Config/AppConfig.dart';
 
 class Text4Widget extends StatefulWidget {
-  const Text4Widget({Key? key}) : super(key: key);
+  const Text4Widget({super.key});
 
   @override
   _Text4WidgetState createState() => _Text4WidgetState();
@@ -21,7 +21,7 @@ class _Text4WidgetState extends State<Text4Widget> {
       softWrap: true,
       textAlign: TextAlign.justify,
       style: TextStyle(
-        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)!/24.0.w,
+        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.w,
         fontWeight: FontWeight.w500,
         fontFamily: TextFontFamily,
         color: const Color(0xff9CA3AF),

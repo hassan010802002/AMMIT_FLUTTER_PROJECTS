@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:jobsque_app/Screens/PortfolioScreen/Service/Repository/ProfileUpdatePortfolioDataService/ProfileUpdatePortfolioDataService.dart';
 
 part 'portfolio_controller_event.dart';
@@ -34,7 +35,9 @@ class PortfolioControllerBloc extends Bloc<PortfolioControllerEvent, PortfolioCo
           emit(PortfolioFailureApiUploadCvFile());
         }
       } on Exception catch (e) {
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
         isSuccessPortfolioUploadCvFileService = false;
         emit(PortfolioFailureApiUploadCvFile());
       }

@@ -11,7 +11,7 @@ import '../../../Controllers/Details_Controller/details_cubit.dart';
 class JobDetailsTitleWidget extends StatefulWidget {
   final DetailsCubit detailsCubitController;
 
-  const JobDetailsTitleWidget({Key? key, required this.detailsCubitController}) : super(key: key);
+  const JobDetailsTitleWidget({super.key, required this.detailsCubitController});
 
   @override
   _JobDetailsTitleWidgetState createState() => _JobDetailsTitleWidgetState();

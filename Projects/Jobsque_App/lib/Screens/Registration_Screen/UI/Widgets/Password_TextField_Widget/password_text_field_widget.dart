@@ -13,7 +13,7 @@ import '../../../Controller/registration_cubit.dart';
 class Password_TextField_Widget extends StatefulWidget {
   final RegistrationCubit cubit;
 
-  const Password_TextField_Widget({Key? key, required this.cubit}) : super(key: key);
+  const Password_TextField_Widget({super.key, required this.cubit});
 
   @override
   _Password_TextField_WidgetState createState() => _Password_TextField_WidgetState();

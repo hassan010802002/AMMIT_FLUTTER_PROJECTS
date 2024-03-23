@@ -12,7 +12,7 @@ import '../../../Controller/on_boarding_cubit.dart';
 class NextOnBoardingViewButton extends StatefulWidget {
   OnBoardingCubit cubit;
 
-  NextOnBoardingViewButton({Key? key, required this.cubit}) : super(key: key);
+  NextOnBoardingViewButton({super.key, required this.cubit});
 
   @override
   _NextOnBoardingViewButtonState createState() => _NextOnBoardingViewButtonState();

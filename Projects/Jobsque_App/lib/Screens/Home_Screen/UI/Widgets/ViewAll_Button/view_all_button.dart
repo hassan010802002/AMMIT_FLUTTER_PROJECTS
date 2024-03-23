@@ -6,7 +6,7 @@ import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class ViewAllButton extends StatefulWidget {
-  const ViewAllButton({Key? key}) : super(key: key);
+  const ViewAllButton({super.key});
 
   @override
   _ViewAllButtonState createState() => _ViewAllButtonState();

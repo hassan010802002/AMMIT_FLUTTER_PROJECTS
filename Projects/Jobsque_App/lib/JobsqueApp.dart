@@ -1,9 +1,12 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/ChatScreen/chat_screen.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/job_application_screen.dart';
 import 'package:jobsque_app/Screens/Splash_Screen/splash__screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
 import 'Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import 'Models/Jobs_Model/JobsModel.dart';
 import 'Routes/App_Pages.dart';
@@ -51,7 +54,7 @@ class MyApp extends StatelessWidget {
           ],
         ),
         debugShowCheckedModeBanner: false,
-        home:MySplash(),
+        home: const MySplash(),
       ),
     );
   }

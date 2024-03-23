@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names
 
 String TextFontFamily = "SF Pro Display";
 
@@ -20,13 +20,13 @@ String EmailCacheKey = "UserEmail";
 String UserNameCacheKey = "UserName";
 String UserPasswordCacheKey = "UserPassword";
 
-String? _API_TOKEN_KEY ;
-set ApiTokenKey(String? ApiToken) => _API_TOKEN_KEY=ApiToken;
+String? _API_TOKEN_KEY;
+set ApiTokenKey(String? ApiToken) => _API_TOKEN_KEY = ApiToken;
 String? get ApiTokenKey => _API_TOKEN_KEY;
 String responseTokenKey = 'token';
 
 /// *******************************************************************************************
 
-String? _registrationToken ;
-set registrationToken(String? token) => _registrationToken=token;
+String? _registrationToken;
+set registrationToken(String? token) => _registrationToken = token;
 String? get registrationToken => _registrationToken;

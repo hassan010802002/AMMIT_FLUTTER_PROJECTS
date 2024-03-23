@@ -23,7 +23,7 @@ class FilterModalBottomSheetView extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
   final SearchBloc controller;
 
-  const FilterModalBottomSheetView({Key? key, required this.bottomSheetCubit, required this.controller}) : super(key: key);
+  const FilterModalBottomSheetView({super.key, required this.bottomSheetCubit, required this.controller});
 
   @override
   _FilterModalBottomSheetViewState createState() => _FilterModalBottomSheetViewState();

@@ -1,13 +1,12 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, file_names
 
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 
-
 class LogInTextButtonWidget extends StatefulWidget {
-  const LogInTextButtonWidget({Key? key}) : super(key: key);
+  const LogInTextButtonWidget({super.key});
 
   @override
   _LogInTextButtonWidgetState createState() => _LogInTextButtonWidgetState();

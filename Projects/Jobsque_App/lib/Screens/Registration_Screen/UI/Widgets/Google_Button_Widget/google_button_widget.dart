@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 import 'package:octo_image/octo_image.dart';
+
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class GoogleButtonWidget extends StatefulWidget {
-  const GoogleButtonWidget({Key? key}) : super(key: key);
+  const GoogleButtonWidget({super.key});
 
   @override
   _GoogleButtonWidgetState createState() => _GoogleButtonWidgetState();

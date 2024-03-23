@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:jobsque_app/Config/AppConfig.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
-import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../Helpers/Local_Cache_Helper/cache_helper.dart';

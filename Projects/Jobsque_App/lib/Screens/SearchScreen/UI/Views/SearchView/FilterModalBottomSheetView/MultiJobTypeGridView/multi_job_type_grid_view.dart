@@ -9,7 +9,7 @@ import '../../../../../Controller/FilterBottomSheetCubit/filter_bottom_sheet_cub
 class MultiJobTypeGridView extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const MultiJobTypeGridView({Key? key, required this.bottomSheetCubit}) : super(key: key);
+  const MultiJobTypeGridView({super.key, required this.bottomSheetCubit});
 
   @override
   _MultiJobTypeGridViewState createState() => _MultiJobTypeGridViewState();

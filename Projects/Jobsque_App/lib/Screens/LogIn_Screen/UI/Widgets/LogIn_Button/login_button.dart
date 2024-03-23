@@ -12,7 +12,7 @@ import '../../../../../Config/AppConfig.dart';
 class LogInButton extends StatefulWidget {
   final LogInCubit cubit;
 
-  const LogInButton({required this.cubit, Key? key}) : super(key: key);
+  const LogInButton({required this.cubit, super.key});
 
   @override
   _LogInButtonState createState() => _LogInButtonState();

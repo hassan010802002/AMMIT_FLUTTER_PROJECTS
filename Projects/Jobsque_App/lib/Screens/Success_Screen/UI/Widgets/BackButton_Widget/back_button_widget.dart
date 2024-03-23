@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BackButtonWidget extends StatefulWidget {
-  const BackButtonWidget({Key? key}) : super(key: key);
+  const BackButtonWidget({super.key});
 
   @override
   _BackButtonWidgetState createState() => _BackButtonWidgetState();

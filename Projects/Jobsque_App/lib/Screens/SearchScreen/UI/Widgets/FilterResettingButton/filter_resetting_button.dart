@@ -10,7 +10,7 @@ import '../../../Controller/FilterBottomSheetCubit/filter_bottom_sheet_cubit.dar
 class FilterResettingButton extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const FilterResettingButton({Key? key , required this.bottomSheetCubit}) : super(key: key);
+  const FilterResettingButton({super.key, required this.bottomSheetCubit});
 
   @override
   _FilterResettingButtonState createState() => _FilterResettingButtonState();

@@ -13,7 +13,7 @@ import 'package:jobsque_app/Screens/Location_Screen/UI/Widgets/Text3_Widget/text
 class LocationMainView extends StatefulWidget {
   final LocationCubit cubit;
 
-  const LocationMainView({Key? key, required this.cubit}) : super(key: key);
+  const LocationMainView({super.key, required this.cubit});
 
   @override
   _LocationMainViewState createState() => _LocationMainViewState();

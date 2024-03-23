@@ -9,7 +9,7 @@ import '../../../../../../Helpers/FixedSearchViewHelper/FixedSearchViewHelper.da
 import '../../../Widgets/FixedRecentSearchText/fixed_recent_search_text.dart';
 
 class PopularSearches extends StatefulWidget {
-  const PopularSearches({Key? key}) : super(key: key);
+  const PopularSearches({super.key});
 
   @override
   _PopularSearchesState createState() => _PopularSearchesState();
@@ -22,7 +22,7 @@ class _PopularSearchesState extends State<PopularSearches> {
       mainAxisAlignment: MainAxisAlignment.start,
       children: List.generate(
         FixedSearchViewHelper.searchTitles.length,
-            (index) => Column(
+        (index) => Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

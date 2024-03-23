@@ -15,7 +15,7 @@ class SearchView extends StatefulWidget {
   final SearchBloc controller;
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const SearchView({Key? key, required this.controller, required this.bottomSheetCubit}) : super(key: key);
+  const SearchView({super.key, required this.controller, required this.bottomSheetCubit});
 
   @override
   _SearchViewState createState() => _SearchViewState();
@@ -31,7 +31,7 @@ class _SearchViewState extends State<SearchView> {
           children: [
             Padding(
               padding: EdgeInsets.only(left: 20.0.w),
-              child: FiltersSettingButton(bottomSheetCubit: widget.bottomSheetCubit , controller: widget.controller),
+              child: FiltersSettingButton(bottomSheetCubit: widget.bottomSheetCubit, controller: widget.controller),
             ),
             SizedBox(
               height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.5.h,

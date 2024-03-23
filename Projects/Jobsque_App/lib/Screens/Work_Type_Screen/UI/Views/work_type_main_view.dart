@@ -13,7 +13,7 @@ import '../../Controller/work_type_cubit.dart';
 class WorkTypeMainView extends StatefulWidget {
   final WorkTypeCubit cubit;
 
-  const WorkTypeMainView({Key? key, required this.cubit}) : super(key: key);
+  const WorkTypeMainView({super.key, required this.cubit});
 
   @override
   _WorkTypeMainViewState createState() => _WorkTypeMainViewState();
@@ -37,7 +37,7 @@ class _WorkTypeMainViewState extends State<WorkTypeMainView> {
               height: 30.0.h,
             ),
             SizedBox(
-              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)!/1.55.h,
+              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 1.55.h,
               child: WorkTypesGridView(cubit: widget.cubit),
             ),
             const NextButtonWidget()

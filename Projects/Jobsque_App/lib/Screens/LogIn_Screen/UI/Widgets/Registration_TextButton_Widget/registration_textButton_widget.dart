@@ -1,4 +1,4 @@
-// ignore_for_file: library_private_types_in_public_api
+// ignore_for_file: library_private_types_in_public_api, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,7 +9,7 @@ import 'package:jobsque_app/Routes/App_Routes.dart';
 import '../../../../../Config/AppConfig.dart';
 
 class RegistrationTextButtonWidget extends StatefulWidget {
-  const RegistrationTextButtonWidget({Key? key}) : super(key: key);
+  const RegistrationTextButtonWidget({super.key});
 
   @override
   _RegistrationTextButtonWidgetState createState() => _RegistrationTextButtonWidgetState();

@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, must_be_immutable
+// ignore_for_file: camel_case_types, must_be_immutable, file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +6,7 @@ import 'package:jobsque_app/Screens/PrivacyPolicyScreen/UI/Widgets/PrivacyPolicy
 import 'package:jobsque_app/Screens/PrivacyPolicyScreen/UI/Widgets/PrivacyPolicyContentText2/privacy_policy_content_text2.dart';
 import 'package:jobsque_app/Screens/PrivacyPolicyScreen/UI/Widgets/PrivacyPolicyHeaderText1/privacy_policy_header_text1.dart';
 import 'package:jobsque_app/Screens/PrivacyPolicyScreen/UI/Widgets/PrivacyPolicyHeaderText2/privacy_policy_header_text2.dart';
+
 import '../../../SearchScreen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 import '../../Controller/privacy_policy_controller_cubit.dart';
 import '../Widgets/PrivacyPolicyTitleTextWidget/privacy_policy_title_text_widget.dart';

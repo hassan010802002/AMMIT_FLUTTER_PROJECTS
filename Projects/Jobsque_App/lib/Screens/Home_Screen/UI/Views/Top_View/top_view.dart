@@ -9,7 +9,7 @@ import 'package:jobsque_app/Screens/Home_Screen/UI/Widgets/WelcomeUser_Text/welc
 class TopView extends StatefulWidget {
   final HomeBloc controller;
 
-  const TopView({Key? key, required this.controller}) : super(key: key);
+  const TopView({super.key, required this.controller});
 
   @override
   _TopViewState createState() => _TopViewState();

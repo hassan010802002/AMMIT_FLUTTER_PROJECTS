@@ -12,7 +12,7 @@ class JobSubTitleWidget extends StatefulWidget {
   int? jobIndex;
   final HomeBloc controller;
 
-  JobSubTitleWidget({Key? key, required this.controller, required this.jobIndex}) : super(key: key);
+  JobSubTitleWidget({super.key, required this.controller, required this.jobIndex});
 
   @override
   _JobSubTitleWidgetState createState() => _JobSubTitleWidgetState();
@@ -24,20 +24,21 @@ class _JobSubTitleWidgetState extends State<JobSubTitleWidget> {
     return BlocBuilder<HomeBloc, HomeState>(
       bloc: widget.controller,
       builder: (context, state) {
-        return  widget.controller.isSuccessJobsData
+        return widget.controller.isSuccessJobsData
             ? Text(
-            widget.controller.jobsModel!.data![widget.jobIndex!].location!.length > 30
-                ? "${widget.controller.jobsModel!.data![widget.jobIndex!].location!.substring(0, 30)}..."
-                : widget.controller.jobsModel!.data![widget.jobIndex!].location!,
-          textAlign: TextAlign.start,
-          softWrap: true,
-          style: TextStyle(
-            color: const Color(0xff9CA3AF),
-            fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 26.0.sp,
-            fontFamily: TextFontFamily,
-            fontWeight: FontWeight.w600,
-          ),
-        ) : const SizedBox();
+                widget.controller.jobsModel!.data![widget.jobIndex!].location!.length > 30
+                    ? "${widget.controller.jobsModel!.data![widget.jobIndex!].location!.substring(0, 30)}..."
+                    : widget.controller.jobsModel!.data![widget.jobIndex!].location!,
+                textAlign: TextAlign.start,
+                softWrap: true,
+                style: TextStyle(
+                  color: const Color(0xff9CA3AF),
+                  fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 26.0.sp,
+                  fontFamily: TextFontFamily,
+                  fontWeight: FontWeight.w600,
+                ),
+              )
+            : const SizedBox();
       },
     );
   }

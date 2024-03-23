@@ -12,7 +12,7 @@ class JobSubTitleWidget extends StatefulWidget {
   final int? jobIndex;
   final SearchBloc controller;
 
-  const JobSubTitleWidget({Key? key, required this.controller, required this.jobIndex}) : super(key: key);
+  const JobSubTitleWidget({super.key, required this.controller, required this.jobIndex});
 
   @override
   _JobSubTitleWidgetState createState() => _JobSubTitleWidgetState();

@@ -1,18 +1,20 @@
 // ignore_for_file: non_constant_identifier_names, invalid_use_of_visible_for_testing_member
 
 import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
 import 'package:jobsque_app/Routes/App_Routes.dart';
 import 'package:jobsque_app/Screens/EditProfileScreen/Service/Repository/ProfileUpdatePortfolioDataService/ProfileUpdatePortfolioDataService.dart';
+
 import '../Service/Repository/ProfileUpdateDataService/ProfileUpdateDataService.dart';
 import '../Service/Repository/ProfileUpdateUserDataService/ProfileUpdateUserDataService.dart';
 
 part 'edit_profile_controller_event.dart';
-
 part 'edit_profile_controller_state.dart';
 
 class EditProfileControllerBloc extends Bloc<EditProfileControllerEvent, EditProfileControllerState> {
@@ -49,7 +51,9 @@ class EditProfileControllerBloc extends Bloc<EditProfileControllerEvent, EditPro
         isSuccessProfileUpdateData = false;
         isSuccessProfileUpdateUserData = false;
         emit(EditProfileFailureApiUpdateData());
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
       }
     });
   }
@@ -59,7 +63,7 @@ class EditProfileControllerBloc extends Bloc<EditProfileControllerEvent, EditPro
     if (isSuccessProfileUpdateData && isSuccessProfileUpdateUserData && isSuccessProfileUpdatePortfolioData) {
       NavigatorHelper(context, AppRoutes.mainProfileScreen);
     }
-    log("Current State is : $state" , name: "Controller Current State");
+    log("Current State is : $state", name: "Controller Current State");
   }
 
   void UpdatingUserProfileImage() async {

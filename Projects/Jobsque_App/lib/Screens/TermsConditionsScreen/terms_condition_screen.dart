@@ -7,30 +7,33 @@ import 'package:jobsque_app/Screens/TermsConditionsScreen/UI/Views/TermsConditio
 import 'Controller/terms_conditions_controller_cubit.dart';
 
 class TermsConditionsScreen extends StatefulWidget {
-  final TermsConditionsControllerCubit termsConditionsControllerCubit = TermsConditionsControllerCubit();
-
-  TermsConditionsScreen({ super.key });
+  const TermsConditionsScreen({super.key});
 
   @override
   State<TermsConditionsScreen> createState() => _TermsConditionsScreenState();
 }
 
 class _TermsConditionsScreenState extends State<TermsConditionsScreen> {
+  TermsConditionsControllerCubit? termsConditionsControllerCubit;
+
+  @override
+  void initState() {
+    termsConditionsControllerCubit = TermsConditionsControllerCubit();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => widget.termsConditionsControllerCubit),
+        BlocProvider(create: (context) => termsConditionsControllerCubit!),
       ],
       child: SafeArea(
         child: Scaffold(
           primary: true,
-          body: TermsConditionsMainView(termsConditionsControllerCubit: widget.termsConditionsControllerCubit),
+          body: TermsConditionsMainView(termsConditionsControllerCubit: termsConditionsControllerCubit!),
         ),
       ),
     );
   }
 }
-
-

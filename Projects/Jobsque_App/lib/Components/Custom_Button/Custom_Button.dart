@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, file_names, prefer_null_aware_operators
 
 import 'package:flutter/material.dart';
 
@@ -27,7 +27,7 @@ class CustomButton extends StatelessWidget {
       style: ButtonStyle(
         elevation: const MaterialStatePropertyAll(5.0),
         fixedSize: fixedSize!,
-        shape: shape!=null? shape! : null,
+        shape: shape != null ? shape! : null,
         backgroundColor: backgroundColor!,
       ),
       child: Text(

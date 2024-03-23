@@ -2,7 +2,10 @@
 
 import 'dart:developer';
 import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+
 import '../../../../../Config/AppConfig.dart';
 
 class ProfileUpdateUserDataService {
@@ -28,7 +31,9 @@ class ProfileUpdateUserDataService {
       log("User Password Update Status: $profileAPIresponse", name: "User Password Status");
       return profileAPIresponse;
     } on Exception catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
     return null;
   }

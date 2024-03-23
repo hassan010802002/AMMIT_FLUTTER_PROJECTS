@@ -1,8 +1,9 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names
 
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:jobsque_app/Models/MainProfileDataModel/MainProfileDataModel.dart';
 
@@ -25,7 +26,9 @@ class MainProfileDataService {
         throw Exception("Profile API Failure");
       }
     } on Exception catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
     return null;
   }

@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Screens/Registration_Screen/Consts/RegistrationConsts.dart';
 
-
 class DividerTextWidget extends StatefulWidget {
-  const DividerTextWidget({Key? key}) : super(key: key);
+  const DividerTextWidget({super.key});
 
   @override
   _DividerTextWidgetState createState() => _DividerTextWidgetState();

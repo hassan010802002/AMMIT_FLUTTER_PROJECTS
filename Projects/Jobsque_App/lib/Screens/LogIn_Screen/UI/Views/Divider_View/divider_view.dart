@@ -7,7 +7,7 @@ import 'package:jobsque_app/Screens/LogIn_Screen/UI/Widgets/Divider2_Widget/divi
 import 'package:jobsque_app/Screens/LogIn_Screen/UI/Widgets/Divider_Text_Widget/divider_text_widget.dart';
 
 class DividerView extends StatefulWidget {
-  const DividerView({Key? key}) : super(key: key);
+  const DividerView({super.key});
 
   @override
   _DividerViewState createState() => _DividerViewState();

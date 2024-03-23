@@ -3,6 +3,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../../../../../Config/AppConfig.dart';
@@ -22,7 +23,9 @@ class ProfileUpdatePortfolioDataService {
       log("Api Response Result : $portfolioDataApiResponse", name: "Portfolio Data Service Status");
       return portfolioDataApiResponse;
     } on Exception catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
     return null;
   }

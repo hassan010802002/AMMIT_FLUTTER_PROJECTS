@@ -9,7 +9,7 @@ import '../../../Controller/location_cubit.dart';
 class LocationCountriesView extends StatefulWidget {
   final LocationCubit cubit;
 
-  const LocationCountriesView({Key? key, required this.cubit}) : super(key: key);
+  const LocationCountriesView({super.key, required this.cubit});
 
   @override
   _LocationCountriesViewState createState() => _LocationCountriesViewState();

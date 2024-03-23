@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/Controller/log_in_cubit.dart';
 import 'package:octo_image/octo_image.dart';
+
 import '../../../../../Components/CustomTextField/CustomTextField.dart';
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -12,7 +13,7 @@ import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 class Password_TextField_Widget extends StatefulWidget {
   final LogInCubit cubit;
 
-  const Password_TextField_Widget({Key? key, required this.cubit}) : super(key: key);
+  const Password_TextField_Widget({super.key, required this.cubit});
 
   @override
   _Password_TextField_WidgetState createState() => _Password_TextField_WidgetState();
@@ -61,7 +62,7 @@ class _Password_TextField_WidgetState extends State<Password_TextField_Widget> {
               height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.h,
             ),
           ),
-          onChanged: (p0) {
+          onChanged: (value) {
             widget.cubit.checkingUserEntrance();
             widget.cubit.checkingUserPasswordLength();
           },

@@ -2,6 +2,7 @@
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Helpers/Local_Cache_Helper/cache_helper.dart';
 import 'package:jobsque_app/Helpers/Navigator_Helper/Navigator_Helper.dart';
@@ -11,12 +12,10 @@ import '../../../Config/AppConfig.dart';
 import '../Service/Repository/ProfileUpdateUserDataService/ProfileUpdateUserDataService.dart';
 
 part 'profile_security_change_password_controller_event.dart';
-
 part 'profile_security_change_password_controller_state.dart';
 
 class ProfileSecurityChangePasswordControllerBloc
     extends Bloc<ProfileSecurityChangePasswordControllerEvent, ProfileSecurityChangePasswordControllerState> {
-
   bool isSuccessUserPasswordUpdate = false;
   bool isCorrectUserOldPassword = false;
   bool isCorrectUserNewPasswordLength = false;
@@ -38,48 +37,50 @@ class ProfileSecurityChangePasswordControllerBloc
         }
         emit(ProfileSecurityUserPasswordUpdateSuccessApiData());
       } on Exception catch (e) {
-        print(e.toString());
+        if (kDebugMode) {
+          print(e.toString());
+        }
         emit(ProfileSecurityUserPasswordUpdateFailureApiData());
       }
     });
   }
 
-  void CheckingUserOldPassword(String? inputPassword){
+  void CheckingUserOldPassword(String? inputPassword) {
     if (inputPassword == CacheHelper.getData(key: UserPasswordCacheKey)) {
       isCorrectUserOldPassword = true;
       emit(ProfileSecurityCorrectUserOldPassword());
-    } else{
+    } else {
       isCorrectUserOldPassword = false;
       emit(ProfileSecurityInCorrectUserOldPassword());
     }
   }
 
-  void CheckingUserNewPasswordLength(String? inputPassword){
+  void CheckingUserNewPasswordLength(String? inputPassword) {
     if (inputPassword!.length >= 9) {
       isCorrectUserNewPasswordLength = true;
       emit(ProfileSecurityCorrectUserNewPasswordLength());
-    } else{
+    } else {
       isCorrectUserNewPasswordLength = false;
       emit(ProfileSecurityInCorrectUserNewPasswordLength());
     }
   }
 
-  void CheckingUserNewPasswordConfirmation(String? inputPassword){
+  void CheckingUserNewPasswordConfirmation(String? inputPassword) {
     if (inputPassword! == newPasswordController!.text) {
       isCorrectUserNewPasswordConfirmation = true;
       emit(ProfileSecurityCorrectUserNewPasswordConfirmation());
-    } else{
+    } else {
       isCorrectUserNewPasswordConfirmation = false;
       emit(ProfileSecurityInCorrectUserNewPasswordConfirmation());
     }
   }
 
-  void UpdatingUserPassword(BuildContext context){
+  void UpdatingUserPassword(BuildContext context) {
     if (isCorrectUserNewPasswordConfirmation && isCorrectUserNewPasswordLength) {
       add(ProfileSequrityUpdateUserPasswordEvent());
       if (isSuccessUserPasswordUpdate) {
         NavigatorHelper(context, AppRoutes.mainProfileScreen);
-      }  
+      }
     }
   }
 }

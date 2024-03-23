@@ -2,10 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:jobsque_app/Helpers/JobDetailsPeopleListHelper/JobDetailsPeopleListHelper.dart';
+
 import '../../../../../Widgets/JobDetailsPeopleListTileWidget/job_details_people_list_tile_widget.dart';
 
 class JobDetailsPeopleListView extends StatefulWidget {
-  const JobDetailsPeopleListView({Key? key}) : super(key: key);
+  const JobDetailsPeopleListView({super.key});
 
   @override
   _JobDetailsPeopleListViewState createState() => _JobDetailsPeopleListViewState();

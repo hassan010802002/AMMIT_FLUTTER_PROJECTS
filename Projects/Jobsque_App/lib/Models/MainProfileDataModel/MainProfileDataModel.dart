@@ -1,13 +1,17 @@
 /// status : true
 /// data : {"portofolio":[{"id":746,"cv_file":"https://project2.amit-learning.com/cv/cv_8i2ogtvser.jpg","name":"Tester","image":"https://project2.amit-learning.com/image/image_8i2ogtvser.png","user_id":1616,"created_at":"2024-03-15T21:03:55.000000Z","updated_at":"2024-03-15T21:03:55.000000Z"}],"profile":{"id":1613,"user_id":1616,"name":"Tester","email":"tester000@gmail.com","mobile":"01234567985","address":"Egypt","language":"en","interested_work":"data","offline_place":"data","remote_place":"data","bio":"Flutter Developer","education":"education","experience":"data","personal_detailed":"data","created_at":"2024-03-15T20:59:34.000000Z","updated_at":"2024-03-15T21:02:19.000000Z"}}
+// ignore_for_file: file_names
+
+library;
 
 class MainProfileDataModel {
   MainProfileDataModel({
-      bool? status, 
-      Data? data,}){
+    bool? status,
+    Data? data,
+  }) {
     _status = status;
     _data = data;
-}
+  }
 
   MainProfileDataModel.fromJson(dynamic json) {
     _status = json['status'];
@@ -27,7 +31,6 @@ class MainProfileDataModel {
     }
     return map;
   }
-
 }
 
 /// portofolio : [{"id":746,"cv_file":"https://project2.amit-learning.com/cv/cv_8i2ogtvser.jpg","name":"Tester","image":"https://project2.amit-learning.com/image/image_8i2ogtvser.png","user_id":1616,"created_at":"2024-03-15T21:03:55.000000Z","updated_at":"2024-03-15T21:03:55.000000Z"}]
@@ -35,11 +38,12 @@ class MainProfileDataModel {
 
 class Data {
   Data({
-      List<Portofolio>? portofolio, 
-      Profile? profile,}){
+    List<Portofolio>? portofolio,
+    Profile? profile,
+  }) {
     _portofolio = portofolio;
     _profile = profile;
-}
+  }
 
   Data.fromJson(dynamic json) {
     if (json['portofolio'] != null) {
@@ -66,7 +70,6 @@ class Data {
     }
     return map;
   }
-
 }
 
 /// id : 1613
@@ -88,22 +91,23 @@ class Data {
 
 class Profile {
   Profile({
-      num? id, 
-      num? userId, 
-      String? name, 
-      String? email, 
-      String? mobile, 
-      String? address, 
-      String? language, 
-      String? interestedWork, 
-      String? offlinePlace, 
-      String? remotePlace, 
-      String? bio, 
-      String? education, 
-      String? experience, 
-      String? personalDetailed, 
-      String? createdAt, 
-      String? updatedAt,}){
+    num? id,
+    num? userId,
+    String? name,
+    String? email,
+    String? mobile,
+    String? address,
+    String? language,
+    String? interestedWork,
+    String? offlinePlace,
+    String? remotePlace,
+    String? bio,
+    String? education,
+    String? experience,
+    String? personalDetailed,
+    String? createdAt,
+    String? updatedAt,
+  }) {
     _id = id;
     _userId = userId;
     _name = name;
@@ -120,7 +124,7 @@ class Profile {
     _personalDetailed = personalDetailed;
     _createdAt = createdAt;
     _updatedAt = updatedAt;
-}
+  }
 
   Profile.fromJson(dynamic json) {
     _id = json['id'];
@@ -194,7 +198,6 @@ class Profile {
     map['updated_at'] = _updatedAt;
     return map;
   }
-
 }
 
 /// id : 746
@@ -207,13 +210,14 @@ class Profile {
 
 class Portofolio {
   Portofolio({
-      num? id, 
-      String? cvFile, 
-      String? name, 
-      String? image, 
-      num? userId, 
-      String? createdAt, 
-      String? updatedAt,}){
+    num? id,
+    String? cvFile,
+    String? name,
+    String? image,
+    num? userId,
+    String? createdAt,
+    String? updatedAt,
+  }) {
     _id = id;
     _cvFile = cvFile;
     _name = name;
@@ -221,7 +225,7 @@ class Portofolio {
     _userId = userId;
     _createdAt = createdAt;
     _updatedAt = updatedAt;
-}
+  }
 
   Portofolio.fromJson(dynamic json) {
     _id = json['id'];
@@ -259,5 +263,4 @@ class Portofolio {
     map['updated_at'] = _updatedAt;
     return map;
   }
-
 }

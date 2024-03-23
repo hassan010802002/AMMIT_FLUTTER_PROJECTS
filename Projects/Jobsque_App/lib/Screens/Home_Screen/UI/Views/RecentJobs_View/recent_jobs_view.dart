@@ -10,7 +10,7 @@ import '../../../Controller/home_bloc.dart';
 class RecentJobsView extends StatefulWidget {
   final HomeBloc blocController;
 
-  const RecentJobsView({Key? key, required this.blocController}) : super(key: key);
+  const RecentJobsView({super.key, required this.blocController});
 
   @override
   _RecentJobsViewState createState() => _RecentJobsViewState();

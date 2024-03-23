@@ -2,7 +2,10 @@
 
 import 'dart:developer';
 import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+
 import '../../../../../Config/AppConfig.dart';
 
 class ResetUserPasswordService {
@@ -28,7 +31,9 @@ class ResetUserPasswordService {
       log("User Password Update Status: $resetPasswordAPIresponse", name: "User Password Status");
       return resetPasswordAPIresponse;
     } on Exception catch (e) {
-      print(e.toString());
+      if (kDebugMode) {
+        print(e.toString());
+      }
     }
     return null;
   }

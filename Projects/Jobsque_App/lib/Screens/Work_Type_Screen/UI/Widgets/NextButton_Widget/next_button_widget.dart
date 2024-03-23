@@ -10,7 +10,7 @@ import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class NextButtonWidget extends StatefulWidget {
-  const NextButtonWidget({Key? key}) : super(key: key);
+  const NextButtonWidget({super.key});
 
   @override
   _NextButtonWidgetState createState() => _NextButtonWidgetState();

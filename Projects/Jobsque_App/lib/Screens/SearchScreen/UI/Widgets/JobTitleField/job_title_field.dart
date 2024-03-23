@@ -10,7 +10,7 @@ import '../../../Controller/FilterBottomSheetCubit/filter_bottom_sheet_cubit.dar
 class JobTitleField extends StatefulWidget {
   final FilterBottomSheetCubit bottomSheetCubit;
 
-  const JobTitleField({Key? key , required this.bottomSheetCubit}) : super(key: key);
+  const JobTitleField({super.key, required this.bottomSheetCubit});
 
   @override
   _JobTitleFieldState createState() => _JobTitleFieldState();

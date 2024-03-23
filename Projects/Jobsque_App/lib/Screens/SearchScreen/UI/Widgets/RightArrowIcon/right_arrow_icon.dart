@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RightArrowIcon extends StatefulWidget {
-  const RightArrowIcon({Key? key}) : super(key: key);
+  const RightArrowIcon({super.key});
 
   @override
   _RightArrowIconState createState() => _RightArrowIconState();

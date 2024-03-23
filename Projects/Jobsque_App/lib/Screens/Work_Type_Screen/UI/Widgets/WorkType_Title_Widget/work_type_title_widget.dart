@@ -10,7 +10,7 @@ import '../../../../../Config/AppConfig.dart';
 class WorkTypeTitleWidget extends StatefulWidget {
   int index;
 
-  WorkTypeTitleWidget({Key? key, required this.index}) : super(key: key);
+  WorkTypeTitleWidget({super.key, required this.index});
 
   @override
   _WorkTypeTitleWidgetState createState() => _WorkTypeTitleWidgetState();

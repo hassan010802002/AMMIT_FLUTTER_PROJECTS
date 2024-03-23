@@ -11,7 +11,7 @@ class FullTimeContainer extends StatefulWidget {
   final int? jobIndex;
   final HomeBloc controller;
 
-  const FullTimeContainer({Key? key, required this.jobIndex, required this.controller}) : super(key: key);
+  const FullTimeContainer({super.key, required this.jobIndex, required this.controller});
 
   @override
   _FullTimeContainerState createState() => _FullTimeContainerState();

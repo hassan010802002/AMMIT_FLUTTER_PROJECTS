@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ClockIcon extends StatefulWidget {
-  const ClockIcon({Key? key}) : super(key: key);
+  const ClockIcon({super.key});
 
   @override
   _ClockIconState createState() => _ClockIconState();

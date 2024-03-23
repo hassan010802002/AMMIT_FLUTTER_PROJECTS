@@ -6,23 +6,29 @@ import 'package:jobsque_app/Screens/Work_Type_Screen/Controller/work_type_cubit.
 import 'package:jobsque_app/Screens/Work_Type_Screen/UI/Views/work_type_main_view.dart';
 
 class WorkTypeScreen extends StatefulWidget {
-  final WorkTypeCubit cubit = WorkTypeCubit();
-
-  WorkTypeScreen({Key? key}) : super(key: key);
+  const WorkTypeScreen({super.key});
 
   @override
   _WorkTypeScreenState createState() => _WorkTypeScreenState();
 }
 
 class _WorkTypeScreenState extends State<WorkTypeScreen> {
+  WorkTypeCubit? cubit;
+
+  @override
+  void initState() {
+    cubit = WorkTypeCubit();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         body: BlocProvider(
-          create: (context) => widget.cubit,
-          child: WorkTypeMainView(cubit: widget.cubit),
+          create: (context) => cubit!,
+          child: WorkTypeMainView(cubit: cubit!),
         ),
       ),
     );

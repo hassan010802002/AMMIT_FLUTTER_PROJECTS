@@ -8,7 +8,7 @@ import 'package:jobsque_app/Screens/SearchScreen/UI/Widgets/EmptySearchText/empt
 import 'package:jobsque_app/Screens/SearchScreen/UI/Widgets/EmptySearchText2/empty_search_text2.dart';
 
 class EmptyView extends StatefulWidget {
-  const EmptyView({Key? key}) : super(key: key);
+  const EmptyView({super.key});
 
   @override
   _EmptyViewState createState() => _EmptyViewState();
@@ -25,7 +25,7 @@ class _EmptyViewState extends State<EmptyView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)!/5.8.h,
+              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 5.8.h,
             ),
             const EmptySearchIcon(),
             SizedBox(
