@@ -76,7 +76,9 @@ class _ProfileSecurityMainViewState extends State<ProfileSecurityMainView> {
               ),
               CustomProfileOtherButton(
                 "Two-step verification",
-                onPressed: () {},
+                onPressed: () {
+                  NavigatorHelper(context, AppRoutes.profileSecurityVerificationScreen);
+                },
               ),
               Divider(
                 thickness: 1.5.h,

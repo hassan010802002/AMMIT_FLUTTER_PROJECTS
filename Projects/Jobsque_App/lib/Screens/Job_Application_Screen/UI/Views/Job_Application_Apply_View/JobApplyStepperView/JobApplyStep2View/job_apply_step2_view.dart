@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jobsque_app/Screens/Job_Application_Screen/Controllers/Application_Controller/application_cubit.dart';
-
 import 'package:jobsque_app/Screens/Job_Application_Screen/UI/Widgets/JobApplyTypeOfWorkTextWidget/job_apply_type_of_work_text_widget.dart';
 
 import '../../../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
@@ -34,10 +33,7 @@ class _JobApplyStep2ViewState extends State<JobApplyStep2View> {
             SizedBox(
               height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 35.0.h,
             ),
-            SizedBox(
-              height: MediaQuery_Size_Helper.MAX_HEIGHT(context)!/2.0.h,
-              child: JobApplyWorkTypesView(applicationCubitController: widget.applicationCubitController),
-            ),
+            JobApplyWorkTypesView(applicationCubitController: widget.applicationCubitController),
           ],
         ),
       ),
