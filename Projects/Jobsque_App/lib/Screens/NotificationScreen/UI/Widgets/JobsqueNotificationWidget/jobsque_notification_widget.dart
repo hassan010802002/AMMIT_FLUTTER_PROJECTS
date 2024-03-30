@@ -49,7 +49,7 @@ class _JobsqueNotificationWidgetState extends State<JobsqueNotificationWidget> {
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 4.6.w,
+                  width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 5.0.w,
                 ),
                 Text(
                   '08.00AM',
