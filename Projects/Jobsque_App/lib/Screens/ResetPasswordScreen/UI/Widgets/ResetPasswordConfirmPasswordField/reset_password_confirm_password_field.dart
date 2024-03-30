@@ -27,7 +27,7 @@ class _ResetPasswordConfirmPasswordFieldState extends State<ResetPasswordConfirm
         return CustomTextField(
           fillColor: Colors.white,
           opsecure: true,
-          textEditingController: TextEditingController(),
+          textEditingController: widget.resetPasswordControllerBloc.confirmPasswordController!,
           prefixIcon: OctoImage(
             image: const AssetImage("Assets/Images/lock.png"),
             height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 15.0.h,

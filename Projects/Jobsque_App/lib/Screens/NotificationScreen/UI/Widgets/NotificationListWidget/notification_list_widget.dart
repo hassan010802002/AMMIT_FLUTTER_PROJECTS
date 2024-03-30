@@ -25,24 +25,26 @@ class _NotificationListWidgetState extends State<NotificationListWidget> {
       padding: EdgeInsets.symmetric(horizontal: 25.0.w, vertical: 20.0.h),
       itemBuilder: (context, index) {
         return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            OctoImage(
-              image: AssetImage(NotificationHelper.logos(index)),
-              fit: BoxFit.contain,
-              filterQuality: FilterQuality.high,
-              alignment: Alignment.center,
-              height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.5.w,
-              width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.5.h,
-            ),
-            SizedBox(
-              width: 20.0.w,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                OctoImage(
+                  image: AssetImage(NotificationHelper.logos(index)),
+                  fit: BoxFit.contain,
+                  filterQuality: FilterQuality.high,
+                  alignment: Alignment.center,
+                  height: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.5.w,
+                  width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.5.h,
+                ),
+                SizedBox(
+                  width: 20.0.w,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       NotificationHelper.titles(index),
@@ -55,23 +57,8 @@ class _NotificationListWidgetState extends State<NotificationListWidget> {
                         fontFamily: TextFontFamily,
                       ),
                     ),
-                    SizedBox(
-                      width: NotificationHelper.titles(index).length > 5
-                          ? NotificationHelper.titles(index).length < 8
-                              ? MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.9.w
-                              : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 3.35.w
-                          : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.53.w,
-                    ),
-                    Icon(
-                      FontAwesomeIcons.solidCircle,
-                      color: const Color(0xffDBB40E),
-                      size: 10.0.sp,
-                    ),
-                    SizedBox(
-                      width: 10.0.w,
-                    ),
                     Text(
-                      '10.00AM',
+                      "Posted new design jobs",
                       softWrap: true,
                       textAlign: TextAlign.start,
                       style: TextStyle(
@@ -83,9 +70,21 @@ class _NotificationListWidgetState extends State<NotificationListWidget> {
                     ),
                   ],
                 ),
-                const SizedBox(),
+              ],
+            ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  FontAwesomeIcons.solidCircle,
+                  color: const Color(0xffDBB40E),
+                  size: 10.0.sp,
+                ),
+                SizedBox(
+                  width: 10.0.w,
+                ),
                 Text(
-                  "Posted new design jobs",
+                  '10.00AM',
                   softWrap: true,
                   textAlign: TextAlign.start,
                   style: TextStyle(

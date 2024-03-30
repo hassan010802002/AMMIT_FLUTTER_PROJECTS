@@ -50,26 +50,31 @@ class _EmailNotificationWidgetState extends State<EmailNotificationWidget> {
                   ),
                 ),
                 SizedBox(
-                  width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 7.0.w,
+                  width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 8.0.w,
                 ),
-                Icon(
-                  FontAwesomeIcons.solidCircle,
-                  color: const Color(0xffDBB40E),
-                  size: 10.0.sp,
-                ),
-                SizedBox(
-                  width: 10.0.w,
-                ),
-                Text(
-                  '10.00AM',
-                  softWrap: true,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    color: const Color(0xff6B7280),
-                    fontWeight: FontWeight.w500,
-                    fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 30.0.sp,
-                    fontFamily: TextFontFamily,
-                  ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      FontAwesomeIcons.solidCircle,
+                      color: const Color(0xffDBB40E),
+                      size: 10.0.sp,
+                    ),
+                    SizedBox(
+                      width: 10.0.w,
+                    ),
+                    Text(
+                      '10.00AM',
+                      softWrap: true,
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                        color: const Color(0xff6B7280),
+                        fontWeight: FontWeight.w500,
+                        fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 30.0.sp,
+                        fontFamily: TextFontFamily,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

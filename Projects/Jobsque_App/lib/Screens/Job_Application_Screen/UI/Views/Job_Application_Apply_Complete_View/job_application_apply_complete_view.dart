@@ -3,13 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:octo_image/octo_image.dart';
+
 import '../../../../../Config/AppConfig.dart';
 import '../../../../../Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 import '../../../../SearchScreen/UI/Widgets/BackButton_Widget/back_button_widget.dart';
 import '../../Widgets/ApplyViewTitleTextWidget/apply_view_title_text_widget.dart';
 
 class JobApplicationApplyCompleteView extends StatefulWidget {
-
   const JobApplicationApplyCompleteView({super.key});
 
   @override
@@ -66,6 +66,9 @@ class _JobApplicationApplyCompleteViewState extends State<JobApplicationApplyCom
           softWrap: true,
           textAlign: TextAlign.center,
         ),
+        SizedBox(
+          height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 9.0.h,
+        )
       ],
     );
   }

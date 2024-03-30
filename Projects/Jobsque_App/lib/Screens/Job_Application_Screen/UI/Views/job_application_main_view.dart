@@ -49,7 +49,7 @@ class _JobApplicationMainViewState extends State<JobApplicationMainView> {
                             ? JobApplicationApplyView(applicationCubitController: widget.applicationCubitController)
                             : const JobApplicationApplyCompleteView(),
                     SizedBox(
-                      height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 9.0.h,
+                      height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 10.0.h,
                     ),
                     JobApplicationButtonWidget(
                       mainCubitController: widget.mainCubitController,

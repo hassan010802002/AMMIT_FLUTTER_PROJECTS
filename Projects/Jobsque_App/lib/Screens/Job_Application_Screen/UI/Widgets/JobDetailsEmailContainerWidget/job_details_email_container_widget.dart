@@ -25,7 +25,6 @@ class _JobDetailsEmailContainerWidgetState extends State<JobDetailsEmailContaine
       builder: (context, state) {
         return widget.detailsCubitController!.isSuccessJobData
             ? Container(
-                height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 12.0.h,
                 padding: EdgeInsets.symmetric(horizontal: 15.0.w, vertical: 10.0.h),
                 width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 2.35.w,
                 decoration: BoxDecoration(
@@ -59,8 +58,8 @@ class _JobDetailsEmailContainerWidgetState extends State<JobDetailsEmailContaine
                       style: TextStyle(
                         color: const Color(0xff111827),
                         fontSize: widget.detailsCubitController!.currentJobDetailsData!.compEmail!.length > 20
-                            ? MediaQuery_Size_Helper.MAX_WIDTH(context)! / 32.0.sp
-                            : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 28.0.sp,
+                            ? MediaQuery_Size_Helper.MAX_WIDTH(context)! / 30.0.sp
+                            : MediaQuery_Size_Helper.MAX_WIDTH(context)! / 25.0.sp,
                         fontWeight: FontWeight.w800,
                         fontFamily: TextFontFamily,
                       ),

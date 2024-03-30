@@ -36,7 +36,7 @@ class _AppliedJobsTabBarViewState extends State<AppliedJobsTabBarView> {
           ),
         ),
         SizedBox(
-          height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 1.374.h,
+          height: MediaQuery_Size_Helper.MAX_HEIGHT(context)! / 1.4.h,
           child: TabBarView(
             children: [
               AppliedJobsActiveJobsTabBarView(appliedJobsControllerBloc: widget.appliedJobsControllerBloc!),

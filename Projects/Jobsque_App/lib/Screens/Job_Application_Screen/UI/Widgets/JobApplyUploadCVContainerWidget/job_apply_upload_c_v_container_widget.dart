@@ -64,10 +64,12 @@ class _JobApplyUploadCVContainerWidgetState extends State<JobApplyUploadCVContai
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  widget.applicationCubitController.myCVFile!,
+                                  widget.applicationCubitController.myCVFile!.length > 25
+                                      ? "${widget.applicationCubitController.myCVFile!.substring(0, 25)}..."
+                                      : widget.applicationCubitController.myCVFile!,
                                   style: TextStyle(
                                     color: const Color(0xff111827),
-                                    fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 25.0.sp,
+                                    fontSize: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 24.0.sp,
                                     fontWeight: FontWeight.w600,
                                     fontFamily: TextFontFamily,
                                   ),
