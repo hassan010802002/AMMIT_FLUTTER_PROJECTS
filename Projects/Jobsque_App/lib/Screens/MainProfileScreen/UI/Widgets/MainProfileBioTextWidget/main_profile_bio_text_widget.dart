@@ -24,7 +24,7 @@ class _MainProfileBioTextWidgetState extends State<MainProfileBioTextWidget> {
       builder: (context, state) {
         return Text(
           widget.mainProfileControllerBloc.isSuccessMainProfileData &&
-                  widget.mainProfileControllerBloc.mainProfileDataModel!.data!.profile!.bio!.isNotEmpty
+                  widget.mainProfileControllerBloc.mainProfileDataModel!.data!.profile!.bio != null
               ? widget.mainProfileControllerBloc.mainProfileDataModel!.data!.profile!.bio!
               : "Hi There",
           style: TextStyle(

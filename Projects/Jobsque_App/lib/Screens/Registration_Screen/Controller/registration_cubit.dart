@@ -59,11 +59,11 @@ class RegistrationCubit extends Cubit<RegistrationState> {
       emit(InitialRegistrationState());
       registrationStatusCode = await RegistrationService.UserRegistration(
           userName: userNameController.text, email: emailController.text, password: passwordController.text);
+      emit(FinalRegistrationState());
       if (registrationStatusCode == 200) {
-        emit(FinalRegistrationState());
         SnackBar_Helper.showSuccessToast(context, "Successful Registration");
         Future.delayed(
-          const Duration(seconds: 2),
+          const Duration(seconds: 3),
           () => NavigatorHelper(context, AppRoutes.workTypeScreen),
         );
       } else {

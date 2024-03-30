@@ -3,7 +3,7 @@
 String TextFontFamily = "SF Pro Display";
 
 /// *******************************************************************************************
-
+String defaultServiceToken = "1|6n7o8bTpDKVp2djRDhlEUvcJqu0mVJhqLG2K7EDK";
 String loginApiUrl = "https://project2.amit-learning.com/api/auth/login";
 String profileApiUrl = "https://project2.amit-learning.com/api/auth/profile";
 String profileUpdateDataApiUrl = "https://project2.amit-learning.com/api/user/profile/edit?";

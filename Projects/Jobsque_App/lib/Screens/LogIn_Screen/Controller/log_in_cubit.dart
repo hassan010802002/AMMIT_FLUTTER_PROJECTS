@@ -3,8 +3,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:jobsque_app/Config/AppConfig.dart';
-import 'package:jobsque_app/Helpers/Local_Cache_Helper/cache_helper.dart';
 import 'package:jobsque_app/Screens/LogIn_Screen/Service/Repository/LogIn_Service/LogIn_Service.dart';
 
 import '../../../Helpers/Navigator_Helper/Navigator_Helper.dart';
@@ -61,12 +59,11 @@ class LogInCubit extends Cubit<LogInState> {
     if (emailController!.text.isNotEmpty && passwordController!.text.isNotEmpty) {
       emit(InitialLogInState());
       loginStatusCode = await LogInService.UserLogIn(email: emailController!.text, password: passwordController!.text);
-      await CacheHelper.saveData(key: UserPasswordCacheKey, value: passwordController!.text);
+      emit(FinalLogInState());
       if (loginStatusCode == 200) {
-        emit(FinalLogInState());
         SnackBar_Helper.showSuccessToast(context, "Successful LogIn");
         Future.delayed(
-          const Duration(seconds: 2),
+          const Duration(seconds: 3),
           () => NavigatorHelper(context, AppRoutes.homeScreen),
         );
       } else {

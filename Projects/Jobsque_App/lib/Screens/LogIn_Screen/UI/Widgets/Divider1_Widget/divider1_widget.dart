@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobsque_app/Helpers/Size_Helper/MediaQuery_Size_Helper.dart';
 
 class Divider1Widget extends StatefulWidget {
   const Divider1Widget({super.key});
@@ -14,8 +13,7 @@ class Divider1Widget extends StatefulWidget {
 class _Divider1WidgetState extends State<Divider1Widget> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery_Size_Helper.MAX_WIDTH(context)! / 5.0.w,
+    return Expanded(
       child: Divider(
         color: const Color(0xffD1D5DB),
         thickness: 2.0.h,

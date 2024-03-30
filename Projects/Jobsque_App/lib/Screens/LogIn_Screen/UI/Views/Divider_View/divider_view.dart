@@ -20,11 +20,11 @@ class _DividerViewState extends State<DividerView> {
       children: [
         const Divider1Widget(),
         SizedBox(
-          width: 15.0.w,
+          width: 8.0.w,
         ),
         const DividerTextWidget(),
         SizedBox(
-          width: 15.0.w,
+          width: 8.0.w,
         ),
         const Divider2Widget()
       ],
