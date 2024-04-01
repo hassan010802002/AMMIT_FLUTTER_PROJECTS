@@ -26,36 +26,40 @@ class _OnBroading_Main_View_State extends State<OnBroading_Main_View> {
       padding: EdgeInsets.only(
         right: 20.0.w,
         left: 20.0.w,
-        top: 60.0.h,
+        top: 50.0.h,
+        bottom: 20.0.h,
       ),
       decoration: OnBroading_Consts.containerStyle,
       child: Align(
         alignment: Alignment.topCenter,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Title_Row_View(),
-            SizedBox(
-              height: 45.0.h,
-            ),
-            const Text1_Widget(),
-            SizedBox(
-              height: 15.0.h,
-            ),
-            const Text2_Widget(),
-            SizedBox(
-              height: 40.0.h,
-            ),
-            const Social_Buttons_View(),
-            SizedBox(
-              height: 45.0.w,
-            ),
-            const Divider_View(),
-            const Email_SignUp_Button_Widget(),
-            const Bottom_LogIn_View(),
-          ],
+        child: SingleChildScrollView(
+          primary: true,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Title_Row_View(),
+              SizedBox(
+                height: 45.0.h,
+              ),
+              const Text1_Widget(),
+              SizedBox(
+                height: 15.0.h,
+              ),
+              const Text2_Widget(),
+              SizedBox(
+                height: 40.0.h,
+              ),
+              const Social_Buttons_View(),
+              SizedBox(
+                height: 45.0.w,
+              ),
+              const Divider_View(),
+              const Email_SignUp_Button_Widget(),
+              const Bottom_LogIn_View(),
+            ],
+          ),
         ),
       ),
     );
